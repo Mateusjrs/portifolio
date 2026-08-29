@@ -822,6 +822,7 @@ imageUrl: '/images/bandeirante-real.jpg', // <--- Foto principal do card
     },
     result: 'O projeto resultou em um modelo integrado da aeronave, combinando reconstrução geométrica, modelagem aerodinâmica, análise de estabilidade e simulação de dinâmica de voo. A comparação entre a trimagem analítica e os resultados do AVL apresentou boa concordância. O simulador 6-DOF em MATLAB permitiu avaliar a resposta a perturbações e identificar os modos dinâmicos, provando que a configuração de 3380 kg e CG recuado apresenta respostas mais sensíveis. O código completo (scripts MATLAB e modelos AVL) está disponível no repositório.',
     githubUrl: 'https://github.com/mateusjrs/emb-110-flight-dynamics', // <--- COLOQUE SEU LINK AQUI
+    // @ts-ignore
     report: 'Relatório Técnico Completo: Análise do Comportamento de Voo do EMB-110 Bandeirante'
   },
   {
