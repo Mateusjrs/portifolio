@@ -49,6 +49,11 @@ export interface Project {
     antenna?: string;
     documentation?: string;
     engineeringSkills?: string[];
+    lighting?: string;
+    protection?: string;
+    firmwareArchitecture?: string;
+    simulation?: string;
+    aircraft?: string;
     // === Novas do projeto NACA ===
     baseline?: string;
     postProcessing?: string;

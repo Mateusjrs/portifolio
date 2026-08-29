@@ -276,7 +276,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                     Galeria do Projeto
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                    {project.gallery.map((imgSrc, idx) => (
+                    {project.gallery.map((imgSrc: string, idx: number) => (
                       <div key={idx} className="rounded-lg overflow-hidden border border-slate-700/50 hover:border-cyan-500/50 transition-colors">
                         <img 
                           src={imgSrc} 
@@ -289,14 +289,14 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                 </div>
               )}
               {/* Seção de Mídia (GIFs e Telas com Descrição) */}
-              {/* Seção de Mídia (GIFs e Telas com Descrição) */}
               {project.media && Object.keys(project.media).length > 0 && (
                 <div className="space-y-4 bg-slate-950/80 p-6 rounded-xl border border-slate-800 mt-4">
                   <h3 className="text-base font-bold text-white flex items-center gap-2 border-b border-slate-800 pb-3">
                      Mídias & Demonstração
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                    {Object.values(project.media).map((item, idx) => {
+                    {/* AQUI ESTÁ A CORREÇÃO: item tipado como any e idx como number */}
+                    {Object.values(project.media).map((item: any, idx: number) => {
                       if (!item || !item.url) return null;
                       return (
                         <div key={idx} className="bg-slate-900 rounded-lg overflow-hidden border border-slate-700/50 hover:border-cyan-500/50 transition-colors group flex flex-col">
