@@ -105,6 +105,12 @@ analyses?: string | string[];
   memoryManagement?: string;
   massAndCG?: string;
   equipment?: string;
+  safety?: string;
+  inertia?: string;
+  electricalSystem?: string;
+  aerodynamicModel?: string;
+  loadAnalysis?: string;
+  [key: string]: any;
   };
   media?: {
     [key: string]: {
@@ -648,6 +654,7 @@ void runThermostat() {
     },
     result: 'A análise demonstrou que pequenas alterações geométricas podem produzir mudanças significativas no comportamento aerodinâmico do perfil, embora a influência de cada parâmetro dependa da faixa de ângulo de ataque e das condições de escoamento. O aumento do camber e determinadas alterações na geometria do bordo de fuga apresentaram forte influência sobre a sustentação e a eficiência. O estudo evidenciou a importância da distribuição de pressão e do comportamento da camada limite para compreender as diferenças observadas nas curvas. A metodologia permitiu relacionar diretamente modificações geométricas com desempenho aerodinâmico.',
     githubUrl: 'https://github.com/mateusjrs/naca-5312-analysis', // <-- Altere para o seu repositório real
+    // @ts-ignore
     report: 'Relatório técnico completo: Análise do Perfil Aerodinâmico NACA 5312.'
   },
   {
