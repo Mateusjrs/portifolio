@@ -101,6 +101,10 @@ analyses?: string | string[];
   connectivity?: string;
   cad?: string;
   regulatory?: string;
+  hardware?: string;
+  memoryManagement?: string;
+  massAndCG?: string;
+  equipment?: string;
   };
   media?: {
     [key: string]: {

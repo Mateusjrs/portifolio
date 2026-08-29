@@ -56,8 +56,11 @@ export function App() {
       <About />
       <Contact />
 
-      {selectedProject && (
-  <ProjectDetailModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+ {activeModalProject && (
+  <ProjectDetailModal 
+    project={activeModalProject} 
+    onClose={() => setActiveModalProject(null)} 
+  />
 )}
 
       <footer className="py-8 bg-slate-950 text-center font-mono text-xs text-slate-600 border-t border-slate-900">
