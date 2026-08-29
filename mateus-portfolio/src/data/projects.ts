@@ -95,6 +95,12 @@ isoTpStack?: string;
 thermostatControl?: string;
 geometry?: string;
 modification?: string;
+analyses?: string | string[];
+  equipmentList?: string | string[];
+  diagnostics?: string;
+  connectivity?: string;
+  cad?: string;
+  regulatory?: string;
   };
   media?: {
     [key: string]: {

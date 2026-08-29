@@ -56,10 +56,9 @@ export function App() {
       <About />
       <Contact />
 
-      <ProjectDetailModal
-        project={activeModalProject}
-        onClose={() => setActiveModalProject(null)}
-      />
+      {selectedProject && (
+  <ProjectDetailModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+)}
 
       <footer className="py-8 bg-slate-950 text-center font-mono text-xs text-slate-600 border-t border-slate-900">
         © {new Date().getFullYear()} Mateus Junio · Engenharia Aeroespacial UFMG
