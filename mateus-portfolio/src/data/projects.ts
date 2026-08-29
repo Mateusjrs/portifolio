@@ -87,6 +87,14 @@ export interface Project {
     memory?: string;
     multitasking?: string;
     mainFunctions?: string[];
+    // Na interface principal do projeto (onde fica o título, descrição, etc):
+report?: string;
+
+// Na interface dos detalhes técnicos (onde você já adicionou lighting, etc):
+isoTpStack?: string;
+thermostatControl?: string;
+geometry?: string;
+modification?: string;
   };
   media?: {
     [key: string]: {

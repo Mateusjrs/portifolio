@@ -1,18 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import type { Project } from '../data/projects';
 import { ModelViewer } from './ModelViewer';
-import {CheckCircle2, Cpu, Wrench, Code2, ZoomIn, X } from 'lucide-react';
+import { CheckCircle2, Cpu, Wrench, Code2, ZoomIn, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react'; // Garanta que o useState está importado
 
-interface Project {
-  title: string;
-  description?: string;
-  image?: string;
-  images?: string[];
+// 1. A "interface Project" que estava aqui foi APAGADA, pois já está vindo do import ali em cima.
+
+// 2. CRIADA a interface das propriedades do modal que estava faltando:
+interface ProjectDetailModalProps {
+  project: Project;
+  onClose: () => void;
 }
-
-
 
 export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   project,
@@ -29,6 +27,8 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
     }
+    
+    // (o resto do seu código continua normal abaixo)
 
     return () => {
       document.body.style.overflow = 'auto';
@@ -72,7 +72,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
               <div>
                 <p className="text-lg text-slate-300 font-light leading-relaxed">{project.summary}</p>
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {project.technologies.map((tech) => (
+                  {project.technologies.map((tech: string) => (
                     <span key={tech} className="bg-cyan-950/60 text-cyan-300 border border-cyan-800/50 text-xs font-mono px-3 py-1 rounded-md">
                       {tech}
                     </span>
@@ -161,12 +161,8 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                       hardware: 'Hardware & Baixo Nível',
                       connectivity: 'Conectividade (IoT)',
                       safety: 'Segurança Lógica',
-                      firmwareArchitecture: 'Arquitetura de Firmware',
                       thermostatControl: 'Controle Térmico Preditivo',
-                      connectivity: 'Conectividade e Provisionamento',
                       memoryManagement: 'Gestão de Memória Flash',
-                      massComparison: 'Comparação de Massas',
-                      stabilityAnalysis: 'Análise de Estabilidade',
                       modification: 'Modificação',
                       regulatory: 'Regulamentação',
                       equipment: 'Equipamentos',
@@ -200,7 +196,6 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                       display: 'Barramento de Display',
                       inputs: 'Entradas (I/O)',
                       connectors: 'Terminais e Conexões',
-                      protection: 'Isolamento e Proteção (Flyback)',
                       bom: 'Lista de Materiais (BOM)'
                     };
 
