@@ -714,24 +714,6 @@ void runThermostat() {
     report: 'Relatório técnico completo: Análise do Perfil Aerodinâmico NACA 5312.'
   },
   {
-    id: 'electrical-load-analysis-cessna',
-    title: 'Análise de Carga Elétrica (ELA) - Cessna 182Q',
-    category: 'Aerospace',
-    shortDescription: 'Estudo normativo e cálculo de balanceamento elétrico aeronáutico para projeto de modificação de aeronave.',
-    technologies: ['Sistemas Aeronáuticos', 'FAR/RBAC', 'Excel / MATLAB'],
-    imageUrl: 'https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=1200&q=80',
-    featured: false,
-    summary: 'Elaboração de um documento técnico formal de Análise de Carga Elétrica (Electrical Load Analysis) para garantir a segurança operacional e regulamentar do sistema elétrico de um Cessna 182Q.',
-    problem: 'Ao adicionar ou modificar aviônicos em uma aeronave, é mandatório comprovar junto às autoridades aeronáuticas que os barramentos e a geração (alternador/bateria) suportam as novas demandas em todas as fases do voo.',
-    contribution: 'Levantamento completo do consumo de todos os equipamentos (rádios, luzes, aviônicos, atuadores) e estruturação do balanço energético considerando fases de táxi, decolagem, cruzeiro e pouso.',
-    engineeringDetails: {
-      calculations: 'Somatório de correntes por barramento, cálculo de capacidade residual do alternador e tempo de autonomia da bateria em cenário de emergência (falha de geração dupla).',
-      decisions: 'Metodologia de cálculo rigorosamente baseada na ASTM F2490 e requisitos do RBAC/FAR Part 23 para garantir conformidade de certificação.',
-      components: ['Sistemas de Geração (Alternador 60A)', 'Bateria (Chumbo-Ácido)', 'Barramentos Primário e de Aviônicos']
-    },
-    result: 'Relatório técnico consistente demonstrando margem de segurança operacional positiva, aplicável a processos reais de certificação e engenharia.'
-  },
-  {
     id: 'quilli-smart-aquarium',
     title: 'Aquário Inteligente',
     category: 'IoT',
@@ -877,7 +859,7 @@ imageUrl: '/images/bandeirante-real.jpg', // <--- Foto principal do card
       ]
     },
     result: 'O projeto resultou em um modelo integrado da aeronave, combinando reconstrução geométrica, modelagem aerodinâmica, análise de estabilidade e simulação de dinâmica de voo. A comparação entre a trimagem analítica e os resultados do AVL apresentou boa concordância. O simulador 6-DOF em MATLAB permitiu avaliar a resposta a perturbações e identificar os modos dinâmicos, provando que a configuração de 3380 kg e CG recuado apresenta respostas mais sensíveis. O código completo (scripts MATLAB e modelos AVL) está disponível no repositório.',
-    githubUrl: 'https://github.com/mateusjrs/emb-110-flight-dynamics', // <--- COLOQUE SEU LINK AQUI
+    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/DinamicaVooBandeirante', // <--- COLOQUE SEU LINK AQUI
     // @ts-ignore
     report: 'Relatório Técnico Completo: Análise do Comportamento de Voo do EMB-110 Bandeirante'
   },
@@ -935,7 +917,7 @@ imageUrl: '/images/bandeirante-real.jpg', // <--- Foto principal do card
       ]
     },
     result: 'A análise resultou em uma proposta estruturada para a substituição do sistema RT-385 pelo Garmin GNS 430W, contemplando os principais componentes necessários, a arquitetura de alimentação, proteção elétrica, conexões e integração com o sistema aviônico existente. O balanço de carga indicou um acréscimo líquido de aproximadamente 1,8 A no pico de transmissão e, considerando o limite de 80% da capacidade do alternador, uma margem suficiente dentro das premissas adotadas. O projeto demonstrou a aplicação integrada de conhecimentos de sistemas elétricos aeronáuticos, aviônicos, regulamentação, análise de requisitos e documentação de engenharia. O material desenvolvido para a resolução técnica e os arquivos utilizados no estudo estão disponibilizados no repositório.',
-    githubUrl: 'https://github.com/mateusjrs/cessna-avionics-mod' // Lembre-se de colocar o link correto
+    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/ControleCargaCessna' // Lembre-se de colocar o link correto
   },
   
 ];
