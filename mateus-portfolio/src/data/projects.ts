@@ -250,7 +250,7 @@ void realizarMedicao() {
     ],
     
     // === IMAGEM DE CAPA ATUALIZADA AQUI ===
-    imageUrl: '/images/capaAirbus.png', // <-- Substitua pelo nome exato da sua imagem!
+    imageUrl: '/images/capaAirbus.jpg', // <-- Substitua pelo nome exato da sua imagem!
     
     modelPath: '/models/Airbus.glb',
     edrawingsUrl: '/models/Airbus.easm',
