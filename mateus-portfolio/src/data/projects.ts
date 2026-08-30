@@ -422,9 +422,9 @@ void realizarMedicao() {
   },
   {
     id: 'mini-sumo-autonomous',
-    title: 'Mini Sumô Autônomo — Alta Densidade e Vácuo',
+    title: 'Mini Sumô Autônomo (500g) — Alta Densidade',
     category: 'Hardware',
-    shortDescription: 'Miniaturização extrema da arquitetura do robô Afrodite, mantendo o sistema de peso virtual e múltiplos sensores ToF em uma PCB de alta densidade.',
+    shortDescription: 'Miniaturização extrema da arquitetura do robô Afrodite, mantendo o processamento dual-core e múltiplos sensores ToF em uma PCB de alta densidade.',
     technologies: [
       'ESP32',
       'Design de PCB SMD',
@@ -433,18 +433,18 @@ void realizarMedicao() {
       'Controle Inercial',
       'Eletrônica de Potência Compacta'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=1200&q=80', // Imagem sugerida (tecnologia/microeletrônica)
+    imageUrl: '/images/MINISUMO_ANGULO.jpeg', // Substitua pela capa do seu robô
     featured: false,
-    summary: 'Adaptação da arquitetura eletrônica e de controle do robô Afrodite (3kg) para a categoria Mini Sumô (500g). O desafio principal consistiu em compactar todo o processamento dual-core do ESP32, a leitura paralela de 5 sensores de distância (VL53L0X), o controle inercial e a eletrônica de potência da turbina de vácuo (peso virtual) em uma área rigorosamente restrita a 10x10 cm.',
-    problem: 'A redução drástica de volume e massa agrava severamente os problemas de interferência eletromagnética (EMI) e dissipação térmica. Posicionar trilhas de alta corrente (para os motores e a turbina de sucção) milímetros ao lado de barramentos de comunicação sensíveis (I2C) exigia um roteamento de placa de circuito impresso (PCB) extremamente rigoroso para evitar ruídos e travamentos do microcontrolador.',
+    summary: 'Adaptação da arquitetura eletrônica e de controle do robô Afrodite (3kg) para a categoria Mini Sumô (500g). O desafio principal consistiu em compactar todo o processamento dual-core do ESP32, a leitura paralela de 5 sensores de distância (VL53L0X), o controle inercial e a eletrônica de potência dos motores em uma área rigorosamente restrita a 10x10 cm.',
+    problem: 'A redução drástica de volume e massa agrava severamente os problemas de interferência eletromagnética (EMI) e dissipação térmica. Posicionar trilhas de alta corrente para os motores a poucos milímetros de distância de barramentos de comunicação sensíveis (I2C) exigia um roteamento de placa de circuito impresso (PCB) extremamente rigoroso para evitar ruídos e travamentos do microcontrolador durante os embates.',
     contribution: 'Realizei a transição do projeto de módulos comerciais para componentes discretos totalmente SMD (Surface-Mount Device). Refatorei o esquemático e executei o roteamento da placa garantindo o isolamento entre a área lógica e a de potência. Mantive a topologia XSHUT para o I2C e implementei reguladores monolíticos de alta frequência para reduzir o tamanho físico dos indutores da fonte.',
     engineeringDetails: {
       schematic: 'Transição completa para componentes SMD (pacotes 0603 e 0402). Eliminação de módulos "prontos" (breakout boards) em favor da integração dos circuitos integrados (como o MPU6050 e os próprios sensores ToF) diretamente na placa-mãe do robô.',
       controller: 'Uso otimizado do ESP32 soldado diretamente na placa, mantendo o processamento paralelo (FreeRTOS) que separa a malha de navegação (leitura I2C) da malha de controle PID dos motores.',
       power: 'Redesenho radical da fonte de alimentação. Substituição dos módulos Step-Down grandes por CIs reguladores buck monolíticos de alta frequência, que requerem capacitores e indutores drasticamente menores e reduzem o peso global.',
       communication: 'Roteamento focado do barramento I2C, utilizando trilhas mais curtas e vias de blindagem (ground shielding) para comunicação limpa com o MPU6050 e os 5 sensores VL53L0X multiplexados.',
-      dimensions: 'Design estrutural confinado às regras da categoria Mini Sumô (máximo de 10x10 cm). A própria PCB precisou ser tratada mecânicamente para acomodar a estrutura do sistema de vácuo sem exceder o limite.',
-      protection: 'Implementação de planos de terra (GND planes) reforçados e vias térmicas (thermal vias) sob os controladores de motor (ponte H) para dissipar o calor gerado durante as disputas travadas no dojô, onde a corrente sobe drasticamente.',
+      dimensions: 'Design estrutural confinado às regras da categoria Mini Sumô (máximo de 10x10 cm). A própria PCB precisou ser otimizada mecanicamente para se integrar de forma eficiente ao chassi metálico, sem exceder as cotas regulamentares.',
+      protection: 'Implementação de planos de terra (GND planes) reforçados e vias térmicas (thermal vias) sob os controladores de motor (ponte H) para dissipar o calor gerado durante as disputas travadas no dojô, onde a corrente sobe drasticamente devido à alta tração mecânica.',
       hardwareComponents: [
         'ESP32 (SMD)',
         'Sensores ToF VL53L0X (Integrados)',
@@ -462,8 +462,30 @@ void realizarMedicao() {
         'Soldagem e Integração de Componentes SMD Discretos'
       ]
     },
-    result: 'A miniaturização foi bem-sucedida, resultando em uma PCB extremamente compacta que suporta todo o sistema de sucção (vácuo) e processamento avançado do irmão maior de 3kg. O layout blindou os sinais lógicos contra o ruído da ponte H, garantindo um robô com tempo de reação impecável e força de tração completamente desproporcional à sua categoria.',
-    githubUrl: 'https://github.com/mateusjrs/mini-sumo-robot' // Atualize com o link real, se possuir
+    media: {
+      roboMontado1: {
+        title: 'Robô Mini Sumô (Perspectiva)',
+        description: 'Visão geral da montagem .',
+        url: '/images/MINISUMO_ANGULO.jpeg' // <-- Adicione a imagem na pasta
+      },
+      roboMontado2: {
+        title: 'Detalhe Estrutural',
+        description: 'Posiocionamento dos sensores frontais.',
+        url: '/images/MINISUMO.jpeg' // <-- Adicione a imagem na pasta
+      },
+      pcbLayout: {
+        title: 'Layout da PCB ',
+        description: 'Roteamento SMD focado no isolamento de ruídos eletromagnéticos entre a potência dos motores e o processamento lógico.',
+        url: '/images/AfroditeMini.png' // <-- Adicione a imagem na pasta
+      },
+      schematic: {
+        title: 'Esquemático Eletrônico',
+        description: 'Diagrama de transição evidenciando a substituição de módulos prontos por componentes integrados diretamente.',
+        url: '/images/esquematico.png' // <-- Adicione a imagem na pasta
+      }
+    },
+    result: 'A miniaturização foi bem-sucedida, resultando em uma PCB extremamente compacta e otimizada termicamente. O layout rigoroso blindou os sinais lógicos contra os picos de ruído induzidos pela ponte H, garantindo ao robô um tempo de reação impecável e comunicação I2C estável mesmo sob intenso estresse elétrico e mecânico.',
+    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/MiniSumo'
   },
  {
     id: 'can-bus-obd2-hacking',
