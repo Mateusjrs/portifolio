@@ -58,7 +58,7 @@ export const Hero: React.FC = () => {
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
 
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="group inline-flex items-center space-x-2 bg-slate-900/50 backdrop-blur hover:bg-slate-800/80 text-slate-200 border border-slate-700/80 px-7 py-3.5 rounded-xl transition-all duration-300 text-sm font-mono hover:border-cyan-500/50">
+            <a href="https://github.com/Mateusjrs" target="_blank" rel="noreferrer" className="group inline-flex items-center space-x-2 bg-slate-900/50 backdrop-blur hover:bg-slate-800/80 text-slate-200 border border-slate-700/80 px-7 py-3.5 rounded-xl transition-all duration-300 text-sm font-mono hover:border-cyan-500/50">
               <Code className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />             <span>GITHUB</span>
             </a>
           </motion.div>
