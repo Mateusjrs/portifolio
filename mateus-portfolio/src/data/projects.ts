@@ -347,7 +347,7 @@ void realizarMedicao() {
       }
     },
     result: 'O desenvolvimento arquitetural resultou em uma placa (hardware) centralizada e extremamente segura. A divisão física entre as seções lógica, medição e potência protege o processador principal de ruídos elétricos. O emprego de MOSFETs de potência junto a optoacopladores permitiu acionamento contínuo das rotinas térmicas e de PWM sem sobreaquecimento ou danos elétricos à unidade central.',
-    githubUrl: 'https://github.com/mateusjrs/aquario-inteligente'
+    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/AquarioHardware/Aquario'
   },
   {
     id: 'afrodite-autonomous-sumo',
@@ -363,7 +363,7 @@ void realizarMedicao() {
       'Controle de Motores',
       'Barramento I2C'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=1200&q=80', // Imagem ilustrativa de robótica
+    imageUrl: '/images/Sumo3k.jpeg',
     featured: true,
     summary: 'A Afrodite é um projeto de robótica competitiva desenvolvido para a categoria Sumô Autônomo (3kg). O grande desafio mecânico e eletrônico deste projeto foi projetar um sistema capaz de gerar um "peso virtual" superior a 100kg (através de aerodinâmica/sucção) e, ao mesmo tempo, possuir um tempo de resposta extremamente rápido para localizar o oponente e desviar de bordas utilizando um conjunto avançado de sensores ToF e inerciais.',
     problem: 'Na categoria de sumô autônomo de 3kg, a tração e a velocidade de resposta são os fatores decisivos para a vitória. O desafio eletrônico consistia em integrar múltiplos sensores de distância (VL53L0X) via barramento I2C sem conflito de endereços, ler comandos de segurança (rádio PPM), monitorar a orientação (MPU6050) e acionar a lógica de motores sem que o ruído elétrico da alta corrente dos motores afetasse a estabilidade do ESP32.',
@@ -397,13 +397,28 @@ void realizarMedicao() {
         'Leitura de Sinais de Rádio (PPM)'
       ]
     },
-    gallery: [
-      // Você precisará salvar essas imagens na pasta public/images/ com os nomes abaixo
-      '/images/afrodite-schematic-1.png', 
-      '/images/afrodite-schematic-2.png'
-    ],
+    
+    // === GALLERY SUBSTITUÍDA POR MEDIA ===
+    media: {
+      roboMontado: {
+        title: 'Robô Afrodite (3kg)',
+        description: 'Visão geral da montagem estrutural e eletrônica do robô de sumô.',
+        url: '/images/Sumo3k.jpeg'
+      },
+      pcbLayout: {
+        title: 'Design da PCB',
+        description: 'Layout da placa de circuito impresso com o roteamento focado em minimizar ruídos.',
+        url: '/images/pcb.png'
+      },
+      schematic: {
+        title: 'Esquemático Eletrônico',
+        description: 'Diagrama unifilar separando os blocos de alimentação, sensores e processamento.',
+        url: '/images/esquematico.png'
+      }
+    },
+    
     result: 'O projeto de hardware garantiu que o ESP32 operasse com energia limpa e estável, essencial para o funcionamento sem travamentos da malha de controle de alta velocidade. A estratégia de usar os pinos XSHUT permitiu a leitura simultânea de 5 sensores ToF, cobrindo um amplo campo de visão frontal e lateral. A placa se tornou o núcleo confiável que permitiu ao robô focar exclusivamente em sua estratégia de combate e no acionamento do sistema de vácuo (peso virtual).',
-    githubUrl: 'https://github.com/mateusjrs/afrodite-sumo-robot' // Substitua pelo link correto do repositório, se houver
+    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/Sumo3K'
   },
   {
     id: 'mini-sumo-autonomous',
