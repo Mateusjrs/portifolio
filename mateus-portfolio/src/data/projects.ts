@@ -238,24 +238,47 @@ void realizarMedicao() {
   },
   {
     id: 'airbus-wing-structure',
-    title: 'Projeto Estrutural de Conjunto Aeronáutico (Airbus Style)',
+    title: 'Projeto Estrutural de Conjunto Aeronáutico (Airbus A380)',
     category: 'CAD / 3D',
-    shortDescription: 'Modelagem 3D avançada de montagem aeronáutica com perfis aerodinâmicos e longarinas estruturais.',
-    technologies: ['SolidWorks', 'CAD', 'Análise Estrutural', 'Aerodinâmica'],
+    shortDescription: 'Tentativa de recriação e modelagem 3D avançada da estrutura da asa do Airbus A380 no SolidWorks, envolvendo perfis aerodinâmicos, superfícies complexas e longarinas.',
+    technologies: [
+      'SolidWorks', 
+      'Modelagem de Superfícies', 
+      'Assembly (Montagem Avançada)', 
+      'Modelagem Paramétrica',
+      'Aerodinâmica'
+    ],
     imageUrl: 'https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&w=1200&q=80',
     modelPath: '/models/Airbus.glb',
     edrawingsUrl: '/models/Airbus.easm',
     featured: true,
-    summary: 'Desenvolvimento de modelo CAD complexo focado em montagem mecânica, tolerâncias de encaixe e distribuição de esforços em superfícies sustentadoras.',
-    problem: 'Necessidade de projetar uma junção estrutural rígida entre o perfil aerodinâmico e a longarina principal, minimizando peso sem comprometer a resistência mecânica a cargas transversais.',
-    contribution: 'Modelagem paramétrica completa no SolidWorks, aplicação de nervuras internas de reforço estrutural, furações de montagem e otimização geométrica para exportação otimizada em ambientes web.',
+    summary: 'Este projeto consistiu em uma tentativa de recriar a modelagem estrutural de uma seção da asa do Airbus A380 utilizando o SolidWorks. O desenvolvimento resultou em um modelo CAD complexo que explora ferramentas avançadas de modelagem de superfícies para criar o envelope aerodinâmico fluido, aliado aos recursos de modelagem sólida para detalhar as nervuras internas, longarinas e painéis de revestimento.',
+    problem: 'A modelagem de uma asa de grande porte exige extrema precisão na transição do perfil aerodinâmico da raiz até a ponta (enflechamento e torção geométrica), além de demandar uma montagem (Assembly) rigorosa no software para evitar colisões e interferências entre os componentes estruturais internos na caixa de torção.',
+    contribution: 'Fui responsável por toda a estruturação da árvore de projeto (FeatureManager). Utilizei recursos de Loft de Superfície e Lofted Boss/Base orientados por curvas-guia 3D para garantir a fluidez do perfil aerodinâmico gerado por coordenadas. Apliquei parametrização e Padrões Lineares (Linear Patterns) para a distribuição de nervuras e fixadores. No ambiente de Montagem, utilizei posicionamentos mecânicos avançados (Mates) e executei análises de Detecção de Interferência para validar os encaixes.',
     engineeringDetails: {
       calculations: 'Dimensionamento de parafusos de fixação sob cisalhamento e verificação de rigidez torcional na raiz da asa.',
-      decisions: 'Uso de cavidades aliviadas nas nervuras internas para redução de massa estrutural (mass reduction) mantendo o momento de inércia.',
-      dimensions: 'Comprimento de corda de 450mm com longarina central de perfil tubular.',
-      components: ['Perfil aerodinâmico customizado', 'Longarina estrutural de seção retangular', 'Flanges de acoplamento e parafusos estruturais M4']
+      cadFeatures: 'Uso intensivo de importação de curvas via coordenadas XYZ (Airfoils), Splines, Loft de Superfície (Surface Loft), Extruded Cut para alívio de peso e gestão de submontagens flexíveis.',
+      decisions: 'Uso de cavidades aliviadas nas nervuras internas desenhadas no plano 2D e cortadas com Extruded Cut para redução de massa estrutural (mass reduction), mantendo o momento de inércia transversal.',
+      dimensions: 'Comprimento de corda de 450mm com longarina central de perfil tubular, dimensionada para integração ao envelope aerodinâmico.',
+      components: [
+        'Perfil aerodinâmico gerado por curvas 3D', 
+        'Longarina estrutural de seção usinada', 
+        'Nervuras de reforço com alívio de peso',
+        'Flanges de acoplamento e parafusos estruturais M4'
+      ]
     },
-    result: 'Modelo 100% parametrizado, validado para visualização em tempo real na web e pronto para inspeção técnica via eDrawings.'
+    
+    // === IMAGEM ADICIONADA AQUI ===
+    media: {
+      render1: {
+        title: 'Estrutura Interna (Assembly)',
+        description: 'Vista detalhada da montagem evidenciando o encaixe das nervuras aliviadas na longarina principal.',
+        url: '/images/airbus.png' // <-- Coloque o nome real do seu print/render aqui
+      }
+    },
+    // ===============================
+
+    result: 'O modelo final possui uma árvore de operações 100% resolvida, sem erros de reconstrução ou referências perdidas. A montagem foi validada geometricamente contra interferências, otimizada para exportação em formatos de visualização web (.glb) e preparada para sessões de Design Review via eDrawings.'
   },
   {
     id: 'quilli-hardware-design',
