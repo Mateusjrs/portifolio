@@ -271,8 +271,8 @@ void realizarMedicao() {
     },
     media: {
       render1: {
-        title: 'Estrutura Interna (Assembly)',
-        description: 'Vista detalhada da montagem evidenciando o encaixe das nervuras aliviadas na longarina principal.',
+        title: 'Estrutura  (Assembly)',
+        description: 'Vista frontal da montagem .',
         url: '/images/Airbus.png' 
       }
     },
@@ -280,7 +280,7 @@ void realizarMedicao() {
   },
   {
     id: 'quilli-hardware-design',
-    title: 'Projeto Eletrônico e Hardware — Quilli',
+    title: 'Projeto Eletrônico e Hardware — Aquário Inteligente',
     category: 'Hardware',
     shortDescription: 'Desenvolvimento do esquemático e arquitetura de hardware para automação de aquários, focando em isolamento óptico, eletrônica de potência e controle de cargas.',
     technologies: [
@@ -291,11 +291,10 @@ void realizarMedicao() {
       'Comunicação RS-485',
       'Barramentos I2C e SPI'
     ],
-    // A IMAGEM DE CAPA AGORA É O SEU ESQUEMÁTICO:
     imageUrl: '/images/esquematicoAquario.png', 
     featured: false,
-    summary: 'O Quilli foi desenvolvido como um sistema embarcado completo, tendo um ESP32 como controlador central e uma arquitetura eletrônica dedicada para integrar sensores, atuadores, interfaces de usuário, comunicação e alimentação. O hardware foi organizado em blocos funcionais, separando os circuitos de processamento e sinais dos circuitos responsáveis pelo acionamento de potência.',
-    problem: 'Controlar aquecedores, coolers de 12V e fitas de LED de alta potência através de um microcontrolador que opera em 3.3V (ESP32) apresenta riscos graves, como transientes, ruídos elétricos e até a queima do controlador. Era necessário desenvolver um projeto de hardware robusto, que isolasse a parte lógica da parte de potência, e que coubesse num layout enxuto.',
+    summary: 'O Aquário Inteligente foi desenvolvido como um sistema embarcado completo, tendo um ESP32 como controlador central e uma arquitetura eletrônica dedicada para integrar sensores, atuadores, interfaces de usuário, comunicação e alimentação. O hardware foi organizado em blocos funcionais, separando os circuitos de processamento e sinais dos circuitos responsáveis pelo acionamento de potência.',
+    problem: 'Controlar aquecedores, coolers de 12V e fitas de LED de alta potência através de um microcontrolador que opera em 3.3V (ESP32) apresenta riscos graves, como transientes, ruídos elétricos e até a queima do controlador. Era necessário desenvolver um projeto de hardware robusto, que isolasse a parte lógica da parte de potência, e que coubesse em um layout pequeno.',
     contribution: 'Fui responsável pela engenharia e projeto elétrico do sistema. Especifiquei os estágios de acionamento utilizando optoacopladores, transistores BC817 e MOSFETs. Dimensionei a rede de distribuição de energia (HLK-5V e linhas de 12V) e estruturei a comunicação (SPI para TFT, I2C para RTC, e módulo RS-485 via MAX485).',
     engineeringDetails: {
       schematic: 'O projeto eletrônico foi desenvolvido a partir de um esquemático completo, onde estão representados o ESP32, fontes de alimentação, entradas, sensores, circuitos de acionamento, interfaces de comunicação, display, RTC e conectores. A organização em blocos facilita a identificação e montagem do sistema.',
@@ -335,10 +334,9 @@ void realizarMedicao() {
       ]
     },
     
-    // A Galeria foi removida e usamos apenas a seção Media:
     media: {
       schematicImg: {
-        title: 'Esquemático Eletrônico do Quilli',
+        title: 'Esquemático Eletrônico do Aquário Inteligente',
         description: 'Desenho unifilar completo separando os blocos de sensores, lógica e potência.',
         url: '/images/esquematicoAquario.png' // <-- Certifique-se de salvar sua foto do esquemático com este nome
       },
@@ -349,7 +347,7 @@ void realizarMedicao() {
       }
     },
     result: 'O desenvolvimento arquitetural resultou em uma placa (hardware) centralizada e extremamente segura. A divisão física entre as seções lógica, medição e potência protege o processador principal de ruídos elétricos. O emprego de MOSFETs de potência junto a optoacopladores permitiu acionamento contínuo das rotinas térmicas e de PWM sem sobreaquecimento ou danos elétricos à unidade central.',
-    githubUrl: 'https://github.com/mateusjrs/quilli-hardware'
+    githubUrl: 'https://github.com/mateusjrs/aquario-inteligente'
   },
   {
     id: 'afrodite-autonomous-sumo',
