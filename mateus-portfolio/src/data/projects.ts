@@ -143,7 +143,7 @@ export const projectsData: Project[] = [
       'Aquisição de dados',
       'Túnel de vento'
     ],
-    imageUrl: '/images/aero-modelo.png',
+    imageUrl: '/images/asa-celula.png',
     featured: true,
     summary: 'Desenvolvimento de um sistema de aquisição de dados para ensaios em túnel de vento com o objetivo de investigar a ocorrência de stall na esteira de uma asa por meio da análise das variações e picos de vibração durante a mudança do ângulo de ataque. A captação primária das vibrações é realizada através de um sensor piezoelétrico, enquanto uma célula de carga integrada a um módulo HX711 é utilizada para aferir e validar os dados de esforço mecânico. O projeto encontra-se atualmente em fase de testes empíricos, com previsão de divulgação dos resultados e validações obtidas em breve.',
     problem: 'Durante os ensaios, era necessário correlacionar a vibração estrutural com os diferentes ângulos de ataque para identificar o início do descolamento da camada limite (stall). A captação contínua e a necessidade de validar o sinal do sensor piezoelétrico com o carregamento real exigiam uma estratégia capaz de realizar o processamento básico em tempo real e permitir que o operador controlasse o momento exato da coleta, organizando as amostras assim que as condições do túnel de vento se estabilizassem.',
