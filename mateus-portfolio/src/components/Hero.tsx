@@ -50,8 +50,7 @@ export const Hero: React.FC = () => {
           </motion.p>
 
           <motion.p variants={item} className="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed font-sans font-light">
-            Estudante de Engenharia Aeroespacial na UFMG, interessado no desenvolvimento de sistemas que integram software, hardware, modelagem e engenharia.
-          </motion.p>
+          Estudante de Engenharia Aeroespacial na UFMG. Focado em projeto mecânico, simulações aerodinâmicas (CFD/FEA) e arquitetura de hardware. Unindo o rigor da engenharia física ao desenvolvimento de firmware, sistemas embarcados e IoT para criar soluções multidisciplinares.          </motion.p>
 
           <motion.div variants={item} className="pt-4 flex flex-wrap gap-4">
             <a href="#projects" className="group inline-flex items-center space-x-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-7 py-3.5 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] text-sm tracking-wider">
