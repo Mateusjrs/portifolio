@@ -248,7 +248,10 @@ void realizarMedicao() {
       'Modelagem Paramétrica',
       'Aerodinâmica'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&w=1200&q=80',
+    
+    // === IMAGEM DE CAPA ATUALIZADA AQUI ===
+    imageUrl: '/images/capaAirbus.png', // <-- Substitua pelo nome exato da sua imagem!
+    
     modelPath: '/models/Airbus.glb',
     edrawingsUrl: '/models/Airbus.easm',
     featured: true,
@@ -267,17 +270,13 @@ void realizarMedicao() {
         'Flanges de acoplamento e parafusos estruturais M4'
       ]
     },
-    
-    // === IMAGEM ADICIONADA AQUI ===
     media: {
       render1: {
         title: 'Estrutura Interna (Assembly)',
         description: 'Vista detalhada da montagem evidenciando o encaixe das nervuras aliviadas na longarina principal.',
-        url: '/images/airbus.png' // <-- Coloque o nome real do seu print/render aqui
+        url: '/images/Airbus.png' 
       }
     },
-    // ===============================
-
     result: 'O modelo final possui uma árvore de operações 100% resolvida, sem erros de reconstrução ou referências perdidas. A montagem foi validada geometricamente contra interferências, otimizada para exportação em formatos de visualização web (.glb) e preparada para sessões de Design Review via eDrawings.'
   },
   {
