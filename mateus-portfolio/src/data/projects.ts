@@ -504,7 +504,7 @@ void realizarMedicao() {
       'Sistemas Embarcados'
     ],
     
-    imageUrl: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/CanBus.jpg',
     
     featured: true,
     
@@ -557,7 +557,7 @@ if (pciType == 0x1) { // FIRST FRAME detectado
     
     result: 'O hardware e o firmware operaram com sucesso, estabelecendo comunicação estável, identificando os parâmetros suportados pelo veículo (PID Discovery) e processando telemetria e códigos de falha em tempo real através da interface Bluetooth, validando a robustez da stack ISO-TP desenvolvida.',
     
-    githubUrl: 'https://github.com/mateusjrs/esp32-can-scanner' // <-- Ajuste o link do seu repositório aqui
+    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/CarControl' // <-- Ajuste o link do seu repositório aqui
   },
  {
     id: 'ir-universal-cloner',
@@ -635,7 +635,7 @@ void runThermostat() {
 }`
     },
     result: 'Dispositivo IoT altamente estável, capaz de controlar ativamente o conforto térmico e minimizar gastos energéticos evitando oscilações excessivas. A abstração universal (`ACInterface`) reduziu o código repetitivo, permitindo suporte "plug-and-play" para novas marcas de AC no futuro através de atualizações OTA (Over-The-Air).',
-    githubUrl: 'https://github.com/mateusjrs/ir-universal-cloner' // <-- Coloque o seu link
+    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/InflaCold/itw600_v001' // <-- Coloque o seu link
   },
   {
     id: 'naca-5312-aerodynamic-analysis',
