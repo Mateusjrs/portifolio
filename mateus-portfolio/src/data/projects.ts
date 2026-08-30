@@ -129,37 +129,37 @@ analyses?: string | string[];
 }
 
 export const projectsData: Project[] = [
- {
+{
     id: 'aero-data-acquisition',
     title: 'Sistema de Aquisição de Dados para Ensaios Aerodinâmicos',
     category: 'Aerospace',
-    shortDescription: 'Sistema automatizado de aquisição de dados para investigação do stall na esteira de uma asa por meio da análise de vibração e carregamento.',
+    shortDescription: 'Sistema de aquisição de dados utilizando sensor piezoelétrico para investigação do stall, com validação de esforços mecânicos via célula de carga.',
     technologies: [
       'C/C++',
       'Microcontroladores',
-      'HX711',
+      'Sensor Piezoelétrico',
       'Célula de carga',
+      'HX711',
       'Aquisição de dados',
       'Túnel de vento'
     ],
     imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80',
     featured: true,
-    summary: 'Desenvolvimento de um sistema de aquisição de dados para ensaios em túnel de vento, com o objetivo de investigar a ocorrência de stall na esteira de uma asa por meio da análise das variações e picos de vibração durante a mudança do ângulo de ataque. O sistema utiliza uma célula de carga integrada a um módulo HX711 para realizar a medição dos esforços, permitindo registrar tanto os valores individuais das amostras quanto suas médias para posterior análise e caracterização do fenômeno aerodinâmico.',
-    problem: 'Durante os ensaios, era necessário realizar medições em diferentes ângulos de ataque e preservar as amostras individuais para identificar variações associadas ao início do stall. A aquisição contínua poderia gerar um volume elevado de dados e dificultar a organização das medições. Dessa forma, foi necessário desenvolver uma estratégia de aquisição capaz de armazenar os dados de forma estruturada, realizar o processamento básico em tempo real e permitir que o operador controlasse o momento exato da coleta após a estabilização das condições do túnel de vento.',
-    contribution: 'Desenvolvi o firmware de aquisição de dados em C/C++, implementando a comunicação com o módulo HX711 e a leitura da célula de carga. Também desenvolvi uma interface interativa via comunicação Serial, permitindo ao operador informar o ângulo de ataque e iniciar cada etapa de aquisição. O sistema organiza automaticamente as amostras por ângulo, calcula a força média e mantém os dados brutos disponíveis para posterior processamento e análise. O desenvolvimento também envolveu a definição da estrutura de armazenamento dos dados e da lógica de controle da aquisição.',
+    summary: 'Desenvolvimento de um sistema de aquisição de dados para ensaios em túnel de vento com o objetivo de investigar a ocorrência de stall na esteira de uma asa por meio da análise das variações e picos de vibração durante a mudança do ângulo de ataque. A captação primária das vibrações é realizada através de um sensor piezoelétrico, enquanto uma célula de carga integrada a um módulo HX711 é utilizada para aferir e validar os dados de esforço mecânico. O projeto encontra-se atualmente em fase de testes empíricos, com previsão de divulgação dos resultados e validações obtidas em breve.',
+    problem: 'Durante os ensaios, era necessário correlacionar a vibração estrutural com os diferentes ângulos de ataque para identificar o início do descolamento da camada limite (stall). A captação contínua e a necessidade de validar o sinal do sensor piezoelétrico com o carregamento real exigiam uma estratégia capaz de realizar o processamento básico em tempo real e permitir que o operador controlasse o momento exato da coleta, organizando as amostras assim que as condições do túnel de vento se estabilizassem.',
+    contribution: 'Desenvolvi o firmware de aquisição em C/C++, implementando a leitura de alta frequência do sensor piezoelétrico e a integração com o módulo HX711 para a célula de carga, usada na validação cruzada dos esforços. Desenvolvi também uma interface via comunicação Serial para que o operador informe o ângulo de ataque e inicie as medições. O sistema organiza as amostras de ambos os sensores, calcula a força média estrutural e mantém os dados brutos de vibração disponíveis para análise espectral posterior.',
     engineeringDetails: {
-      calculations: 'Implementação de uma estrutura matricial para armazenar até 25 amostras brutas para cada ângulo de ataque, com capacidade de registrar até 20 condições diferentes. Para cada condição, o firmware calcula a média das amostras adquiridas, permitindo comparar o comportamento do carregamento entre diferentes ângulos de ataque.',
-      decisions: 'Foi adotado um sistema de aquisição controlado pelo operador, em vez de uma medição contínua. Essa abordagem permite que o túnel de vento seja estabilizado antes de cada coleta e reduz a quantidade de dados desnecessários armazenados. A estratégia também facilita a associação entre cada conjunto de amostras e seu respectivo ângulo de ataque.',
+      calculations: 'Implementação de uma estrutura matricial para armazenar até 25 amostras brutas para cada ângulo de ataque, com capacidade de registrar até 20 condições diferentes. Para cada condição, o firmware processa as médias, permitindo cruzar os dados de vibração do piezoelétrico com o carregamento da célula de carga.',
+      decisions: 'Foi adotada uma arquitetura de aquisição controlada, onde o operador aciona a leitura após a estabilização do escoamento no túnel de vento. O uso da célula de carga foi mantido como redundância e calibração (validação do experimento) para garantir a integridade da leitura do sensor piezoelétrico.',
       components: [
         'Microcontrolador',
+        'Sensor Piezoelétrico (Captação Principal)',
+        'Célula de carga de 5 kg/10 kg (Validação)',
         'Módulo amplificador HX711',
-        'Célula de carga de 5 kg/10 kg',
         'Túnel de vento'
       ],
-      dataStructure: 'Os dados são organizados em matrizes bidimensionais, nas quais cada linha representa uma condição de ensaio associada a um determinado ângulo de ataque e cada coluna representa uma amostra individual da célula de carga.'
+      dataStructure: 'Os dados são organizados em matrizes bidimensionais, nas quais cada linha representa uma condição de ensaio associada a um ângulo de ataque e cada coluna armazena as amostras conjuntas de vibração e carga para pós-processamento.'
     },
-    
-    // === NOVO BLOCO DE MÍDIAS AQUI ===
     media: {
       image1: {
         title: 'Modelo 3D da Bancada',
