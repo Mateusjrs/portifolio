@@ -10,6 +10,7 @@ import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { projectsData } from './data/projects';
 import type { Project, Category } from './data/projects';
+import { Analytics } from '@vercel/analytics/react';
 
 export function App() {
   const [selectedCategory, setSelectedCategory] = useState<Category>('All');
@@ -55,7 +56,7 @@ export function App() {
       <SkillsSection />
       <About />
       <Contact />
-
+      <Analytics />
  {activeModalProject && (
   <ProjectDetailModal 
     project={activeModalProject} 
