@@ -4,7 +4,7 @@ import { Hero } from './components/Hero';
 import { ProjectCard } from './components/ProjectCard';
 import { ProjectFilter } from './components/ProjectFilter';
 import { ProjectDetailModal } from './components/ProjectDetailModal';
-import { CadSection } from './components/CadSection';
+import { FutureProjects } from './components/FutureProjects';
 import { SkillsSection } from './components/SkillsSection';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
@@ -51,7 +51,7 @@ export function App() {
         </div>
       </section>
 
-      <CadSection />
+      <FutureProjects />
       <SkillsSection />
       <About />
       <Contact />
