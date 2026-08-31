@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, MapPin } from 'lucide-react';
+import { GraduationCap, MapPin, Target, Cpu } from 'lucide-react';
 
 export const About: React.FC = () => {
   return (
@@ -11,13 +11,23 @@ export const About: React.FC = () => {
         </div>
 
         <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-sans">
-          Sou estudante de Engenharia Aeroespacial na UFMG e tenho interesse no desenvolvimento de sistemas que conectam engenharia, software e hardware. Tenho experiência prática com sistemas embarcados, CAD, IoT, instrumentação e desenvolvimento de projetos.
+Sou estudante do 8º período de Engenharia Aeroespacial na UFMG e Técnico em Eletrotécnica pelo CEFET-MG. Minha formação reúne conhecimentos de engenharia aeroespacial, eletrônica, programação e desenvolvimento de sistemas, com experiência prática em projetos que envolvem desde CAD e simulações computacionais (FEA/CFD) até instrumentação, hardware e sistemas embarcados. Gosto de trabalhar na interface entre diferentes áreas da engenharia, transformando problemas em soluções práticas e funcionais. Ao longo da minha trajetória, desenvolvi projetos de automação, sistemas embarcados, robótica e análise de sistemas aeroespaciais, buscando sempre entender o problema como um todo. Meu objetivo profissional é atuar no setor aeroespacial, especialmente na Embraer, contribuindo com uma visão multidisciplinar e prática para o desenvolvimento de novas tecnologias e soluções para a aviação.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 font-mono text-xs">
           <div className="bg-slate-900/80 border border-slate-800 p-4 rounded-xl flex items-center space-x-3">
             <GraduationCap className="w-5 h-5 text-cyan-400" />
-            <span className="text-slate-200">Engenharia Aeroespacial — UFMG</span>
+            <span className="text-slate-200">Eng. Aeroespacial — UFMG</span>
+          </div>
+
+          <div className="bg-slate-900/80 border border-slate-800 p-4 rounded-xl flex items-center space-x-3">
+            <Cpu className="w-5 h-5 text-cyan-400" />
+            <span className="text-slate-200">Téc. Eletrotécnica — CEFET-MG</span>
+          </div>
+
+          <div className="bg-slate-900/80 border border-slate-800 p-4 rounded-xl flex items-center space-x-3">
+            <Target className="w-5 h-5 text-cyan-400" />
+            <span className="text-slate-200">Foco Profissional — Embraer</span>
           </div>
 
           <div className="bg-slate-900/80 border border-slate-800 p-4 rounded-xl flex items-center space-x-3">
