@@ -10,69 +10,6 @@ export const SkillsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         
         {/* ============================================================== */}
-        {/* CABEÇALHO DA SEÇÃO SOFTWARE & HARDWARE */}
-        {/* ============================================================== */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
-          <span className="text-xs font-mono text-cyan-400 tracking-wider uppercase">
-            [ Stack Técnico ]
-          </span>
-          <h2 className="text-3xl font-extrabold text-white">SOFTWARE & HARDWARE</h2>
-          <p className="text-slate-400 text-sm">
-            Domínio multidisciplinar integrando programação de baixo nível e arquitetura de hardware.
-          </p>
-        </div>
-
-        {/* ============================================================== */}
-        {/* GRIDS: SOFTWARE E HARDWARE */}
-        {/* ============================================================== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
-          
-          {/* Software Box */}
-          <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 hover:border-slate-700 transition-colors">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="p-3 bg-cyan-950/50 border border-cyan-800/50 rounded-xl text-cyan-400">
-                <Code className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">SOFTWARE</h3>
-                <span className="text-xs font-mono text-slate-400">Desenvolvimento & Análise</span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              {softwareSkills.map((skill) => (
-                <div key={skill} className="bg-slate-950/80 border border-slate-800 px-4 py-3 rounded-lg flex items-center justify-between">
-                  <span className="text-sm font-mono text-slate-200">{skill}</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Hardware Box */}
-          <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 hover:border-slate-700 transition-colors">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="p-3 bg-cyan-950/50 border border-cyan-800/50 rounded-xl text-cyan-400">
-                <Cpu className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">HARDWARE</h3>
-                <span className="text-xs font-mono text-slate-400">Embarcados & Protocolos</span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              {hardwareSkills.map((skill) => (
-                <div key={skill} className="bg-slate-950/80 border border-slate-800 px-4 py-3 rounded-lg flex items-center justify-between">
-                  <span className="text-sm font-mono text-slate-200">{skill}</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* ============================================================== */}
         {/* CABEÇALHO DA SEÇÃO MODELAGEM 3D & ENGENHARIA */}
         {/* ============================================================== */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
@@ -88,7 +25,7 @@ export const SkillsSection: React.FC = () => {
         {/* ============================================================== */}
         {/* GRIDS: MODELAGEM E ENGENHARIA */}
         {/* ============================================================== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-24">
           
           {/* Card 1: CAD & Modelagem */}
           <div className="bg-slate-900/60 p-6 rounded-xl border border-slate-800 hover:border-cyan-500/30 transition-colors group">
@@ -152,6 +89,70 @@ export const SkillsSection: React.FC = () => {
           </div>
           
         </div>
+
+        {/* ============================================================== */}
+        {/* CABEÇALHO DA SEÇÃO SOFTWARE & HARDWARE */}
+        {/* ============================================================== */}
+        <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
+          <span className="text-xs font-mono text-cyan-400 tracking-wider uppercase">
+            [ Stack Técnico ]
+          </span>
+          <h2 className="text-3xl font-extrabold text-white">SOFTWARE & HARDWARE</h2>
+          <p className="text-slate-400 text-sm">
+            Domínio multidisciplinar integrando programação de baixo nível e arquitetura de hardware.
+          </p>
+        </div>
+
+        {/* ============================================================== */}
+        {/* GRIDS: SOFTWARE E HARDWARE */}
+        {/* ============================================================== */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          {/* Software Box */}
+          <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 hover:border-slate-700 transition-colors">
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="p-3 bg-cyan-950/50 border border-cyan-800/50 rounded-xl text-cyan-400">
+                <Code className="w-6 h-6" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white">SOFTWARE</h3>
+                <span className="text-xs font-mono text-slate-400">Desenvolvimento & Análise</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              {softwareSkills.map((skill) => (
+                <div key={skill} className="bg-slate-950/80 border border-slate-800 px-4 py-3 rounded-lg flex items-center justify-between">
+                  <span className="text-sm font-mono text-slate-200">{skill}</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Hardware Box */}
+          <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 hover:border-slate-700 transition-colors">
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="p-3 bg-cyan-950/50 border border-cyan-800/50 rounded-xl text-cyan-400">
+                <Cpu className="w-6 h-6" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white">HARDWARE</h3>
+                <span className="text-xs font-mono text-slate-400">Embarcados & Protocolos</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              {hardwareSkills.map((skill) => (
+                <div key={skill} className="bg-slate-950/80 border border-slate-800 px-4 py-3 rounded-lg flex items-center justify-between">
+                  <span className="text-sm font-mono text-slate-200">{skill}</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
