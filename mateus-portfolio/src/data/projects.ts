@@ -469,6 +469,55 @@ void realizarMedicao() {
       }
     }
   },
+  ,
+  {
+    id: 'truss-structure-fea',
+    title: 'Análise Estrutural de uma Estrutura Treliçada',
+    category: 'CAD / 3D',
+    shortDescription: 'Modelagem estrutural e análise de deformação de uma estrutura treliçada utilizando o Método dos Elementos Finitos no ANSYS Mechanical.',
+    technologies: [
+      'ANSYS Mechanical',
+      'FEA (Elementos Finitos)',
+      'Análise Estática Estrutural',
+      'Mecânica dos Sólidos'
+    ],
+    imageUrl: '/images/trel-1.png', 
+    featured: false,
+    summary: 'Este projeto consiste na análise estrutural de uma estrutura treliçada utilizando o ANSYS Mechanical, com o objetivo de investigar seu comportamento sob as condições de carregamento aplicadas. A geometria é composta por barras interconectadas, cuja configuração permite estudar a distribuição de esforços e os deslocamentos resultantes da interação entre seus elementos.',
+    problem: 'O objetivo principal era aplicar conceitos de mecânica dos sólidos para compreender a resposta de estruturas treliçadas, relacionando geometria, condições de contorno e carregamentos. Além disso, o projeto visava desenvolver competências avançadas em simulação numérica e interpretação crítica de resultados de engenharia.',
+    contribution: 'Execução de simulação estática estrutural para avaliar a deformação total e a deformação direcional no eixo X. A configuração da simulação e a visualização dos resultados permitiram identificar as regiões com os maiores deslocamentos e compreender como a montagem geométrica influencia a resposta da estrutura aos esforços.',
+    engineeringDetails: {
+      analysis: 'A interpretação da distribuição dos deslocamentos permitiu a identificação de regiões nodais e barras que exigem maior atenção no comportamento global da estrutura.',
+      'Deformação Total': 'Avaliação dos deslocamentos globais resultantes ao longo da estrutura, com valor máximo de aproximadamente 0,000649 mm na simulação apresentada.',
+      'Deformação Direcional (Eixo X)': 'Investigação dos deslocamentos específicos ao longo do eixo horizontal, registrando valor máximo de aproximadamente 0,000288 mm e mínimo de -0,00000765 mm.',
+      mainFindings: [
+        'A geometria das barras dita diretamente a distribuição dos esforços e o deslocamento nodal.',
+        'O deslocamento máximo global (0,000649 mm) localiza-se nas regiões de menor restrição.',
+        'A deformação no eixo X apresentou compressão e tração com pico de 0,000288 mm.',
+        'Os resultados obtidos refletem condições específicas de carregamento e não comprovam, isoladamente, a segurança estrutural final do modelo.'
+      ],
+      engineeringSkills: [
+        'Simulação em ANSYS Mechanical',
+        'Método dos Elementos Finitos (FEA)',
+        'Mecânica dos Sólidos Aplicada',
+        'Interpretação de Resultados Numéricos'
+      ]
+    },
+    result: 'A análise forneceu um mapeamento detalhado da mecânica da treliça sob carga, destacando a interação entre os elementos. A simulação atendeu ao objetivo de consolidar conceitos de análise estrutural, fornecendo métricas exatas de deslocamento que podem servir como base para dimensionamento e verificações futuras de falha ou fadiga.',
+    githubUrl: 'https://github.com/Mateusjrs/Projetos',
+    media: {
+      totalDeformation: {
+        title: 'Deformação Total',
+        description: 'Distribuição dos deslocamentos globais resultantes ao longo da estrutura treliçada.',
+        url: '/images/trel-1.png'
+      },
+      directionalDeformation: {
+        title: 'Deformação Direcional (Eixo X)',
+        description: 'Investigação dos deslocamentos específicos ao longo do eixo horizontal (tração/compressão).',
+        url: '/images/trel-2.png'
+      }
+    }
+  },
   {
     id: 'quilli-hardware-design',
     title: 'Projeto Eletrônico e Hardware — Aquário Inteligente',
