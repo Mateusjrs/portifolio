@@ -470,6 +470,56 @@ void realizarMedicao() {
     }
   },
   ,
+
+  {
+    id: 'transient-thermal-analysis',
+    title: 'Análise Térmica Transiente em Estrutura Plana',
+    category: 'CAD / 3D',
+    shortDescription: 'Simulação térmica transiente no ANSYS Mechanical para avaliar a distribuição de temperatura e o fluxo de calor ao longo do tempo.',
+    technologies: [
+      'ANSYS Mechanical 2026 R1',
+      'FEA',
+      'Transferência de Calor',
+      'Simulação Transiente'
+    ],
+    imageUrl: '/images/fluxo1.png', 
+    featured: false,
+    summary: 'Este projeto consiste em uma análise térmica transiente de uma estrutura em formato de placa utilizando o ANSYS Mechanical. O objetivo central foi investigar a distribuição de temperatura e o comportamento contínuo da transferência de calor ao longo do tempo, mapeando como o domínio reage às condições de contorno térmicas impostas durante o ciclo de simulação.',
+    problem: 'O principal desafio em simulações transientes é capturar com precisão a evolução temporal dos gradientes térmicos. Era necessário estabelecer uma configuração rigorosa de malha, propriedades dos materiais e restrições térmicas para avaliar o comportamento do fluxo de calor até o instante de 30.000 segundos, evitando divergências numéricas durante a integração temporal.',
+    contribution: 'Realizei a configuração e execução completa da análise por elementos finitos. Modelei as condições de contorno, processei o solver transiente e extraí os campos térmicos. Através da interpretação dos resultados numéricos, correlacionei os gradientes de temperatura com as taxas de fluxo de calor, validando a física do escoamento térmico na estrutura.',
+    engineeringDetails: {
+      analysis: 'Ao invés de uma análise estática, o estudo focou na evolução temporal da transferência de calor. A avaliação do campo térmico no instante final (30.000 s) revelou uma temperatura máxima de 402,74 K e uma mínima de 300 K. Essa distribuição contínua permitiu identificar visualmente as rotas de condução térmica e as zonas de maior acúmulo de energia geométrica.',
+      calculations: 'A investigação do fluxo de calor total complementou o campo de temperaturas, registrando uma magnitude máxima de 0,0471 W/mm². O cruzamento desses dados evidenciou a relação direta entre a geometria da placa, os gradientes térmicos mais severos e os vetores de dissipação, fundamentando a interpretação física do modelo matemático.',
+      mainFindings: [
+        'Gradiente térmico perfeitamente mapeado entre 300 K e 402,74 K.',
+        'Fluxo de calor atingiu magnitude máxima de 0,0471 W/mm² nas zonas críticas.',
+        'Simulação estável e convergente para o período de 30.000 segundos.',
+        'Os resultados demonstram a resposta específica da estrutura às restrições configuradas.'
+      ],
+      engineeringSkills: [
+        'Simulação Térmica Transiente (ANSYS)',
+        'Análise de Transferência de Calor',
+        'Avaliação de Fluxo e Gradientes Térmicos',
+        'Interpretação de Resultados Numéricos'
+      ]
+    },
+    result: 'O projeto demonstrou com sucesso a aplicação do método dos elementos finitos em problemas de engenharia térmica transiente. A abordagem mais expositiva e temporal da simulação permitiu compreender profundamente os mecanismos de transferência de calor da estrutura, consolidando as competências analíticas em modelagem e configuração de solvers no ANSYS Mechanical.',
+    githubUrl: 'https://github.com/Mateusjrs/Projetos',
+    media: {
+      temperatureDistribution: {
+        title: 'Distribuição de Temperatura',
+        description: 'Campo térmico avaliado em 30.000 segundos, evidenciando o gradiente de 300 K a 402,74 K.',
+        url: '/images/fluxo1.png'
+      },
+      heatFlux: {
+        title: 'Fluxo de Calor Total',
+        description: 'Variação do fluxo de calor ao longo da estrutura com pico de 0,0471 W/mm².',
+        url: '/images/fluxo2.png'
+      }
+    }
+  }
+
+,
   {
     id: 'truss-structure-fea',
     title: 'Análise Estrutural de uma Estrutura Treliçada',
