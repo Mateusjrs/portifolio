@@ -278,6 +278,55 @@ void realizarMedicao() {
     },
     result: 'O modelo final possui uma árvore de operações 100% resolvida, sem erros de reconstrução ou referências perdidas. A montagem foi validada geometricamente contra interferências, otimizada para exportação em formatos de visualização web (.glb) e preparada para sessões de Design Review via eDrawings.'
   },
+
+
+  ,
+  {
+    id: 'helicopter-pitch-arm-fea',
+    title: 'Análise Estrutural: Braço de Passo do Rotor (Helicóptero)',
+    category: 'Aerospace',
+    shortDescription: 'Análise estática estrutural no ANSYS Mechanical para comparar o comportamento mecânico de três geometrias distintas do braço de passo.',
+    technologies: [
+      'ANSYS Mechanical',
+      'FEA (Elementos Finitos)',
+      'Análise Estática Estrutural',
+      'Otimização Geométrica'
+    ],
+    imageUrl: '/images/heli-capa.jpg', // <-- Substitua pelo nome da sua imagem de capa
+    featured: true,
+    summary: 'A análise estrutural do braço de passo do rotor de helicóptero foi realizada no ANSYS Mechanical, por meio de uma análise estática estrutural, considerando três configurações geométricas: Raw Design (A), Engineer Design (B) e Optized (C). Foram analisadas a tensão equivalente de von Mises e a deformação total para comparar a resposta dos componentes ao carregamento aplicado.',
+    problem: 'O desafio consistia em avaliar o comportamento mecânico de três diferentes geometrias submetidas às mesmas condições de carregamento. Era necessário identificar as concentrações de tensão e comparar a rigidez estrutural entre os modelos para validar se as propostas de otimização apresentavam um desempenho superior ao modelo original.',
+    contribution: 'Estruturação e análise comparativa dos resultados das simulações estáticas estruturais. Avaliação crítica das distribuições de tensão (von Mises) e deslocamentos totais para determinar os impactos das alterações geométricas e investigar se os picos representavam concentrações físicas reais ou apenas singularidades numéricas.',
+    engineeringDetails: {
+      analysis: 'A comparação evidencia que modificações geométricas podem alterar significativamente a distribuição de tensões e os deslocamentos do braço de passo.',
+      'Raw Design (A)': 'Apresentou os menores valores entre as configurações, com tensão máxima de 105,29 MPa e deformação máxima de 0,12935 mm. A tensão concentrou-se na região curva de transição, com o restante da estrutura apresentando valores inferiores. Sugere resposta mais rígida sob as condições simuladas.',
+      'Engineer Design (B)': 'Apresentou os maiores resultados, alcançando tensão máxima de 2.565,1 MPa e deformação máxima de 1,527 mm. A concentração ocorreu próximo à extremidade do braço. Recomenda-se verificar a qualidade da malha e as condições de apoio para determinar se é uma concentração real ou singularidade numérica.',
+      'Optized (C)': 'Apresentou tensão máxima de 932,94 MPa e deformação máxima de 0,47336 mm. Em comparação com o Engineer Design, houve redução de aproximadamente 63,6% na tensão máxima e 69,0% na deformação. Contudo, os valores permaneceram superiores aos do Raw Design.',
+      mainFindings: [
+        'A geometria altera significativamente a distribuição de tensões e os deslocamentos.',
+        'O modelo original (Raw) apresentou a resposta estrutural mais rígida e segura.',
+        'Necessidade de investigar a malha no modelo B para descartar singularidades.',
+        'A otimização (C) não demonstrou desempenho estrutural superior ao modelo original (A).'
+      ],
+      engineeringSkills: [
+        'Simulação em ANSYS Mechanical',
+        'Análise de Tensão de von Mises',
+        'Estudo de Convergência de Malha',
+        'Análise de Singularidades Numéricas',
+        'Estudo Comparativo de Geometrias'
+      ]
+    },
+    result: 'Concluiu-se que a escolha da configuração mais adequada não deve se basear exclusivamente nos valores máximos obtidos. É essencial confirmar a equivalência das condições de simulação, avaliar a convergência da malha e comparar os resultados com os limites de resistência do material, limites admissíveis de deformação e os fatores de segurança exigidos pelo componente aeroespacial.',
+    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/SUA-PASTA-AQUI', // <-- Substitua pelo link real do seu repositório
+    gallery: [
+      '/images/heli-1.png', 
+      '/images/heli-2.png',
+      '/images/heli-3.png',
+      '/images/heli-4.png',
+      '/images/heli-5.png',
+      '/images/heli-6.png'
+    ]
+  },
   {
     id: 'quilli-hardware-design',
     title: 'Projeto Eletrônico e Hardware — Aquário Inteligente',
