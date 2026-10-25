@@ -469,7 +469,7 @@ void realizarMedicao() {
       }
     }
   },
-  ,
+  
 
   {
     id: 'transient-thermal-analysis',
