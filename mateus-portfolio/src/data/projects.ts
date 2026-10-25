@@ -292,7 +292,7 @@ void realizarMedicao() {
       'Análise Estática Estrutural',
       'Otimização Geométrica'
     ],
-    imageUrl: '/images/heli-capa.jpg', // <-- Substitua pelo nome da sua imagem de capa
+    imageUrl: '/images/heli-1.png', // <-- Substitua pelo nome da sua imagem de capa
     featured: true,
     summary: 'A análise estrutural do braço de passo do rotor de helicóptero foi realizada no ANSYS Mechanical, por meio de uma análise estática estrutural, considerando três configurações geométricas: Raw Design (A), Engineer Design (B) e Optized (C). Foram analisadas a tensão equivalente de von Mises e a deformação total para comparar a resposta dos componentes ao carregamento aplicado.',
     problem: 'O desafio consistia em avaliar o comportamento mecânico de três diferentes geometrias submetidas às mesmas condições de carregamento. Era necessário identificar as concentrações de tensão e comparar a rigidez estrutural entre os modelos para validar se as propostas de otimização apresentavam um desempenho superior ao modelo original.',
