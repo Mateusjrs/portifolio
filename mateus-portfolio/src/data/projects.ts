@@ -401,6 +401,75 @@ void realizarMedicao() {
     }
   },
   {
+    id: 'propeller-modal-analysis',
+    title: 'Análise Modal e Dinâmica: Hélice',
+    category: 'Aerospace',
+    shortDescription: 'Análise modal no ANSYS Mechanical para identificação das frequências naturais e formas modais de uma hélice.',
+    technologies: [
+      'ANSYS Mechanical',
+      'FEA (Elementos Finitos)',
+      'Análise Modal',
+      'Dinâmica Estrutural'
+    ],
+    imageUrl: '/images/helice-1.png', 
+    featured: false,
+    summary: 'A análise modal da hélice foi realizada no ANSYS Mechanical com o objetivo de identificar as frequências naturais e as correspondentes formas modais da estrutura. Foram examinados os seis primeiros modos de vibração para caracterizar os padrões geométricos de flexão e torção.',
+    problem: 'O desafio analítico consistia em mapear o comportamento dinâmico da hélice, compreendendo que frequências naturais muito próximas indicam flexões em diferentes direções coordenadas, e que a avaliação estrutural exige cruzar esses dados com as frequências reais de excitação operacional (RPM e passagem de pás) para evitar ressonância.',
+    contribution: 'Interpretação dos seis primeiros modos de vibração, correlacionando a proximidade de frequências (como nos pares 1-2, 3-4 e 5-6) com os padrões de flexão e torção, além de delimitar a validade geométrica dos deslocamentos normalizados gerados pelo software.',
+    engineeringDetails: {
+      analysis: 'A avaliação identificou agrupamentos de frequências naturais, onde pares de modos exibem deformações globais semelhantes com orientações distintas.',
+      'Modos 1 e 2': 'Frequências de 53,668 Hz e 53,702 Hz. Diferença de apenas 0,063%, indicando modos de flexão primária em direções perpendiculares/distintas.',
+      'Modos 3 e 4': 'Frequências de 321,58 Hz e 322,92 Hz (diferença de ~0,416%). Representam modos de ordem superior, com inversões de curvatura ao longo das pás.',
+      'Modos 5 e 6': 'Frequências de 416,62 Hz e 419,7 Hz (diferença de ~0,737%). Formas modais com configurações geométricas complexas, combinando flexão e torção.',
+      mainFindings: [
+        'Existência de modos pareados com frequências muito próximas.',
+        'As amplitudes do software são normalizadas (não representam o deslocamento físico real).',
+        'Necessidade de comparar os resultados numéricos com a rotação operacional do motor.',
+        'Necessidade de calcular o fator de participação modal e massa modal efetiva para validação estrutural.'
+      ],
+      engineeringSkills: [
+        'Simulação Modal (ANSYS)',
+        'Análise de Frequência Natural e Ressonância',
+        'Interpretação de Formas Modais',
+        'Dinâmica Estrutural Aeroespacial'
+      ]
+    },
+    result: 'Os resultados permitiram mapear com sucesso as frequências críticas da estrutura. Concluiu-se que o comportamento dinâmico da hélice exige análises adicionais que correlacionem essas formas modais com as frequências de excitação do motor, validando as condições reais de montagem e evitando zonas de ressonância perigosas durante o voo.',
+    githubUrl: 'https://github.com/Mateusjrs/Projetos',
+    media: {
+      mode1: {
+        title: 'Modo 1 - 53,668 Hz',
+        description: 'Primeira forma modal. Deformação global de flexão da pá.',
+        url: '/images/helice-1.png'
+      },
+      mode2: {
+        title: 'Modo 2 - 53,702 Hz',
+        description: 'Segunda forma modal. Flexão em orientação coordenada distinta (diferença de 0,063%).',
+        url: '/images/helice-2.png'
+      },
+      mode3: {
+        title: 'Modo 3 - 321,58 Hz',
+        description: 'Terceira forma modal. Configuração indicando padrão de flexão de ordem superior.',
+        url: '/images/helice-3.png'
+      },
+      mode4: {
+        title: 'Modo 4 - 322,92 Hz',
+        description: 'Quarta forma modal. Padrão semelhante ao modo 3, diferindo em direção (diferença de 0,416%).',
+        url: '/images/helice-4.png'
+      },
+      mode5: {
+        title: 'Modo 5 - 416,62 Hz',
+        description: 'Quinta forma modal. Distribuição complexa combinando padrões estruturais.',
+        url: '/images/helice-5.png'
+      },
+      mode6: {
+        title: 'Modo 6 - 419,70 Hz',
+        description: 'Sexta forma modal. Combinação avançada de flexão e torção na estrutura das pás.',
+        url: '/images/helice-6.png'
+      }
+    }
+  },
+  {
     id: 'quilli-hardware-design',
     title: 'Projeto Eletrônico e Hardware — Aquário Inteligente',
     category: 'Hardware',
