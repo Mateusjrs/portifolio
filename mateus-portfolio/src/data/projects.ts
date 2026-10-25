@@ -317,15 +317,39 @@ void realizarMedicao() {
       ]
     },
     result: 'Concluiu-se que a escolha da configuração mais adequada não deve se basear exclusivamente nos valores máximos obtidos. É essencial confirmar a equivalência das condições de simulação, avaliar a convergência da malha e comparar os resultados com os limites de resistência do material, limites admissíveis de deformação e os fatores de segurança exigidos pelo componente aeroespacial.',
-    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/SUA-PASTA-AQUI', // <-- Substitua pelo link real do seu repositório
-    gallery: [
-      '/images/heli-1.png', 
-      '/images/heli-2.png',
-      '/images/heli-3.png',
-      '/images/heli-4.png',
-      '/images/heli-5.png',
-      '/images/heli-6.png'
-    ]
+   githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/SUA-PASTA-AQUI', // <-- Substitua pelo link real
+    media: {
+      rawDesignTension: {
+        title: 'Raw Design (A) - Tensão',
+        description: 'Distribuição da tensão de von Mises no modelo original. Concentração na região curva de transição.',
+        url: '/images/heli-1.png'
+      },
+      rawDesignDeformation: {
+        title: 'Raw Design (A) - Deformação',
+        description: 'Deslocamento total sob carregamento. Apresentou a resposta mais rígida (0,12935 mm).',
+        url: '/images/heli-2.png'
+      },
+      engineerDesignTension: {
+        title: 'Engineer Design (B) - Tensão',
+        description: 'Pico de tensão máxima próximo à extremidade. Possível singularidade numérica.',
+        url: '/images/heli-3.png'
+      },
+      engineerDesignDeformation: {
+        title: 'Engineer Design (B) - Deformação',
+        description: 'Maior deslocamento estrutural registrado entre os modelos (1,527 mm).',
+        url: '/images/heli-4.png'
+      },
+      optizedDesignTension: {
+        title: 'Optized Design (C) - Tensão',
+        description: 'Redução de 63,6% na tensão em comparação com o modelo B.',
+        url: '/images/heli-5.png'
+      },
+      optizedDesignDeformation: {
+        title: 'Optized Design (C) - Deformação',
+        description: 'Comportamento do braço otimizado, sem superar o desempenho do modelo original.',
+        url: '/images/heli-6.png'
+      }
+    }
   },
   {
     id: 'quilli-hardware-design',
