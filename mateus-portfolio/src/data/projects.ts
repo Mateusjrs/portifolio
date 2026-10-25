@@ -316,6 +316,7 @@ void realizarMedicao() {
         'Estudo Comparativo de Geometrias'
       ]
     },
+    
     result: 'Concluiu-se que a escolha da configuração mais adequada não deve se basear exclusivamente nos valores máximos obtidos. É essencial confirmar a equivalência das condições de simulação, avaliar a convergência da malha e comparar os resultados com os limites de resistência do material, limites admissíveis de deformação e os fatores de segurança exigidos pelo componente aeroespacial.',
    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/SUA-PASTA-AQUI', // <-- Substitua pelo link real
     media: {
@@ -348,6 +349,54 @@ void realizarMedicao() {
         title: 'Optized Design (C) - Deformação',
         description: 'Comportamento do braço otimizado, sem superar o desempenho do modelo original.',
         url: '/images/heli-6.png'
+      }
+    }
+  },
+  {
+    id: 'bicycle-suspension-linkage-fea',
+    title: 'Análise Estrutural: Braço de Suspensão (Bicycle Linkage)',
+    category: 'CAD / 3D',
+    shortDescription: 'Análise estática estrutural no ANSYS Mechanical avaliando a deformação total e elástica equivalente de um braço de suspensão de bicicleta.',
+    technologies: [
+      'ANSYS Mechanical',
+      'FEA (Elementos Finitos)',
+      'Análise Estática Estrutural',
+      'Projeto Mecânico'
+    ],
+    imageUrl: '/images/bic1.png', 
+    featured: false,
+    summary: 'A análise estrutural do Bicycle Suspension Linkage Arm foi realizada no ANSYS Mechanical por meio de uma análise estática estrutural. Foram avaliadas a deformação total e a deformação elástica equivalente, com o objetivo de investigar os deslocamentos do componente e a distribuição das deformações locais sob as condições de carregamento aplicadas.',
+    problem: 'O desafio consistia em mapear o comportamento estrutural do braço de ligação, compreendendo que a avaliação do componente deve considerar simultaneamente o comportamento global de movimentação da peça e a identificação dos possíveis pontos de concentração de esforços locais.',
+    contribution: 'Interpretação analítica dos resultados simulados, mapeando o deslocamento máximo na extremidade direita da geometria e contrastando-o com a zona de maior intensidade de deformação local na transição do olhal esquerdo, fundamentando a necessidade de análises complementares.',
+    engineeringDetails: {
+      analysis: 'A comparação evidencia que o maior deslocamento global ocorre em uma região diferente daquela que concentra a maior deformação elástica equivalente.',
+      'Deformação Total': 'Valor máximo de 0,58561 mm e valor mínimo de 0 mm. A distribuição indica valores reduzidos na extremidade esquerda (próximos ao olhal maior) e crescentes em direção à extremidade direita (deslocamento máximo).',
+      'Deformação Elástica Equivalente': 'Valor máximo de 0,00072733 mm/mm (~0,0727%) e mínimo de 6,3085e-8 mm/mm. Maiores intensidades concentradas na transição entre o olhal esquerdo e o corpo do braço, e próximas às bordas da seção alongada.',
+      mainFindings: [
+        'A região de maior deslocamento não coincide com a de maior deformação local.',
+        'O deslocamento máximo (0,5856 mm) isolou-se na extremidade direita.',
+        'A transição geométrica do olhal esquerdo é a área estruturalmente mais exigida.',
+        'Necessidade de verificar tensões de von Mises e a convergência da malha na área crítica.'
+      ],
+      engineeringSkills: [
+        'Simulação ANSYS Mechanical',
+        'Análise de Deformação Total e Elástica',
+        'Avaliação de Integridade Estrutural',
+        'Interpretação de Concentração de Esforços'
+      ]
+    },
+    result: 'Os resultados forneceram uma caracterização robusta da resposta estrutural. Concluiu-se que os dados devem ser interpretados de maneira complementar, e que a confirmação da adequação mecânica do braço depende de análises futuras envolvendo tensões de von Mises, propriedades de escoamento do material e refinamento da malha na região de transição.',
+    githubUrl: 'https://github.com/Mateusjrs/Projetos',
+    media: {
+      totalDeformation: {
+        title: 'Deformação Total',
+        description: 'Deslocamento máximo de 0,58561 mm localizado na extremidade direita do braço de suspensão.',
+        url: '/images/bic1.png'
+      },
+      elasticStrain: {
+        title: 'Deformação Elástica Equivalente',
+        description: 'Concentração de deformação local (0,0727%) identificada na transição do olhal esquerdo.',
+        url: '/images/bic2.png'
       }
     }
   },
