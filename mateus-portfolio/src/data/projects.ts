@@ -254,6 +254,79 @@ void realizarMedicao() {
 
  
 {
+  id: 'swept-wing-structure-cad',
+  title: 'Modelagem 3D de Estrutura de Asa Enflechada',
+  category: 'CAD / 3D',
+
+  shortDescription: 'Modelagem 3D de uma asa enflechada a partir de desenho técnico, incluindo a geometria externa, nervuras, longarinas e montagem dos componentes estruturais.',
+
+  technologies: [
+    'Modelagem CAD 3D',
+    'Desenho Técnico',
+    'Modelagem Paramétrica',
+    'Montagem de Componentes',
+    'Estruturas Aeronáuticas',
+    'Geometria de Asas'
+  ],
+
+  imageUrl: '/images/asa-enflechada-estrutura.png',
+  featured: false,
+
+  summary: 'O projeto teve como objetivo desenvolver um modelo 3D da estrutura de uma asa enflechada a partir de um desenho técnico com suas principais dimensões. A modelagem considerou a variação da corda ao longo da envergadura, o ângulo de enflechamento e a posição dos componentes estruturais internos. Durante o desenvolvimento, trabalhei na construção da geometria da asa e na modelagem das nervuras e longarinas, buscando representar como esses elementos são distribuídos e conectados dentro de uma estrutura aeronáutica.',
+
+  problem: 'O principal desafio foi transformar o desenho técnico em uma estrutura tridimensional, mantendo as proporções e as dimensões indicadas. Como a asa possui enflechamento e redução da corda em direção à ponta, foi necessário ajustar os contornos e o posicionamento dos componentes internos ao longo da geometria. Outro desafio foi organizar as nervuras e os elementos longitudinais para que acompanhassem corretamente o formato da asa e se encaixassem na montagem.',
+
+  contribution: '',
+
+  engineeringDetails: {
+    geometry: 'A asa foi modelada considerando uma corda de 2.000 mm na raiz e 800 mm na ponta, distribuídas ao longo de uma semienvergadura de 4.000 mm. A geometria apresenta uma redução gradual da corda, formando uma asa trapezoidal enflechada. Essas dimensões foram utilizadas como referência para desenvolver o contorno externo e posicionar os componentes estruturais.',
+
+    sweep: 'O desenho técnico apresenta um ângulo de enflechamento de 30°, definido ao longo da linha de 25% da corda. Essa linha também foi utilizada como referência para o posicionamento da longarina principal, localizada a 500 mm do bordo de ataque na raiz e a 200 mm na ponta da asa.',
+
+    modeling: 'A modelagem começou pela interpretação das dimensões do desenho técnico e pela construção do contorno da asa. A partir dessa geometria, foram desenvolvidos os componentes internos, considerando a redução da corda e o enflechamento. O trabalho envolveu o posicionamento das nervuras e dos elementos longitudinais para formar o conjunto tridimensional.',
+
+    structure: 'A estrutura foi representada por nervuras distribuídas ao longo da asa e elementos longitudinais responsáveis por conectar essas regiões. A montagem permite visualizar a disposição dos componentes internos e compreender melhor como uma estrutura de asa pode ser organizada.',
+
+    decisions: 'Durante a modelagem, utilizei as dimensões do desenho como referência para manter a proporção entre a raiz e a ponta da asa. O posicionamento da longarina principal foi baseado na linha de 25% da corda, enquanto as nervuras foram ajustadas conforme a geometria de cada seção. O objetivo foi desenvolver uma representação organizada da estrutura interna, sem realizar um dimensionamento estrutural completo.',
+
+    dimensions: 'Corda na raiz: 2.000 mm; corda na ponta: 800 mm; semienvergadura: 4.000 mm; ângulo de enflechamento: 30°; posição da longarina principal: 25% da corda.',
+
+    components: [
+      'Geometria externa da asa enflechada',
+      'Longarina principal',
+      'Nervuras estruturais',
+      'Elementos longitudinais de reforço',
+      'Conjunto de montagem 3D'
+    ],
+
+    engineeringSkills: [
+      'Interpretação de Desenho Técnico',
+      'Modelagem Tridimensional',
+      'Geometria de Asas',
+      'Modelagem de Componentes Estruturais',
+      'Montagem CAD',
+      'Organização de Conjuntos Mecânicos'
+    ]
+  },
+
+  media: {
+    technicalDrawing: {
+      title: 'Desenho Técnico da Asa',
+      description: 'Desenho utilizado como referência para a modelagem, apresentando as dimensões de corda, semienvergadura, enflechamento e posição da longarina principal.',
+      url: '/images/vista3d'
+    },
+
+    structuralModel: {
+      title: 'Modelo 3D da Estrutura',
+      description: 'Visualização da montagem tridimensional, mostrando a distribuição das nervuras, longarinas e demais componentes internos da asa.',
+      url: '/images/asa.png'
+    }
+  },
+
+  result: 'O projeto resultou em um modelo tridimensional de uma estrutura de asa enflechada, desenvolvido a partir das dimensões e referências de um desenho técnico. Foi possível representar a geometria externa e organizar os componentes internos em uma montagem 3D. O trabalho ajudou a colocar em prática conhecimentos de desenho técnico, modelagem CAD e estruturas aeronáuticas, principalmente na interpretação de geometrias e no posicionamento de nervuras e longarinas ao longo de uma asa.'
+},
+
+{
   id: 'airbus-wing-structure',
   title: 'Modelagem 3D de Asa Aeronáutica (Airbus A380)',
   category: 'CAD / 3D',
