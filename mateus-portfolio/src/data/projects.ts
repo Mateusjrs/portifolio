@@ -636,221 +636,286 @@ void realizarMedicao() {
 },
 
 
-  {
-    id: 'truss-structure-fea',
-    title: 'Análise Estrutural de uma Estrutura Treliçada',
-    category: 'CAD / 3D',
-    shortDescription: 'Modelagem estrutural e análise de deformação de uma estrutura treliçada utilizando o Método dos Elementos Finitos no ANSYS Mechanical.',
-    technologies: [
-      'ANSYS Mechanical',
-      'FEA (Elementos Finitos)',
-      'Análise Estática Estrutural',
-      'Mecânica dos Sólidos'
+  
+{
+  id: 'truss-structure-fea',
+  title: 'Análise Estrutural de uma Estrutura Treliçada',
+  category: 'CAD / 3D',
+
+  shortDescription: 'Simulação estrutural no ANSYS Mechanical para avaliar os deslocamentos de uma estrutura treliçada submetida a carregamentos.',
+
+  technologies: [
+    'ANSYS Mechanical',
+    'Método dos Elementos Finitos (FEA)',
+    'Análise Estática Estrutural',
+    'Mecânica dos Sólidos'
+  ],
+
+  imageUrl: '/images/trel-1.png',
+  featured: false,
+
+  summary: 'O projeto teve como objetivo estudar o comportamento de uma estrutura treliçada utilizando o ANSYS Mechanical. Foi realizada uma análise estática estrutural pelo método dos elementos finitos, observando os deslocamentos provocados pelo carregamento aplicado. Durante a simulação, foram avaliados o deslocamento total da estrutura e o deslocamento na direção do eixo X. O estudo permitiu visualizar como as barras e suas conexões influenciam o comportamento do conjunto.',
+
+  problem: 'O principal desafio foi entender como uma estrutura formada por várias barras conectadas se comporta quando submetida a esforços. Para isso, foi necessário considerar a geometria da treliça, os pontos de apoio e as condições de carregamento. Outro ponto importante foi interpretar os resultados da simulação, identificando as regiões com maiores deslocamentos e observando como as restrições influenciam o comportamento da estrutura.',
+
+  contribution: '',
+
+  engineeringDetails: {
+    analysis: 'A simulação foi realizada no ANSYS Mechanical utilizando uma análise estática estrutural. Foram avaliados o deslocamento total (Total Deformation) e o deslocamento direcional no eixo X (Directional Deformation). A partir dos mapas de resultados, foi possível observar como a estrutura se desloca sob as condições aplicadas e identificar as regiões que apresentam os maiores valores.',
+
+    'Deformação Total': 'O deslocamento total máximo encontrado foi de aproximadamente 0,000649 mm. A distribuição dos resultados permitiu observar quais regiões apresentaram maiores movimentações em relação à posição inicial da estrutura.',
+
+    'Deformação Direcional (Eixo X)': 'Na análise do deslocamento na direção do eixo X, foi encontrado um valor máximo de aproximadamente 0,000288 mm e um mínimo de -0,00000765 mm. Esses resultados mostram como diferentes regiões da treliça se deslocaram no sentido positivo e negativo do eixo horizontal.',
+
+    mainFindings: [
+      'A geometria e as condições de apoio influenciam os deslocamentos da estrutura.',
+      'O deslocamento total máximo encontrado foi de aproximadamente 0,000649 mm.',
+      'O deslocamento no eixo X apresentou valores positivos e negativos.',
+      'Os mapas de resultados permitiram identificar as regiões com maiores deslocamentos.',
+      'Uma análise de tensões seria necessária para avaliar melhor a resistência da estrutura.'
     ],
-    imageUrl: '/images/trel-1.png', 
-    featured: false,
-    summary: 'Este projeto consiste na análise estrutural de uma estrutura treliçada utilizando o ANSYS Mechanical, com o objetivo de investigar seu comportamento sob as condições de carregamento aplicadas. A geometria é composta por barras interconectadas, cuja configuração permite estudar a distribuição de esforços e os deslocamentos resultantes da interação entre seus elementos.',
-    problem: 'O objetivo principal era aplicar conceitos de mecânica dos sólidos para compreender a resposta de estruturas treliçadas, relacionando geometria, condições de contorno e carregamentos. Além disso, o projeto visava desenvolver competências avançadas em simulação numérica e interpretação crítica de resultados de engenharia.',
-    contribution: 'Execução de simulação estática estrutural para avaliar a deformação total e a deformação direcional no eixo X. A configuração da simulação e a visualização dos resultados permitiram identificar as regiões com os maiores deslocamentos e compreender como a montagem geométrica influencia a resposta da estrutura aos esforços.',
-    engineeringDetails: {
-      analysis: 'A interpretação da distribuição dos deslocamentos permitiu a identificação de regiões nodais e barras que exigem maior atenção no comportamento global da estrutura.',
-      'Deformação Total': 'Avaliação dos deslocamentos globais resultantes ao longo da estrutura, com valor máximo de aproximadamente 0,000649 mm na simulação apresentada.',
-      'Deformação Direcional (Eixo X)': 'Investigação dos deslocamentos específicos ao longo do eixo horizontal, registrando valor máximo de aproximadamente 0,000288 mm e mínimo de -0,00000765 mm.',
-      mainFindings: [
-        'A geometria das barras dita diretamente a distribuição dos esforços e o deslocamento nodal.',
-        'O deslocamento máximo global (0,000649 mm) localiza-se nas regiões de menor restrição.',
-        'A deformação no eixo X apresentou compressão e tração com pico de 0,000288 mm.',
-        'Os resultados obtidos refletem condições específicas de carregamento e não comprovam, isoladamente, a segurança estrutural final do modelo.'
-      ],
-      engineeringSkills: [
-        'Simulação em ANSYS Mechanical',
-        'Método dos Elementos Finitos (FEA)',
-        'Mecânica dos Sólidos Aplicada',
-        'Interpretação de Resultados Numéricos'
-      ]
+
+    engineeringSkills: [
+      'Utilização do ANSYS Mechanical',
+      'Método dos Elementos Finitos',
+      'Análise Estática Estrutural',
+      'Interpretação de Deslocamentos',
+      'Mecânica dos Sólidos',
+      'Análise de Estruturas Treliçadas'
+    ]
+  },
+
+  result: 'A simulação permitiu observar os deslocamentos de uma estrutura treliçada submetida a carregamentos, identificando tanto o deslocamento total quanto a movimentação na direção do eixo X. O projeto foi importante para praticar a utilização do ANSYS Mechanical e compreender melhor como a geometria, os apoios e os esforços aplicados influenciam o comportamento de uma estrutura. Também ajudou a desenvolver a interpretação de resultados obtidos pelo método dos elementos finitos.',
+
+  githubUrl: 'https://github.com/Mateusjrs/Projetos',
+
+  media: {
+    totalDeformation: {
+      title: 'Deslocamento Total',
+      description: 'Distribuição dos deslocamentos da estrutura treliçada, com valor máximo de aproximadamente 0,000649 mm.',
+      url: '/images/trel-1.png'
     },
-    result: 'A análise forneceu um mapeamento detalhado da mecânica da treliça sob carga, destacando a interação entre os elementos. A simulação atendeu ao objetivo de consolidar conceitos de análise estrutural, fornecendo métricas exatas de deslocamento que podem servir como base para dimensionamento e verificações futuras de falha ou fadiga.',
-    githubUrl: 'https://github.com/Mateusjrs/Projetos',
-    media: {
-      totalDeformation: {
-        title: 'Deformação Total',
-        description: 'Distribuição dos deslocamentos globais resultantes ao longo da estrutura treliçada.',
-        url: '/images/trel-1.png'
-      },
-      directionalDeformation: {
-        title: 'Deformação Direcional (Eixo X)',
-        description: 'Investigação dos deslocamentos específicos ao longo do eixo horizontal (tração/compressão).',
-        url: '/images/trel-2.png'
-      }
+
+    directionalDeformation: {
+      title: 'Deslocamento Direcional (Eixo X)',
+      description: 'Resultado dos deslocamentos na direção horizontal, mostrando valores positivos e negativos ao longo da estrutura.',
+      url: '/images/trel-2.png'
+    }
+  }
+},
+
+{
+  id: 'quilli-hardware-design',
+  title: 'Projeto Eletrônico e Hardware — Aquário Inteligente',
+  category: 'Hardware',
+
+  shortDescription: 'Desenvolvimento do circuito eletrônico de um aquário inteligente utilizando ESP32, sensores, relés, MOSFETs e interfaces de comunicação para automação do sistema.',
+
+  technologies: [
+    'Projeto de Circuitos Eletrônicos',
+    'ESP32',
+    'MOSFETs e Relés',
+    'Optoacopladores',
+    'Comunicação RS-485',
+    'Barramentos I2C e SPI',
+    'Design de PCB'
+  ],
+
+  imageUrl: '/images/esquematicoAquario.png',
+  featured: false,
+
+  summary: 'O projeto teve como objetivo desenvolver o hardware de um sistema de automação para aquários, utilizando um ESP32 como controlador principal. O circuito foi planejado para integrar sensores, controle de temperatura, iluminação, ventilação e comunicação com outros dispositivos. Durante o desenvolvimento, trabalhei na criação do esquemático eletrônico, escolha dos componentes e organização dos circuitos de alimentação, controle e acionamento. O principal foco foi permitir que o ESP32 controlasse diferentes equipamentos sem conectar diretamente as cargas de maior potência aos seus pinos.',
+
+  problem: 'Um dos principais desafios foi integrar dispositivos que trabalham com tensões e correntes diferentes. Enquanto o ESP32 utiliza sinais de 3,3 V, alguns equipamentos do aquário, como coolers e sistemas de iluminação, trabalham com 12 V. Por isso, foi necessário desenvolver circuitos específicos para o acionamento dessas cargas, utilizando transistores, MOSFETs, relés e optoacopladores. Também foi importante organizar os componentes e as conexões para facilitar a montagem e a manutenção do sistema.',
+
+  contribution: '',
+
+  engineeringDetails: {
+    schematic: 'O esquemático eletrônico foi desenvolvido dividindo o sistema em blocos, como alimentação, processamento, sensores, acionamento de cargas e comunicação. Essa organização facilitou a identificação das conexões entre os componentes e permitiu planejar a integração de todos os dispositivos em uma única placa.',
+
+    controller: 'O ESP32-DEVKIT-V1 foi escolhido como controlador principal do sistema. Ele é responsável pelo processamento das informações dos sensores e pelo envio dos sinais de controle para os circuitos de acionamento. Também foram previstas conexões para display, botões e comunicação com outros módulos.',
+
+    power: 'O circuito de alimentação foi planejado utilizando uma fonte Hi-Link HLK-5M05 para fornecer 5 V aos circuitos de controle e uma linha de 12 V destinada a equipamentos como coolers e iluminação. A distribuição de energia foi organizada para separar o acionamento das cargas de maior potência dos sinais utilizados pelo ESP32.',
+
+    thermostat: 'Para o acionamento do aquecedor, foi utilizado um circuito com transistor BC817 e relé de 5 V. O transistor permite controlar a bobina do relé a partir do sinal do microcontrolador. Também foi adicionado um diodo 1N4007 para proteger o circuito contra os picos de tensão gerados quando a bobina é desligada.',
+
+    cooler: 'O acionamento do cooler de 12 V foi desenvolvido utilizando um MOSFET de potência e um optoacoplador PC817. Essa configuração permite controlar o funcionamento do cooler através do ESP32, utilizando um circuito de acionamento separado da saída direta do microcontrolador.',
+
+    lighting: 'O sistema de iluminação foi dividido em canais de controle utilizando MOSFETs. Essa configuração permite acionar diferentes lâmpadas e fitas de LED, além de possibilitar o controle de intensidade por PWM nos canais compatíveis.',
+
+    adc: 'Para melhorar a resolução das leituras analógicas, foi incluído um conversor ADS1115 de 16 bits, conectado ao ESP32 pelo barramento I2C. O módulo permite realizar medições analógicas com maior resolução nominal em comparação com o conversor interno do microcontrolador.',
+
+    communication: 'Foi incluído um transceptor MAX485 para permitir comunicação através da interface RS-485. O circuito foi planejado para possibilitar a integração futura com outros dispositivos, incluindo equipamentos que utilizem protocolos como Modbus RTU.',
+
+    rtc: 'O controle de horários foi planejado utilizando um módulo RTC DS3231 conectado pelo barramento I2C. O circuito também possui uma bateria de backup CR2032, permitindo que o relógio continue mantendo a referência de tempo quando a alimentação principal estiver desligada.',
+
+    display: 'O hardware possui conexões para um display TFT utilizando comunicação SPI, além de botões físicos para interação com o sistema. Esses componentes permitem apresentar informações do aquário e configurar funções diretamente pelo equipamento.',
+
+    protection: 'Durante o desenvolvimento do circuito, foram considerados componentes de proteção e acionamento, como diodos, resistores, transistores e optoacopladores. O objetivo foi evitar que as cargas fossem conectadas diretamente aos pinos do ESP32 e reduzir possíveis interferências elétricas no sistema.',
+
+    bom: 'Também foi organizada uma lista de materiais contendo os principais componentes eletrônicos utilizados no projeto, como resistores, capacitores, relés, MOSFETs, transistores, conectores e módulos de comunicação.',
+
+    hardwareComponents: [
+      'ESP32-DEVKIT-V1',
+      'Fonte Hi-Link HLK-5M05',
+      'Conversor ADS1115 de 16 bits',
+      'Transceptor RS-485 MAX485',
+      'RTC DS3231 e bateria CR2032',
+      'Relé SRD-05VDC-SL-C',
+      'Optoacopladores PC817',
+      'MOSFETs de potência',
+      'Transistores BC817',
+      'Diodo 1N4007',
+      'Conectores JST-XH'
+    ],
+
+    engineeringSkills: [
+      'Desenvolvimento de Esquemáticos Eletrônicos',
+      'Projeto de Circuitos com ESP32',
+      'Acionamento de Relés e MOSFETs',
+      'Circuitos de Proteção',
+      'Distribuição de Alimentação',
+      'Comunicação I2C, SPI e RS-485',
+      'Integração de Sensores e Atuadores',
+      'Desenvolvimento de PCB'
+    ]
+  },
+
+  media: {
+    schematicImg: {
+      title: 'Esquemático Eletrônico do Aquário Inteligente',
+      description: 'Esquemático completo do sistema, mostrando os circuitos de alimentação, processamento, sensores e acionamento.',
+      url: '/images/esquematicoAquario.png'
+    },
+
+    pcb3d: {
+      title: 'Modelo 3D da PCB',
+      description: 'Visualização da placa de circuito impresso com a disposição dos componentes e conectores do sistema.',
+      url: '/images/pcbAquario.png'
     }
   },
-  {
-    id: 'quilli-hardware-design',
-    title: 'Projeto Eletrônico e Hardware — Aquário Inteligente',
-    category: 'Hardware',
-    shortDescription: 'Desenvolvimento do esquemático e arquitetura de hardware para automação de aquários, focando em isolamento óptico, eletrônica de potência e controle de cargas.',
-    technologies: [
-      'Design de PCB / Esquemáticos',
-      'Eletrônica de Potência',
-      'Isolamento Óptico',
-      'MOSFETs / Relés',
-      'Comunicação RS-485',
-      'Barramentos I2C e SPI'
+
+  result: 'O projeto resultou no desenvolvimento do esquemático eletrônico e na organização do hardware de um sistema de automação para aquários. A arquitetura reúne o ESP32, os circuitos de alimentação, sensores, interfaces de comunicação e acionamento de equipamentos como aquecedores, coolers e iluminação. Durante o desenvolvimento, pude colocar em prática conhecimentos de eletrônica, dimensionamento de componentes, comunicação entre dispositivos e projeto de circuitos. O trabalho também ajudou a compreender a importância de organizar os blocos eletrônicos e considerar a proteção do microcontrolador durante o acionamento de cargas.',
+
+  githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/AquarioHardware/Aquario'
+},
+
+{
+  id: 'afrodite-autonomous-sumo',
+  title: 'Afrodite — Robô Sumô Autônomo (3 kg)',
+  category: 'Hardware',
+
+  shortDescription: 'Desenvolvimento do hardware de um robô de sumô autônomo de 3 kg utilizando ESP32, sensores de distância, sensores de borda e circuitos de controle.',
+
+  technologies: [
+    'ESP32',
+    'Projeto de PCB e Esquemáticos',
+    'Sensores VL53L0X (ToF)',
+    'Sensor Inercial MPU6050',
+    'Leitura PPM',
+    'Controle de Motores',
+    'Comunicação I2C'
+  ],
+
+  imageUrl: '/images/Sumo3k.jpeg',
+  featured: true,
+
+  summary: 'O Afrodite é um projeto de robô desenvolvido para competições de sumô autônomo na categoria de 3 kg. O objetivo foi desenvolver um sistema eletrônico capaz de identificar o adversário, detectar os limites da arena e controlar os movimentos do robô. O projeto utiliza um ESP32 como controlador principal, sensores de distância VL53L0X, sensores de borda e um sensor inercial MPU6050. Também foi considerada a utilização de um sistema de sucção para aumentar a aderência do robô ao solo. Durante o desenvolvimento, trabalhei principalmente na arquitetura do hardware, criação do esquemático e integração dos diferentes módulos eletrônicos.',
+
+  problem: 'Um dos principais desafios foi integrar vários sensores e dispositivos de controle em um espaço reduzido, considerando as limitações de uma competição de robótica. O robô precisa identificar rapidamente a posição do adversário e detectar as bordas da arena para evitar sair da área de combate. Outro desafio foi utilizar cinco sensores VL53L0X no mesmo barramento I2C, já que esses sensores possuem o mesmo endereço padrão. Também foi necessário organizar a alimentação para reduzir possíveis interferências provocadas pelos motores.',
+
+  contribution: '',
+
+  engineeringDetails: {
+    schematic: 'O esquemático eletrônico foi desenvolvido separando os circuitos em blocos de alimentação, sensores, processamento, comunicação e sinalização. Essa organização facilitou a distribuição das conexões e a integração dos componentes utilizados no robô.',
+
+    controller: 'O ESP32-DEVKIT-V1 foi escolhido como controlador principal por possuir boa capacidade de processamento e diferentes interfaces de comunicação. Ele é utilizado para receber informações dos sensores, processar os comandos e controlar os sistemas eletrônicos do robô.',
+
+    power: 'A alimentação foi planejada utilizando um conversor Step Down para fornecer 5 V a partir da bateria e reguladores de 3,3 V para os componentes que trabalham com essa tensão. Também foram utilizados capacitores de filtragem para ajudar a reduzir ruídos e variações na alimentação dos circuitos.',
+
+    communication: 'Um dos pontos principais do projeto foi a integração de cinco sensores de distância VL53L0X utilizando o barramento I2C. Como esses sensores possuem o mesmo endereço de fábrica, foi utilizado o controle individual dos pinos XSHUT para inicializá-los separadamente e configurar endereços diferentes. Dessa forma, é possível utilizar os cinco sensores no mesmo barramento.',
+
+    inputs: 'O sistema conta com cinco sensores ToF VL53L0X para detectar o adversário, sensores de borda para identificar os limites da arena e um MPU6050 para obter informações de aceleração e orientação angular. Também foi incluída uma entrada para receptor de rádio PPM, utilizada no controle remoto de segurança e inicialização do robô.',
+
+    display: 'O circuito possui um display OLED de 128x64 pixels e LEDs de sinalização. Esses componentes foram incluídos para facilitar a visualização de informações do sistema, como estados de funcionamento e leituras dos sensores durante os testes.',
+
+    bom: 'Durante o desenvolvimento, também foi organizada a lista de componentes eletrônicos utilizados na placa, incluindo resistores, capacitores, LEDs, conectores, reguladores de tensão e módulos de sensores. Essa etapa ajudou a planejar a montagem e organizar os materiais necessários.',
+
+    hardwareComponents: [
+      'ESP32-DEVKIT-V1',
+      '5 Sensores VL53L0X (ToF)',
+      'Sensor Inercial MPU6050',
+      'Sensores de Borda',
+      'Receptor PPM Orange R616XN Nano',
+      'Conversor Step Down 5 V',
+      'Reguladores de 3,3 V',
+      'Display OLED 128x64',
+      'Receptor IR TSOP1838',
+      'Resistores e Capacitores de Filtragem'
     ],
-    imageUrl: '/images/esquematicoAquario.png', 
-    featured: false,
-    summary: 'O Aquário Inteligente foi desenvolvido como um sistema embarcado completo, tendo um ESP32 como controlador central e uma arquitetura eletrônica dedicada para integrar sensores, atuadores, interfaces de usuário, comunicação e alimentação. O hardware foi organizado em blocos funcionais, separando os circuitos de processamento e sinais dos circuitos responsáveis pelo acionamento de potência.',
-    problem: 'Controlar aquecedores, coolers de 12V e fitas de LED de alta potência através de um microcontrolador que opera em 3.3V (ESP32) apresenta riscos graves, como transientes, ruídos elétricos e até a queima do controlador. Era necessário desenvolver um projeto de hardware robusto, que isolasse a parte lógica da parte de potência, e que coubesse em um layout pequeno.',
-    contribution: 'Fui responsável pela engenharia e projeto elétrico do sistema. Especifiquei os estágios de acionamento utilizando optoacopladores, transistores BC817 e MOSFETs. Dimensionei a rede de distribuição de energia (HLK-5V e linhas de 12V) e estruturei a comunicação (SPI para TFT, I2C para RTC, e módulo RS-485 via MAX485).',
-    engineeringDetails: {
-      schematic: 'O projeto eletrônico foi desenvolvido a partir de um esquemático completo, onde estão representados o ESP32, fontes de alimentação, entradas, sensores, circuitos de acionamento, interfaces de comunicação, display, RTC e conectores. A organização em blocos facilita a identificação e montagem do sistema.',
-      controller: 'O ESP32-DEVKIT-V1 atua como unidade central de processamento. Ele é responsável pela aquisição dos sinais analógicos, processamento da lógica, controle de atuadores via PWM, display gráfico e conectividade sem fio.',
-      power: 'A alimentação utiliza uma fonte isolada HLK-5V para a lógica e possui uma linha de 12V destinada aos atuadores (cooler/luzes). A distribuição foi organizada para que o ESP32 comande cargas de maior potência sem submetê-lo diretamente às correntes dessas cargas.',
-      thermostat: 'O aquecedor é acionado por um estágio dedicado com transistor BC817 e relé de 5V. Essa configuração permite que o pino do ESP32 atue de maneira isolada. Um diodo 1N4007 flyback é utilizado no circuito para proteção contra transientes da bobina do relé.',
-      cooler: 'O cooler é acionado por um estágio eletrônico baseado em optoacoplador PC817 e MOSFET de potência, garantindo separação galvânica entre o controle (3.3V) e a potência (12V).',
-      lighting: 'O sistema possui múltiplos canais independentes (lâmpadas e fitas LED) controlados via MOSFETs e optoacopladores PC817, habilitando ajuste de intensidade da iluminação via PWM sem sobrecarregar a fonte primária.',
-      adc: 'O projeto incorpora um conversor analógico-digital ADS1115 (16 bits) via I2C para aquisição de sinais analógicos com maior resolução do que os ADCs internos do ESP32 permitem.',
-      communication: 'Foi utilizado um transceptor MAX485 (Half-Duplex) para interface física RS-485. Sinais de controle do ESP32 alternam entre transmissão e recepção, permitindo integração futura com sensores ou atuadores industriais em rede Modbus.',
-      rtc: 'O controle temporal utiliza um módulo RTC DS3231 via barramento I2C, mantido por uma bateria de lítio CR2032 (RTC Backup) para não perder as agendas programadas do aquário em caso de queda de energia.',
-      display: 'O hardware disponibiliza barramento SPI de alta velocidade dedicado ao Display TFT, e botões físicos nas entradas do ESP (pull-up/pull-down) para interface de usuário (IHM).',
-      protection: 'A arquitetura é focada na proteção do microcontrolador: uso intenso de optoacopladores (PC817), MOSFETs de nível lógico (Logic Level) com resistores de gate, e diodos de proteção. As cargas nunca encontram diretamente os pinos do ESP32.',
-      bom: 'A lista de materiais (BOM) foi estruturada englobando toda a arquitetura de CIs, transistores, reguladores HLK, relés, capacitores de filtro, resistores limitadores e terminais de conexão padronizados tipo JST-XH.',
-      hardwareComponents: [
-        'ESP32-DEVKIT-V1',
-        'Fonte Hi-Link HLK-5M05',
-        'ADC de 16 bits ADS1115',
-        'Transceptor RS-485 (MAX485)',
-        'RTC DS3231 + Bateria CR2032',
-        'Relé SRD-05VDC-SL-C',
-        'Optoacopladores PC817',
-        'Power MOSFETs (IRF)',
-        'Transistores NPN BC817',
-        'Diodo Flyback 1N4007',
-        'Conectores tipo JST-XH'
-      ],
-      engineeringSkills: [
-        'Projeto de Circuitos Eletrônicos (Schematic Design)',
-        'Isolamento Galvânico e Eletrônica de Potência',
-        'Dimensionamento de Relés e Flyback',
-        'Acionamento de MOSFETs e Optoacopladores',
-        'Barramentos industriais: RS-485 / Modbus',
-        'Barramentos embarcados: I2C e SPI',
-        'Interfaceamento ADC de alta resolução',
-        'Estruturação de BOM'
-      ]
-    },
-    
-    media: {
-      schematicImg: {
-        title: 'Esquemático Eletrônico do Aquário Inteligente',
-        description: 'Desenho unifilar completo separando os blocos de sensores, lógica e potência.',
-        url: '/images/esquematicoAquario.png' // <-- Certifique-se de salvar sua foto do esquemático com este nome
-      },
-      pcb3d: {
-        title: 'Modelo 3D da PCB / Engenharia de Layout',
-        description: 'Visualização 3D da placa de circuito impresso projetada para abrigar a fonte HLK, o ESP32, os blocos de relés, MOSFETs e os conectores JST-XH.',
-        url: '/images/pcbAquario.png' // <-- Certifique-se de salvar sua foto 3D com este nome
-      }
-    },
-    result: 'O desenvolvimento arquitetural resultou em uma placa (hardware) centralizada e extremamente segura. A divisão física entre as seções lógica, medição e potência protege o processador principal de ruídos elétricos. O emprego de MOSFETs de potência junto a optoacopladores permitiu acionamento contínuo das rotinas térmicas e de PWM sem sobreaquecimento ou danos elétricos à unidade central.',
-    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/AquarioHardware/Aquario'
+
+    engineeringSkills: [
+      'Desenvolvimento de Hardware para Robótica',
+      'Projeto de Esquemáticos Eletrônicos',
+      'Integração de Sensores com ESP32',
+      'Comunicação I2C',
+      'Configuração de Endereços I2C',
+      'Circuitos de Alimentação',
+      'Leitura de Sinais PPM',
+      'Desenvolvimento de PCB'
+    ]
   },
-  {
-    id: 'afrodite-autonomous-sumo',
-    title: 'Afrodite — Robô Sumô Autônomo (3kg)',
-    category: 'Hardware',
-    shortDescription: 'Projeto de hardware e integração eletrônica para um robô de sumô autônomo da categoria 3kg, projetado para suportar até 100kg de peso virtual.',
-    technologies: [
-      'ESP32',
-      'Design de PCB / Esquemáticos',
-      'Sensores VL53L0X (ToF)',
-      'Acelerômetro MPU6050',
-      'Leitura PPM',
-      'Controle de Motores',
-      'Barramento I2C'
-    ],
-    imageUrl: '/images/Sumo3k.jpeg',
-    featured: true,
-    summary: 'A Afrodite é um projeto de robótica competitiva desenvolvido para a categoria Sumô Autônomo (3kg). O grande desafio mecânico e eletrônico deste projeto foi projetar um sistema capaz de gerar um "peso virtual" superior a 100kg (através de aerodinâmica/sucção) e, ao mesmo tempo, possuir um tempo de resposta extremamente rápido para localizar o oponente e desviar de bordas utilizando um conjunto avançado de sensores ToF e inerciais.',
-    problem: 'Na categoria de sumô autônomo de 3kg, a tração e a velocidade de resposta são os fatores decisivos para a vitória. O desafio eletrônico consistia em integrar múltiplos sensores de distância (VL53L0X) via barramento I2C sem conflito de endereços, ler comandos de segurança (rádio PPM), monitorar a orientação (MPU6050) e acionar a lógica de motores sem que o ruído elétrico da alta corrente dos motores afetasse a estabilidade do ESP32.',
-    contribution: 'Fui responsável pela arquitetura do hardware e elaboração do esquemático completo da placa principal. Desenvolvi a lógica de integração dos 5 sensores de distância VL53L0X gerenciando os pinos XSHUT, a interface do módulo inercial MPU6050 e a rede de distribuição de energia (Step Down 5V e reguladores 3V3). Também estruturei a leitura de sinais PPM do receptor de segurança e os barramentos para os sensores de borda.',
-    engineeringDetails: {
-      schematic: 'O esquemático foi desenhado separando claramente os blocos vitais do robô: alimentação, sensores de linha/borda, sensores de distância I2C, interface de rádio (PPM) e feedback visual (Display OLED e LEDs).',
-      controller: 'O cérebro do robô é um ESP32-DEVKIT-V1, escolhido por sua alta capacidade de processamento (Dual Core), permitindo rodar a malha de controle dos motores em um núcleo enquanto processa a fusão de dados dos sensores I2C no outro.',
-      power: 'Para suportar os picos de corrente e isolar a lógica, o projeto conta com um módulo Step Down dedicado para baixar a tensão da bateria para 5V, e reguladores g108433 para fornecer 3.3V limpo aos sensores e ao ESP32, com ampla filtragem por capacitores.',
-      communication: 'O projeto faz uso intensivo do barramento I2C. Para utilizar 5 sensores VL53L0X simultaneamente, o ESP32 controla os pinos XSHUT de cada um (XSHUT1 a XSHUT5), inicializando-os um por vez e trocando seus endereços I2C dinamicamente no boot.',
-      inputs: 'As entradas incluem 5 sensores ToF, sensores de borda (g1113), sensor inercial (MPU6050), e um receptor Nano R616XN para leitura do sinal PPM, que atua como chave de segurança/start remoto exigida pelas regras da competição.',
-      display: 'O robô possui um Display OLED 128x64 e LEDs de debug para feedback visual instantâneo do estado da bateria e da leitura dos sensores durante os testes no dojô.',
-      bom: 'A lista de materiais foi rigorosamente mapeada, totalizando 40 resistores (100Ω, 10kΩ, 20kΩ), 19 capacitores de filtro, 12 LEDs de status, receptor IR TSOP1838, além de conectores padronizados para módulos PPM, Display e Motores.',
-      hardwareComponents: [
-        'ESP32-DEVKIT-V1',
-        'Sensores ToF (VL53L0X / I2c)',
-        'Módulo Inercial (MPU6050)',
-        'Sensores de Borda (g1113)',
-        'Receptor PPM (Orange R616XN Nano)',
-        'Módulo Step Down 5V',
-        'Regulador 3.3V (g108433)',
-        'Display OLED 128x64',
-        'Receptor IR TSOP1838',
-        'Rede de Capacitores (100nF, 10uF) e Resistores'
-      ],
-      engineeringSkills: [
-        'Arquitetura de Hardware para Robótica',
-        'Gerenciamento de Barramento I2C Multi-Device',
-        'Condicionamento de Energia (Step-Down e LDOs)',
-        'Design de Esquemático Eletrônico',
-        'Integração de Sensores Inerciais e Ópticos',
-        'Leitura de Sinais de Rádio (PPM)'
-      ]
+
+  media: {
+    roboMontado: {
+      title: 'Robô Afrodite (3 kg)',
+      description: 'Visão geral do robô de sumô autônomo, mostrando sua estrutura e montagem dos componentes.',
+      url: '/images/Sumo3k.jpeg'
     },
-    
-    // === GALLERY SUBSTITUÍDA POR MEDIA ===
-    media: {
-      roboMontado: {
-        title: 'Robô Afrodite (3kg)',
-        description: 'Visão geral da montagem estrutural e eletrônica do robô de sumô.',
-        url: '/images/Sumo3k.jpeg'
-      },
-      pcbLayout: {
-        title: 'Design da PCB',
-        description: 'Layout da placa de circuito impresso com o roteamento focado em minimizar ruídos.',
-        url: '/images/pcb.png'
-      },
-      schematic: {
-        title: 'Esquemático Eletrônico',
-        description: 'Diagrama unifilar separando os blocos de alimentação, sensores e processamento.',
-        url: '/images/esquematico.png'
-      }
+
+    pcbLayout: {
+      title: 'Layout da PCB',
+      description: 'Desenvolvimento da placa de circuito impresso com a disposição dos componentes e o roteamento das conexões.',
+      url: '/images/pcb.png'
     },
-    
-    result: 'O projeto de hardware garantiu que o ESP32 operasse com energia limpa e estável, essencial para o funcionamento sem travamentos da malha de controle de alta velocidade. A estratégia de usar os pinos XSHUT permitiu a leitura simultânea de 5 sensores ToF, cobrindo um amplo campo de visão frontal e lateral. A placa se tornou o núcleo confiável que permitiu ao robô focar exclusivamente em sua estratégia de combate e no acionamento do sistema de vácuo (peso virtual).',
-    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/Sumo3K'
+
+    schematic: {
+      title: 'Esquemático Eletrônico',
+      description: 'Esquemático do circuito principal, incluindo alimentação, ESP32, sensores e interfaces de comunicação.',
+      url: '/images/esquematico.png'
+    }
   },
-  {
+
+  result: 'O projeto permitiu desenvolver a arquitetura eletrônica de um robô de sumô autônomo, integrando diferentes sensores e circuitos de controle em um único sistema. Um dos principais pontos do desenvolvimento foi a utilização de cinco sensores VL53L0X no mesmo barramento I2C, através do gerenciamento dos pinos XSHUT. O trabalho também envolveu o planejamento da alimentação, a integração de sensores inerciais e a criação do esquemático eletrônico e da PCB. O projeto foi importante para aplicar conhecimentos de eletrônica, sistemas embarcados e robótica em uma aplicação prática voltada para competições.',
+
+  githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/Sumo3K'
+},
+
+ {
     id: 'mini-sumo-autonomous',
-    title: 'Mini Sumô Autônomo (500g) — Alta Densidade',
+    title: 'Mini Sumô Autônomo (500 g) — Projeto de Hardware',
     category: 'Hardware',
-    shortDescription: 'Miniaturização extrema da arquitetura do robô Afrodite, mantendo o processamento dual-core e múltiplos sensores ToF em uma PCB de alta densidade.',
+    shortDescription: 'Adaptação do hardware do robô Afrodite para um mini sumô de 500 g, com ESP32, sensores de distância e uma placa compacta com componentes SMD.',
     technologies: [
       'ESP32',
-      'Design de PCB SMD',
+      'Projeto de PCB com componentes SMD',
       'Alta Densidade (High-Density Routing)',
       'Sensores VL53L0X',
       'Controle Inercial',
       'Eletrônica de Potência Compacta'
     ],
-    imageUrl: '/images/MINISUMO_ANGULO.jpeg', // Substitua pela capa do seu robô
+    imageUrl: '/images/MINISUMO_ANGULO.jpeg',
     featured: false,
-    summary: 'Adaptação da arquitetura eletrônica e de controle do robô Afrodite (3kg) para a categoria Mini Sumô (500g). O desafio principal consistiu em compactar todo o processamento dual-core do ESP32, a leitura paralela de 5 sensores de distância (VL53L0X), o controle inercial e a eletrônica de potência dos motores em uma área rigorosamente restrita a 10x10 cm.',
-    problem: 'A redução drástica de volume e massa agrava severamente os problemas de interferência eletromagnética (EMI) e dissipação térmica. Posicionar trilhas de alta corrente para os motores a poucos milímetros de distância de barramentos de comunicação sensíveis (I2C) exigia um roteamento de placa de circuito impresso (PCB) extremamente rigoroso para evitar ruídos e travamentos do microcontrolador durante os embates.',
-    contribution: 'Realizei a transição do projeto de módulos comerciais para componentes discretos totalmente SMD (Surface-Mount Device). Refatorei o esquemático e executei o roteamento da placa garantindo o isolamento entre a área lógica e a de potência. Mantive a topologia XSHUT para o I2C e implementei reguladores monolíticos de alta frequência para reduzir o tamanho físico dos indutores da fonte.',
+    summary: 'O projeto teve como objetivo adaptar a parte eletrônica do robô Afrodite, de 3 kg, para um mini sumô de 500 g. Como o robô precisa ocupar um espaço menor, foi necessário reorganizar os componentes e desenvolver uma PCB mais compacta. O sistema utiliza um ESP32, cinco sensores de distância VL53L0X, um sensor inercial MPU6050 e circuitos para o controle dos motores. Durante o desenvolvimento, trabalhei principalmente na escolha dos componentes, no esquemático e no layout da placa.',
+    problem: 'O principal desafio foi reduzir o tamanho e o peso da eletrônica sem perder as funções do robô maior. Era preciso acomodar os sensores, a alimentação e o controle dos motores em uma placa que coubesse no chassi, respeitando o limite de 10 x 10 cm da categoria. Também foi importante planejar o caminho das trilhas, porque os motores podem gerar ruídos elétricos que interferem na comunicação dos sensores.',
+    contribution: '',
     engineeringDetails: {
-      schematic: 'Transição completa para componentes SMD (pacotes 0603 e 0402). Eliminação de módulos "prontos" (breakout boards) em favor da integração dos circuitos integrados (como o MPU6050 e os próprios sensores ToF) diretamente na placa-mãe do robô.',
-      controller: 'Uso otimizado do ESP32 soldado diretamente na placa, mantendo o processamento paralelo (FreeRTOS) que separa a malha de navegação (leitura I2C) da malha de controle PID dos motores.',
-      power: 'Redesenho radical da fonte de alimentação. Substituição dos módulos Step-Down grandes por CIs reguladores buck monolíticos de alta frequência, que requerem capacitores e indutores drasticamente menores e reduzem o peso global.',
-      communication: 'Roteamento focado do barramento I2C, utilizando trilhas mais curtas e vias de blindagem (ground shielding) para comunicação limpa com o MPU6050 e os 5 sensores VL53L0X multiplexados.',
-      dimensions: 'Design estrutural confinado às regras da categoria Mini Sumô (máximo de 10x10 cm). A própria PCB precisou ser otimizada mecanicamente para se integrar de forma eficiente ao chassi metálico, sem exceder as cotas regulamentares.',
-      protection: 'Implementação de planos de terra (GND planes) reforçados e vias térmicas (thermal vias) sob os controladores de motor (ponte H) para dissipar o calor gerado durante as disputas travadas no dojô, onde a corrente sobe drasticamente devido à alta tração mecânica.',
+      schematic: 'O circuito foi redesenhado para utilizar componentes SMD, incluindo resistores e capacitores nos tamanhos 0603 e 0402. Sempre que possível, os circuitos que antes utilizavam módulos prontos foram integrados diretamente à placa, como os sensores e o MPU6050. Isso ajudou a reduzir o espaço ocupado pelo hardware.',
+      controller: 'O ESP32 foi mantido como controlador principal. O projeto considera a organização do firmware em tarefas com FreeRTOS para separar a leitura dos sensores e o controle dos motores, facilitando o gerenciamento das funções do robô.',
+      power: 'A alimentação foi adaptada para uma placa menor, substituindo módulos Step-Down maiores por reguladores buck integrados. A escolha desses componentes ajudou a reduzir o espaço ocupado pelos circuitos de alimentação.',
+      communication: 'Os cinco sensores VL53L0X compartilham o barramento I2C. Para evitar conflitos de endereço, foi mantido o controle individual dos pinos XSHUT. No layout, também procurei manter as trilhas de comunicação organizadas e afastadas, quando possível, das trilhas de corrente dos motores.',
+      dimensions: 'O layout foi pensado para caber em um robô da categoria Mini Sumô, com limite de 10 x 10 cm e massa máxima de 500 g. O posicionamento dos componentes também levou em conta o espaço disponível no chassi e a posição dos sensores.',
+      protection: 'Foram utilizados planos de terra e vias térmicas próximos aos circuitos de potência, buscando melhorar o retorno das correntes e a dissipação de calor. Esses cuidados são importantes porque os motores podem exigir correntes elevadas durante o funcionamento.',
       hardwareComponents: [
         'ESP32 (SMD)',
         'Sensores ToF VL53L0X (Integrados)',
@@ -861,44 +926,44 @@ void realizarMedicao() {
         'Componentes Passivos SMD 0603/0402'
       ],
       engineeringSkills: [
-        'Roteamento de PCB de Alta Densidade (HDI)',
+        'Roteamento de PCB compacta com componentes SMD',
         'Miniaturização de Hardware',
-        'Controle de EMI/EMC em Espaços Reduzidos',
+        'Cuidados com ruído elétrico no layout de PCB',
         'Gestão Térmica em PCB (Thermal Vias)',
-        'Soldagem e Integração de Componentes SMD Discretos'
+        'Integração de componentes SMD'
       ]
     },
     media: {
       roboMontado1: {
-        title: 'Robô Mini Sumô (Perspectiva)',
-        description: 'Visão geral da montagem .',
-        url: '/images/MINISUMO_ANGULO.jpeg' // <-- Adicione a imagem na pasta
+        title: 'Mini Sumô Autônomo (500 g) — Projeto de Hardware',
+        description: 'Vista em perspectiva do mini sumô e da disposição dos seus componentes.',
+        url: '/images/MINISUMO_ANGULO.jpeg'
       },
       roboMontado2: {
-        title: 'Detalhe Estrutural',
-        description: 'Posiocionamento dos sensores frontais.',
-        url: '/images/MINISUMO.jpeg' // <-- Adicione a imagem na pasta
+        title: 'Mini Sumô Autônomo (500 g) — Projeto de Hardware',
+        description: 'Detalhe da estrutura e do posicionamento dos sensores na parte frontal.',
+        url: '/images/MINISUMO.jpeg'
       },
       pcbLayout: {
-        title: 'Layout da PCB ',
-        description: 'Roteamento SMD focado no isolamento de ruídos eletromagnéticos entre a potência dos motores e o processamento lógico.',
-        url: '/images/AfroditeMini.png' // <-- Adicione a imagem na pasta
+        title: 'Mini Sumô Autônomo (500 g) — Projeto de Hardware',
+        description: 'Layout da PCB com os circuitos de controle, sensores e potência organizados em uma área compacta.',
+        url: '/images/AfroditeMini.png'
       },
       schematic: {
-        title: 'Esquemático Eletrônico',
-        description: 'Diagrama de transição evidenciando a substituição de módulos prontos por componentes integrados diretamente.',
-        url: '/images/esquematico.png' // <-- Adicione a imagem na pasta
+        title: 'Mini Sumô Autônomo (500 g) — Projeto de Hardware',
+        description: 'Esquemático eletrônico desenvolvido com componentes integrados diretamente à placa.',
+        url: '/images/esquematico.png'
       }
     },
-    result: 'A miniaturização foi bem-sucedida, resultando em uma PCB extremamente compacta e otimizada termicamente. O layout rigoroso blindou os sinais lógicos contra os picos de ruído induzidos pela ponte H, garantindo ao robô um tempo de reação impecável e comunicação I2C estável mesmo sob intenso estresse elétrico e mecânico.',
+    result: 'O projeto resultou em uma versão mais compacta do circuito eletrônico do Afrodite, com componentes SMD e integração dos sensores na PCB. Durante o desenvolvimento, pratiquei a criação de esquemáticos e o roteamento de placas com pouco espaço disponível, além de estudar alimentação, comunicação I2C e dissipação de calor. Para confirmar a resistência a ruídos e o desempenho térmico, ainda são necessários testes na placa montada.',
     githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/MiniSumo'
   },
  {
     id: 'can-bus-obd2-hacking',
-    title: 'Scanner Automotivo e Engenharia Reversa via CAN-BUS',
+    title: 'Scanner Automotivo com ESP32 e CAN-BUS',
     category: 'Hardware',
     
-    shortDescription: 'Desenvolvimento de um scanner OBD-II sem fio com ESP32, implementando stack ISO-TP customizada para decodificação de telemetria, DTCs e Freeze Frames.',
+    shortDescription: 'Desenvolvimento de um scanner OBD-II com ESP32 e MCP2515 para ler mensagens CAN, consultar informações do veículo e enviar dados por Bluetooth.',
     
     technologies: [
       'C/C++',
@@ -914,24 +979,24 @@ void realizarMedicao() {
     
     featured: true,
     
-    summary: 'Projeto completo de um datalogger e scanner automotivo sem fio. O sistema utiliza um ESP32 e um controlador MCP2515 para acessar a rede CAN veicular. Além de ler dados brutos (RAW), o firmware foi projetado para atuar como um scanner OBD-II ativo, solicitando o chassi (VIN), varrendo Códigos de Falha (DTCs), extraindo o contexto do erro (Freeze Frame) e transmitindo a telemetria em tempo real via Bluetooth.',
+    summary: 'O projeto consiste no desenvolvimento de um scanner automotivo com ESP32 e controlador CAN MCP2515. A ideia foi criar uma ferramenta para acompanhar mensagens da rede CAN e consultar informações disponíveis pelo padrão OBD-II, como dados de funcionamento do motor, códigos de falha e identificação do veículo (VIN). Também implementei a transmissão das informações por Bluetooth, permitindo acompanhar as leituras sem precisar conectar o computador diretamente ao circuito.',
     
-    problem: 'Ferramentas de diagnóstico comerciais costumam atuar como "caixas pretas", ocultando os dados RAW e limitando a análise de engenharia. O desafio era construir um hardware de baixo custo e desenvolver, do zero, uma stack de comunicação capaz não apenas de ler mensagens simples de 8 bytes, mas de remontar pacotes longos e gerenciar o fluxo de dados com a ECU em diferentes taxas de transmissão.',
+    problem: 'Uma das maiores dificuldades foi trabalhar com a comunicação entre o ESP32 e os módulos eletrônicos do veículo. Algumas respostas OBD-II cabem em uma única mensagem CAN, enquanto outras precisam ser divididas em vários quadros. Por isso, foi necessário estudar o protocolo ISO-TP, organizar as solicitações feitas à ECU e tratar diferentes velocidades de comunicação.',
     
-    contribution: 'Desenvolvi o firmware em C++ implementando uma arquitetura baseada em Máquina de Estados para orquestrar as requisições OBD-II de forma não-bloqueante. Programei a detecção automática de baud rate (500k, 250k, 125k), a rotina de PID Discovery e, principalmente, uma camada ISO-TP customizada para gerenciar a fragmentação de mensagens, permitindo o tráfego de pacotes extensos como a leitura do VIN (Modo 09) e falhas ativas (Modo 03).',
+    contribution: '',
     
     engineeringDetails: {
-      firmwareArchitecture: 'Implementação de uma Máquina de Estados (OBD_IDLE, REQUEST_VIN, REQUEST_DTC, REQUEST_FF) para evitar o bloqueio do processador e garantir a prioridade máxima para a leitura do barramento CAN através de interrupções (emuladas por polling rápido).',
+      firmwareArchitecture: 'O firmware foi organizado com uma máquina de estados para controlar as consultas OBD-II, incluindo leitura do VIN, códigos de falha e Freeze Frame. Essa organização ajuda a executar as solicitações sem interromper constantemente a leitura do barramento CAN.',
       
-      isoTpStack: 'Desenvolvimento manual do protocolo de transporte ISO 15765-2 (ISO-TP). O firmware é capaz de processar Single Frames, identificar First Frames, responder com mensagens de controle de fluxo (Flow Control / CTS) respeitando os tempos de STmin, e remontar Consecutive Frames em um buffer local.',
+      isoTpStack: 'Implementei uma rotina para tratar mensagens ISO-TP, utilizadas quando uma resposta OBD-II precisa de mais de um quadro CAN. O código identifica Single Frames e First Frames, envia mensagens de controle de fluxo e junta os Consecutive Frames em um buffer para reconstruir a resposta.',
       
-      diagnostics: 'Suporte a múltiplos modos OBD-II: Mode 01 (Live Data), Mode 02 (Freeze Frame), Mode 03 (Leitura de DTCs), Mode 04 (Limpeza de falhas com trava de segurança de RPM) e Mode 09 (VIN).',
+      diagnostics: 'O firmware possui rotinas para os modos OBD-II 01 (dados em tempo real), 02 (Freeze Frame), 03 (leitura de códigos de falha), 04 (limpeza de códigos) e 09 (informações do veículo, como VIN). A disponibilidade de cada informação depende do veículo e de sua ECU.',
       
-      hardware: 'Utilização do microcontrolador ESP32 integrado ao controlador CAN MCP2515 (via barramento SPI a 8MHz) em modo promíscuo (Filtros e Máscaras em 0x00) para capturar tanto mensagens de diagnóstico (0x7DF-0x7EF) quanto tráfego proprietário das montadoras.',
+      hardware: 'O ESP32 se comunica com o MCP2515 pelo barramento SPI. O controlador CAN permite receber mensagens de diagnóstico e observar quadros da rede. Também foram previstas tentativas de comunicação em diferentes velocidades, como 500, 250 e 125 kbit/s.',
       
-      connectivity: 'Integração com a stack Bluetooth clássica do ESP32 (BluetoothSerial) para streaming bidirecional da telemetria e recepção de comandos do usuário (ex: limpar falhas) de forma remota.',
+      connectivity: 'Foi utilizada a biblioteca BluetoothSerial do ESP32 para enviar as informações coletadas e receber comandos. Assim, é possível acompanhar os dados do scanner por meio de uma conexão Bluetooth.',
       
-      safety: 'Implementação de fallback de endereçamento (0x7DF, 0x7E0, 0x7E1) para aumentar a compatibilidade entre diferentes módulos do motor e rotina de segurança que bloqueia o comando de limpeza de falhas caso o motor esteja em funcionamento (RPM > 0).'
+      safety: 'O código prevê diferentes identificadores CAN para realizar as consultas e inclui uma verificação de RPM antes do comando de limpeza de falhas. Essa proteção é uma medida adicional de software e não substitui os cuidados necessários ao conectar equipamentos à rede de um veículo.'
     },
     
     codeSnippet: {
@@ -961,15 +1026,15 @@ if (pciType == 0x1) { // FIRST FRAME detectado
 }`
     },
     
-    result: 'O hardware e o firmware operaram com sucesso, estabelecendo comunicação estável, identificando os parâmetros suportados pelo veículo (PID Discovery) e processando telemetria e códigos de falha em tempo real através da interface Bluetooth, validando a robustez da stack ISO-TP desenvolvida.',
+    result: 'O projeto permitiu colocar em prática conhecimentos de C++, ESP32 e comunicação automotiva. O firmware foi desenvolvido para consultar parâmetros OBD-II, tratar respostas divididas em vários quadros pelo ISO-TP e enviar informações por Bluetooth. A atividade também ajudou a compreender melhor o funcionamento da rede CAN e a importância de organizar as mensagens e seus tempos de resposta.',
     
-    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/CarControl' // <-- Ajuste o link do seu repositório aqui
+    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/CarControl'
   },
  {
     id: 'ir-universal-cloner',
-    title: 'Clonador Universal Infravermelho para Automação',
+    title: 'Controle Infravermelho Universal para Ar-Condicionado',
     category: 'IoT',
-    shortDescription: 'Sistema embarcado IoT com termostato preditivo e interface universal baseada em macros C para abstração de 19 protocolos de climatização.',
+    shortDescription: 'Sistema com ESP32 para controlar aparelhos de ar-condicionado por infravermelho, monitorar temperatura e trocar informações pela rede Wi-Fi usando MQTT.',
     technologies: [
       'ESP32', 
       'C/C++', 
@@ -981,14 +1046,14 @@ if (pciType == 0x1) { // FIRST FRAME detectado
     ],
     imageUrl: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=1200&q=80',
     featured: false,
-    summary: 'Projeto de um nó IoT (ITW-600) para automação de centrais de ar-condicionado. O sistema realiza engenharia reversa e reprodução de sinais infravermelhos (IR), e integra um sensor de temperatura (DS18B20) para operar como um termostato preditivo autônomo conectado à rede via MQTT. O projeto foi projetado para ambientes corporativos, suportando provisionamento via SmartConfig e atualização contínua do banco de dados na EEPROM.',
-    problem: 'O ecossistema de climatização corporativa possui dezenas de marcas (Samsung, Carrier, Midea, Hitachi, etc.), cada uma com sua própria estrutura de codificação IR. Era necessário criar um dispositivo universal, capaz de autodetectar o modelo do equipamento, controlar ativamente a temperatura do ambiente sem oscilações bruscas (liga/desliga frequente) e comunicar-se de forma segura com um broker MQTT, sem travar o processador durante as tentativas de reconexão de rede.',
-    contribution: 'Desenvolvi um firmware no padrão RTOS, onde a comunicação de rede e o provisionamento (ESP-Touch/SmartConfig) operam em background, enquanto o controle térmico roda continuamente. A principal contribuição arquitetural foi a criação de uma interface genérica de controle (ACInterface) estruturada via Macros C e ponteiros de função, permitindo integrar 19 bibliotecas de fabricantes diferentes em uma única lista gerenciável, reduzindo drasticamente o consumo de memória RAM do ESP32.',
+    summary: 'O projeto teve como objetivo desenvolver um dispositivo com ESP32 para controlar diferentes modelos de ar-condicionado por sinais infravermelhos. O sistema utiliza um sensor DS18B20 para acompanhar a temperatura do ambiente e pode enviar comandos aos aparelhos de acordo com a temperatura desejada. Também foram incluídas funções de comunicação Wi-Fi e MQTT para permitir o controle remoto e o acompanhamento das informações.',
+    problem: 'O principal desafio foi criar um firmware capaz de trabalhar com diferentes protocolos de controle infravermelho, já que cada fabricante utiliza comandos próprios. Além disso, era necessário ler a temperatura, controlar o aparelho e manter a comunicação com a rede sem deixar uma função atrapalhar a outra. Outro cuidado foi evitar ajustes muito frequentes de temperatura.',
+    contribution: '',
     engineeringDetails: {
-      firmwareArchitecture: 'Implementação de arquitetura baseada em abstração de ponteiros de função (`ACInterface`) para polimorfismo em C, instanciando drivers apenas sob demanda através de macros de pré-compilação (`DEF_DRIVER_...`).',
-      thermostatControl: 'O controle de temperatura não usa apenas limite superior/inferior. Implementei um Filtro de Média Móvel Exponencial (EMA) sobre o sinal RAW do sensor e o cálculo da Taxa de Variação (Derivativa dT/dt). O algoritmo prediz a inércia térmica da sala e ajusta o setpoint do AC de forma suave, respeitando margens de overshoot e tempos de acomodação (Settling Time).',
-      connectivity: 'Provisionamento de rede WiFi sem contato físico (headless) utilizando o protocolo SmartConfig/ESP-Touch. O dispositivo entra na rede e se cadastra automaticamente no Broker MQTT (iotew.com.br), gerenciando payloads dinâmicos (JSON) e tolerância a falhas (reconexões automáticas e salvamento de estado de pânico na EEPROM).',
-      memoryManagement: 'Estruturação avançada de gravação na memória Flash/EEPROM, salvando as credenciais de rede, perfil do driver AC autodetectado e configurações do termostato, garantindo a recuperação integral do estado do sistema após quedas de energia e proteção contra loops infinitos de reset de Watchdog.',
+      firmwareArchitecture: 'Para organizar os diferentes aparelhos, utilizei uma interface chamada ACInterface, baseada em ponteiros de função e macros em C/C++. Essa estrutura permite reunir drivers de diferentes fabricantes e selecionar as funções necessárias para cada modelo. O projeto contempla suporte a 19 conjuntos de drivers/protocolos de climatização.',
+      thermostatControl: 'A temperatura é lida por um sensor DS18B20 e passa por um filtro de média móvel exponencial (EMA), usado para suavizar pequenas variações nas leituras. O firmware também calcula a taxa de mudança da temperatura (dT/dt). Com essas informações, a lógica procura ajustar o setpoint do ar-condicionado de forma gradual, respeitando um intervalo mínimo entre comandos.',
+      connectivity: 'A conexão Wi-Fi utiliza SmartConfig/ESP-Touch para configurar a rede sem precisar alterar o código do dispositivo. A comunicação MQTT permite enviar informações e receber comandos de uma plataforma externa. Também foram previstas rotinas de reconexão em caso de perda da rede.',
+      memoryManagement: 'As configurações de rede, do aparelho selecionado e do controle de temperatura são armazenadas em memória não volátil. Isso permite recuperar os parâmetros após reiniciar ou desligar o equipamento.',
       components: [
         'Microcontrolador ESP32', 
         'Sensor de Temperatura 1-Wire DS18B20', 
@@ -1040,14 +1105,14 @@ void runThermostat() {
   }
 }`
     },
-    result: 'Dispositivo IoT altamente estável, capaz de controlar ativamente o conforto térmico e minimizar gastos energéticos evitando oscilações excessivas. A abstração universal (`ACInterface`) reduziu o código repetitivo, permitindo suporte "plug-and-play" para novas marcas de AC no futuro através de atualizações OTA (Over-The-Air).',
-    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/InflaCold/itw600_v001' // <-- Coloque o seu link
+    result: 'O desenvolvimento resultou em um firmware que reúne controle por infravermelho, leitura de temperatura e comunicação Wi-Fi/MQTT em um único dispositivo. O uso da interface ACInterface facilitou a organização dos protocolos, enquanto o filtro EMA e o cálculo da variação de temperatura permitiram experimentar uma lógica de controle mais gradual. O projeto foi importante para praticar programação embarcada, integração de sensores e comunicação IoT.',
+    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/InflaCold/itw600_v001'
   },
   {
     id: 'naca-5312-aerodynamic-analysis',
-    title: 'Análise Aerodinâmica e Otimização Paramétrica do NACA 5312',
+    title: 'Análise Aerodinâmica do Perfil NACA 5312',
     category: 'Aerospace',
-    shortDescription: 'Estudo paramétrico do perfil NACA 5312 utilizando XFLR5 e Python para investigar a influência da geometria sobre sustentação, arrasto, eficiência, pressão e camada limite.',
+    shortDescription: 'Estudo do perfil NACA 5312 no XFLR5, com comparação de alterações geométricas e análise dos resultados por meio de gráficos gerados em Python.',
     technologies: [
       'XFLR5',
       'Python',
@@ -1059,45 +1124,45 @@ void runThermostat() {
     ],
     imageUrl: '/images/naca.jpg',
     
-    // === BASTA ADICIONAR ESTE BLOCO AQUI ===
+   
     gallery: [
       '/images/naca-cl-alpha.png',
       '/images/naca-efficiency.png',
       '/images/naca-cd-alpha.png',
       '/images/naca-boundary-layer.png'
     ],
-    // =======================================
+   
 
     featured: true,
-    summary: 'Estudo computacional do perfil aerodinâmico NACA 5312 com o objetivo de investigar como alterações individuais em sua geometria modificam o desempenho aerodinâmico...',
-    problem: 'O desempenho de um perfil aerodinâmico depende diretamente de sua geometria e das condições do escoamento. O desafio do projeto foi separar a influência de diferentes parâmetros geométricos sobre o comportamento do NACA 5312, evitando analisar apenas o perfil como uma configuração única. Para isso, foram desenvolvidas variações controladas de espessura, posição da espessura máxima, camber, posição do camber máximo, raio do bordo de ataque e geometria do bordo de fuga, permitindo comparar sistematicamente os efeitos de cada modificação.',
-    contribution: 'Participei do desenvolvimento da análise aerodinâmica do NACA 5312, estruturando as comparações entre diferentes geometrias e interpretando os resultados das simulações. O estudo envolveu a configuração das análises no XFLR5, avaliação das curvas aerodinâmicas e processamento dos resultados em Python. Foram analisadas as relações entre geometria e coeficientes aerodinâmicos, distribuição de pressão, camada limite e centro de pressão, permitindo identificar quais modificações apresentavam maior impacto sobre o desempenho do perfil.',
+    summary: 'O projeto teve como objetivo estudar como mudanças no formato do perfil NACA 5312 influenciam seu comportamento aerodinâmico. Utilizei o XFLR5 para comparar diferentes geometrias, alterando características como espessura, camber e formato dos bordos de ataque e fuga. Depois, organizei os resultados em Python e gerei gráficos para observar as mudanças na sustentação, no arrasto, no momento aerodinâmico e em outras características do escoamento.',
+    problem: 'O principal desafio foi entender quais alterações da geometria tinham maior influência nos resultados aerodinâmicos. Em vez de comparar perfis muito diferentes ao mesmo tempo, organizei o estudo para modificar um parâmetro de cada vez e manter os demais constantes. Dessa forma, foi possível observar melhor o efeito da espessura, do camber e das alterações nos bordos do perfil.',
+    contribution: '',
     engineeringDetails: {
-      baseline: 'O perfil de referência utilizado foi o NACA 5312. Sua nomenclatura indica 5% de camber máximo, localizado a 30% da corda, e espessura máxima correspondente a 12% da corda. O perfil foi utilizado como referência para todas as modificações geométricas realizadas ao longo do estudo.',
-      simulation: 'As simulações foram realizadas utilizando o XFLR5, baseado em métodos de painel combinados a modelos de camada limite. As condições analisadas abrangeram números de Reynolds entre 4 × 10^6 e 6 × 10^6, números de Mach entre 0,15 e 0,22 e ângulos de ataque entre -2° e 14°.',
-      postProcessing: 'Os resultados das simulações foram exportados e posteriormente tratados em Python. O processamento permitiu organizar os dados, gerar gráficos comparativos e avaliar de maneira consistente as diferenças entre as configurações geométricas analisadas.',
-      parameters: 'O estudo foi estruturado de forma paramétrica, alterando individualmente características geométricas do perfil enquanto os demais parâmetros eram mantidos constantes. Essa abordagem permitiu associar diretamente cada alteração geométrica às mudanças observadas no comportamento aerodinâmico.',
-      thickness: 'Foi analisada a influência da espessura máxima e de sua posição ao longo da corda. Foram comparadas configurações com espessura de 8% e 16%, além do deslocamento da posição da espessura máxima de 30% para 40% da corda. Os resultados mostraram que a posição da espessura pode ser tão relevante quanto seu valor absoluto, especialmente em relação ao arrasto, separação do escoamento e comportamento em elevados ângulos de ataque.',
-      camber: 'A influência do camber também foi investigada por meio de configurações com 3% e 6% de curvatura máxima, além do deslocamento da posição do camber máximo de 30% para 40% da corda. O aumento do camber apresentou forte influência sobre a sustentação e sobre a eficiência aerodinâmica, enquanto o deslocamento da curvatura alterou a distribuição de pressão e a posição do centro de pressão.',
-      leadingEdge: 'O raio do bordo de ataque foi analisado por meio de três configurações relativas ao valor original: 0,80R, 1,12R e 1,15R. A análise mostrou que alterações no raio modificam principalmente características associadas à região frontal e à transição do escoamento, apresentando influência relativamente limitada sobre os coeficientes aerodinâmicos globais.',
-      trailingEdge: 'Também foi investigada a influência da forma e da espessura do bordo de fuga. As modificações permitiram avaliar o efeito da distribuição de carga na região posterior do perfil, incluindo alterações no momento aerodinâmico, no centro de pressão e no comportamento da esteira.',
+      baseline: 'O perfil utilizado como referência foi o NACA 5312, que possui camber máximo de 5% da corda, localizado a 30% da corda, e espessura máxima de 12% da corda. As outras configurações foram comparadas com esse perfil inicial.',
+      simulation: 'As análises foram realizadas no XFLR5, utilizando métodos de painéis e modelos de camada limite. Foram consideradas condições com números de Reynolds entre 4 × 10^6 e 6 × 10^6, Mach de 0,15 a 0,22 e ângulos de ataque de -2° a 14°.',
+      postProcessing: 'Os resultados foram exportados do XFLR5 e organizados em Python. Com isso, foi possível gerar gráficos comparativos e analisar as diferenças entre os perfis de maneira mais clara.',
+      parameters: 'As geometrias foram modificadas de forma separada, variando um parâmetro por vez. Essa organização ajudou a relacionar cada mudança de formato com as diferenças observadas nas curvas aerodinâmicas.',
+      thickness: 'Foram comparadas espessuras máximas de 8% e 16% da corda, além de mudanças na posição da espessura máxima, de 30% para 40% da corda. Essas análises ajudaram a observar como a espessura e sua posição influenciam o arrasto e o comportamento do perfil em diferentes ângulos de ataque.',
+      camber: 'Também foram analisados valores de camber máximo de 3% e 6%, além de posições de 30% e 40% da corda. Os resultados mostraram mudanças na sustentação, no arrasto e na distribuição de pressão, destacando a influência da curvatura do perfil.',
+      leadingEdge: 'O raio do bordo de ataque foi alterado para 0,80R, 1,12R e 1,15R em relação ao valor original. A comparação permitiu observar o efeito dessas mudanças nas características aerodinâmicas, principalmente na região frontal do perfil.',
+      trailingEdge: 'Foram testadas alterações na forma e na espessura do bordo de fuga. A comparação ajudou a observar mudanças na distribuição de pressão, no momento aerodinâmico e no comportamento da região posterior do perfil.',
       aerodynamicCurves: [
         'CL × α (Sustentação)',
         'CD × α (Arrasto)',
         'CM × α (Momento)',
         'CL/CD × α (Eficiência)',
-        'Identificação de CL,max',
-        'Identificação do ângulo de estol',
+        'Estimativa de CL,max no modelo',
+        'Estimativa do ângulo de estol no modelo',
         'Análise do momento de arfagem'
       ],
-      pressureAnalysis: 'Foram analisadas distribuições do coeficiente de pressão Cp ao longo da corda para diferentes ângulos de ataque. A análise permitiu identificar picos de sucção, alterações na distribuição de pressão e mudanças no carregamento aerodinâmico provocadas pelas modificações geométricas.',
-      boundaryLayer: 'A camada limite foi analisada por meio da espessura de deslocamento ao longo da corda. Essa análise permitiu avaliar como diferentes geometrias modificam o crescimento da camada limite, os gradientes de pressão e a tendência à separação do escoamento.',
-      centerOfPressure: 'O comportamento do centro de pressão foi avaliado em função do ângulo de ataque. A posição do centro de pressão foi utilizada para relacionar alterações na distribuição de pressão com mudanças no momento aerodinâmico e nas características de estabilidade longitudinal do perfil.',
-      analysis: 'Ao todo, foram gerados mais de 40 gráficos para comparar os diferentes cenários. A análise conjunta dos resultados permitiu avaliar os efeitos da geometria não apenas sobre sustentação e arrasto, mas também sobre eficiência aerodinâmica, momento, pressão, camada limite e centro de pressão.',
+      pressureAnalysis: 'A distribuição do coeficiente de pressão (Cp) foi comparada ao longo da corda para diferentes ângulos de ataque. Os gráficos ajudaram a identificar regiões de maior sucção e mudanças na distribuição de carga aerodinâmica.',
+      boundaryLayer: 'Também observei resultados relacionados à camada limite, como a espessura de deslocamento ao longo da corda. Essa etapa ajudou a entender como diferentes geometrias influenciam o comportamento do escoamento próximo à superfície.',
+      centerOfPressure: 'Foi analisada a variação do centro de pressão com o ângulo de ataque, relacionando sua posição às mudanças na distribuição de pressão e no momento aerodinâmico.',
+      analysis: 'Ao todo, foram gerados mais de 40 gráficos para comparar as configurações. A análise incluiu curvas de sustentação, arrasto, eficiência e momento, além de resultados de pressão, camada limite e centro de pressão.',
       mainFindings: [
         'Aumento do CL associado ao aumento do Reynolds, camber e modificações no bordo de fuga.',
         'Aumento do arrasto associado à redução do Reynolds, aumento da espessura e camber.',
-        'Aumento do camber apresentou forte influência positiva sobre a sustentação e a eficiência.',
+        'O aumento do camber teve influência importante na sustentação e na eficiência nas condições analisadas.',
         'O raio do bordo de ataque apresentou influência pequena nos coeficientes aerodinâmicos globais.',
         'O deslocamento da espessura máxima e do camber modificou significativamente a distribuição de pressão.',
         'As alterações apresentaram efeitos diferentes dependendo do ângulo de ataque analisado.'
@@ -1105,25 +1170,25 @@ void runThermostat() {
       engineeringSkills: [
         'Modelagem de perfis aerodinâmicos',
         'Análise paramétrica',
-        'Aerodinâmica computacional (CFD Básico)',
+        'Aerodinâmica computacional (método dos painéis)',
         'Método dos Painéis',
         'Análise de camada limite',
         'Distribuição de pressão',
         'Processamento de dados (Python)',
         'Geração e interpretação de curvas',
-        'Análise de estabilidade longitudinal'
+        'Análise de centro de pressão e momento aerodinâmico'
       ]
     },
-    result: 'A análise demonstrou que pequenas alterações geométricas podem produzir mudanças significativas no comportamento aerodinâmico do perfil, embora a influência de cada parâmetro dependa da faixa de ângulo de ataque e das condições de escoamento. O aumento do camber e determinadas alterações na geometria do bordo de fuga apresentaram forte influência sobre a sustentação e a eficiência. O estudo evidenciou a importância da distribuição de pressão e do comportamento da camada limite para compreender as diferenças observadas nas curvas. A metodologia permitiu relacionar diretamente modificações geométricas com desempenho aerodinâmico.',
-    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/AnaliseNaca', // <-- Altere para o seu repositório real
+    result: 'O estudo mostrou que alterações no formato do NACA 5312 podem modificar bastante os resultados aerodinâmicos, dependendo do ângulo de ataque e das condições do escoamento. O camber e algumas mudanças no bordo de fuga apresentaram influência importante na sustentação, enquanto outras alterações afetaram o arrasto e a distribuição de pressão. O projeto foi uma oportunidade de praticar o XFLR5, organizar resultados em Python e compreender melhor a relação entre geometria e desempenho aerodinâmico.',
+    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/AnaliseNaca',
     // @ts-ignore
     report: 'Relatório técnico completo: Análise do Perfil Aerodinâmico NACA 5312.'
   },
   {
     id: 'quilli-smart-aquarium',
-    title: 'Aquário Inteligente',
+    title: 'Quilli — Aquário Inteligente',
     category: 'IoT',
-    shortDescription: 'Sistema embarcado para automação de aquário, integrando controle de temperatura, alimentação programada, iluminação com intensidade ajustável e conectividade Wi-Fi.',
+    shortDescription: 'Sistema de automação de aquário com ESP32, controle de temperatura, alimentação programada, iluminação ajustável e comunicação Wi-Fi/MQTT.',
     technologies: [
       'C/C++',
       'ESP32',
@@ -1137,30 +1202,30 @@ void runThermostat() {
       'PWM',
       'Sistemas Embarcados'
     ],
-    imageUrl: '/images/Aquario.jpeg', // Imagem principal provisória
+    imageUrl: '/images/Aquario.jpeg',
     featured: true,
-    summary: 'Desenvolvimento do Quilli, um aquário inteligente baseado em ESP32 desenvolvido para automatizar as principais tarefas de manutenção e controle do aquário. O sistema integra controle automático de temperatura, alimentação programada, iluminação com ajuste de intensidade e horários, interface gráfica TFT e conectividade Wi-Fi. A arquitetura foi desenvolvida para permitir que as diferentes funções operem de forma independente e coordenada, reduzindo a necessidade de intervenção manual do usuário.',
-    problem: 'A manutenção de um aquário envolve tarefas que precisam ser realizadas de maneira periódica e consistente, como controlar a temperatura da água, alimentar os peixes em horários determinados e reproduzir ciclos adequados de iluminação. O objetivo do projeto foi desenvolver um sistema capaz de automatizar essas funções e centralizar seu controle em uma única plataforma, permitindo configurar horários, intensidades e parâmetros diretamente pela interface do equipamento ou remotamente.',
-    contribution: 'Atuei no desenvolvimento do firmware e na integração entre hardware e software do Quilli. Implementei as rotinas de controle de temperatura, acionamento do termostato e cooler, programação dos horários de alimentação, controle da intensidade e dos horários da iluminação, além da interface gráfica e comunicação Wi-Fi/MQTT. Também trabalhei na organização do firmware em diferentes tarefas e temporizadores para que as funções de monitoramento, controle e comunicação pudessem operar simultaneamente.',
+    summary: 'O Quilli é um sistema de automação de aquário desenvolvido com ESP32. O projeto reúne funções de controle de temperatura, alimentação automática, iluminação programável e uma interface gráfica em display TFT. Também utiliza Wi-Fi e MQTT para troca de informações e comandos. Durante o desenvolvimento, trabalhei no firmware e na integração entre sensores, atuadores, interface e comunicação, buscando reunir as principais funções do aquário em um único sistema.',
+    problem: 'Manter um aquário exige acompanhar a temperatura da água, alimentar os peixes em horários definidos e controlar a iluminação. O desafio foi automatizar essas tarefas sem precisar de um controlador separado para cada uma. Também foi necessário organizar o código para que leitura de sensores, acionamento dos equipamentos, atualização da tela e comunicação com a rede funcionassem de maneira coordenada.',
+    contribution: '',
     engineeringDetails: {
-      systemArchitecture: 'O Quilli utiliza um ESP32 como controlador principal, responsável pelo processamento das informações dos sensores, execução das rotinas de automação, controle dos atuadores, atualização da interface e comunicação com o servidor. O firmware foi dividido em módulos específicos para gerenciamento de memória, comunicação, interface, sensores e funções de controle.',
-      temperatureControl: 'O sistema realiza o monitoramento contínuo da temperatura da água e permite ao usuário definir uma temperatura desejada e uma faixa de controle. A partir da temperatura medida, o firmware determina automaticamente qual atuador deve ser acionado para aproximar a água da temperatura configurada.',
-      thermostat: 'O controle de aquecimento é realizado por meio de um termostato acionado pelo ESP32. Quando a temperatura está abaixo da condição desejada, o sistema pode ativar o aquecedor e mantê-lo funcionando até que a temperatura alcance a faixa estabelecida. O firmware também possui limites de segurança para evitar o acionamento do controle quando a temperatura medida estiver fora de uma faixa válida.',
-      cooler: 'Quando a temperatura da água ultrapassa a faixa configurada, o sistema pode acionar um cooler para realizar o resfriamento. Dessa forma, o Quilli consegue atuar tanto no aquecimento quanto no resfriamento, mantendo a temperatura próxima ao valor definido pelo usuário.',
-      temperatureSafety: 'Foram definidos limites mínimo e máximo para a temperatura considerada válida. Caso a leitura ultrapasse esses limites, o sistema interrompe o acionamento do aquecedor e do cooler, desabilitando temporariamente o controle automático para evitar que uma leitura inválida provoque um acionamento inadequado.',
-      feedingControl: 'O sistema possui um alimentador automático capaz de executar rotinas de alimentação previamente programadas. O usuário pode definir os horários em que a alimentação deve ocorrer e a quantidade de acionamentos do mecanismo, permitindo automatizar completamente essa tarefa.',
-      feedingSchedule: 'As rotinas de alimentação são associadas ao relógio de tempo real do sistema. O ESP32 compara continuamente o horário atual com os horários programados e executa automaticamente o alimentador quando uma rotina é atingida. O sistema também mantém informações sobre as rotinas configuradas e os próximos horários de alimentação.',
-      feedingMemory: 'As configurações das rotinas são armazenadas em memória não volátil, permitindo preservar os horários e parâmetros configurados mesmo após uma reinicialização do equipamento.',
-      lightingControl: 'O Quilli possui controle independente de diferentes canais de iluminação. Cada canal pode ter sua intensidade configurada, permitindo adaptar a iluminação às necessidades do aquário e criar diferentes cenários de funcionamento.',
-      lightingIntensity: 'A intensidade das lâmpadas pode ser ajustada pelo sistema, permitindo controlar a quantidade de luz fornecida ao aquário. O controle da intensidade é realizado de forma independente para os diferentes canais de iluminação, possibilitando combinações distintas entre eles.',
-      lightingSchedule: 'Além da intensidade, o usuário pode programar os horários de funcionamento da iluminação. O sistema utiliza o relógio de tempo real para determinar quando cada rotina deve ser iniciada e encerrada, automatizando o ciclo diário de iluminação.',
-      lightingRoutines: 'O firmware permite armazenar diferentes rotinas de iluminação, associando horários a intensidades específicas para os canais disponíveis. Dessa maneira, é possível criar diferentes períodos de iluminação ao longo do dia em vez de utilizar apenas um estado ligado/desligado.',
-      realTimeClock: 'O sistema utiliza um RTC (Real Time Clock) para manter o horário utilizado pelas funções de automação. O relógio é utilizado principalmente pelas rotinas de alimentação e iluminação, garantindo que os eventos programados sejam executados nos horários definidos pelo usuário.',
-      interface: 'Foi desenvolvida uma interface gráfica utilizando um display TFT para permitir a interação direta com o aquário. A interface apresenta informações de temperatura, estado dos atuadores, iluminação, alimentação e conexão Wi-Fi, além de disponibilizar menus para configuração das principais funções.',
-      wifi: 'O ESP32 possui conectividade Wi-Fi para permitir a configuração e comunicação do sistema com uma infraestrutura externa. O firmware também possui mecanismos para gerenciamento da conexão e reconexão da rede.',
-      mqtt: 'A comunicação MQTT permite que parâmetros e comandos relacionados ao aquário sejam enviados e recebidos remotamente. Essa arquitetura possibilita integrar o Quilli a uma plataforma IoT e controlar funções do equipamento sem depender exclusivamente da interface física.',
-      memory: 'A EEPROM é utilizada para armazenar configurações que precisam permanecer disponíveis após o desligamento do equipamento. Dessa forma, parâmetros de funcionamento, rotinas de iluminação e alimentação podem ser recuperados durante a inicialização do sistema.',
-      multitasking: 'A arquitetura do firmware foi desenvolvida para executar diferentes funções de maneira coordenada. Temporizadores e tarefas independentes são utilizados para lidar com leitura de temperatura, atualização do relógio, comunicação com o servidor, atualização da interface, controle da iluminação, alimentação e controle térmico.',
+      systemArchitecture: 'O ESP32 é o controlador principal do sistema. O firmware foi dividido em partes para leitura de sensores, controle dos equipamentos, interface gráfica, armazenamento de configurações e comunicação. Essa divisão facilitou a organização do código e a integração entre as funções.',
+      temperatureControl: 'O sistema acompanha a temperatura da água e permite configurar um valor desejado e uma faixa de controle. A partir das leituras do sensor, o firmware decide quando acionar o aquecimento ou o resfriamento.',
+      thermostat: 'Quando a água está abaixo da faixa configurada, o ESP32 pode acionar o aquecedor por meio do circuito de controle. O aquecimento é interrompido quando a temperatura alcança a condição definida.',
+      cooler: 'Se a temperatura ultrapassar o limite configurado, o sistema pode ligar um cooler para ajudar no resfriamento da água. Assim, o controle atua tanto no aquecimento quanto no resfriamento.',
+      temperatureSafety: 'O firmware verifica se a leitura de temperatura está dentro de uma faixa considerada válida. Caso a leitura esteja fora desses limites, o aquecedor e o cooler são desligados para evitar acionamentos inadequados.',
+      feedingControl: 'O aquário conta com uma rotina para acionar automaticamente o alimentador. É possível definir os horários e a quantidade de acionamentos do mecanismo de alimentação.',
+      feedingSchedule: 'Os horários de alimentação são comparados com a hora informada pelo relógio de tempo real (RTC). Quando chega o horário programado, o ESP32 executa a rotina de alimentação.',
+      feedingMemory: 'As configurações da alimentação são salvas em memória não volátil para que os horários continuem disponíveis após reiniciar o dispositivo.',
+      lightingControl: 'O sistema permite controlar canais diferentes de iluminação de forma independente, ajustando o funcionamento conforme a configuração escolhida.',
+      lightingIntensity: 'A intensidade das luzes pode ser ajustada por PWM, permitindo definir diferentes níveis de iluminação para cada canal.',
+      lightingSchedule: 'É possível programar os horários em que as luzes devem acender ou apagar. O RTC fornece a referência de tempo para executar essas rotinas.',
+      lightingRoutines: 'Além de ligar e desligar as luzes, o firmware permite programar períodos do dia com intensidades diferentes para cada canal.',
+      realTimeClock: 'O RTC é utilizado para manter os horários das rotinas de alimentação e iluminação, mesmo quando o sistema não está conectado à internet.',
+      interface: 'A interface foi desenvolvida em um display TFT e mostra informações como temperatura, estado dos equipamentos, iluminação, horários de alimentação e conexão Wi-Fi. Também possui menus para alterar as configurações.',
+      wifi: 'O ESP32 utiliza Wi-Fi para se conectar à rede e possui rotinas para tentar restabelecer a conexão quando ela é perdida.',
+      mqtt: 'O protocolo MQTT é utilizado para enviar informações e receber comandos, permitindo integrar o aquário a uma plataforma externa de monitoramento e controle.',
+      memory: 'As configurações de temperatura, iluminação e alimentação são armazenadas em memória não volátil, utilizando a interface EEPROM do firmware.',
+      multitasking: 'O código utiliza tarefas e temporizadores para organizar a leitura dos sensores, o controle dos atuadores, a atualização da tela e a comunicação com a rede, evitando concentrar tudo em uma única rotina.',
       mainFunctions: [
         'Monitoramento da temperatura da água',
         'Controle automático do termostato',
@@ -1192,31 +1257,33 @@ void runThermostat() {
     },
     media: {
       gif1: {
-        title: 'Interface e controle do Quilli',
+        title: 'Quilli — Aquário Inteligente',
         description: 'Demonstração da interface TFT e da navegação entre as funções de controle do aquário.',
-        url: '/images/AquarioFuncionamento2.gif' // Troque pelo caminho real do seu GIF
+        url: '/images/AquarioFuncionamento2.gif'
       },
       gif2: {
-        title: 'Automação do aquário',
+        title: 'Quilli — Aquário Inteligente',
         description: 'Demonstração do funcionamento automático da rotina de alimentação e iluminação.',
-        url: '/images/AquarioFuncionamento.gif' // Troque pelo caminho real do seu GIF
+        url: '/images/AquarioFuncionamento.gif'
       },
       image1: {
-        title: 'Protótipo do Quilli',
+        title: 'Quilli — Aquário Inteligente',
         description: 'Imagem do protótipo, mostrando o hardware e os principais componentes (ESP32, TFT, Sensores).',
-        url: '/images/Aquario.jpeg' // Troque pelo caminho real da sua Imagem
+        url: '/images/Aquario.jpeg'
       },
 
     },
-    result: 'O Quilli resultou em uma plataforma embarcada capaz de automatizar as principais funções de manutenção de um aquário. O sistema controla a temperatura por meio do acionamento de termostato e cooler, automatiza a alimentação de acordo com horários programados e permite controlar tanto a intensidade quanto os horários de funcionamento da iluminação. A integração entre ESP32, sensores, atuadores, RTC, memória, interface TFT e comunicação Wi-Fi/MQTT transformou diferentes tarefas independentes em um único sistema de automação avançado.',
-    githubUrl: 'https://github.com/mateusjrs/quilli-smart-aquarium' // Substitua pelo link correto
+    result: 'O projeto reuniu em um único sistema o monitoramento da temperatura, o controle de aquecimento e resfriamento, a alimentação automática e a programação da iluminação. A integração do ESP32 com sensores, RTC, display TFT, memória e comunicação Wi-Fi/MQTT permitiu desenvolver uma solução de automação para aquários. O trabalho foi importante para praticar C/C++, sistemas embarcados, controle de atuadores e organização de um firmware com várias funções.',
+    githubUrl: 'https://github.com/mateusjrs/quilli-smart-aquarium'
   }
   ,
   {
     id: 'emb-110-flight-dynamics',
     title: 'Análise do Comportamento de Voo do EMB-110 Bandeirante',
     category: 'Aerospace',
-    shortDescription: 'Modelagem aerodinâmica, análise de estabilidade e simulação da dinâmica de voo do EMB-110 Bandeirante utilizando AVL, AutoCAD e MATLAB.',
+
+    shortDescription: 'Estudo da aerodinâmica, estabilidade e dinâmica de voo do EMB-110 Bandeirante, utilizando AutoCAD, AVL e MATLAB.',
+
     technologies: [
       'MATLAB',
       'AVL',
@@ -1225,74 +1292,110 @@ void runThermostat() {
       'Dinâmica de Voo',
       'Mecânica do Voo'
     ],
-imageUrl: '/images/bandeirante-real.jpg', // <--- Foto principal do card
+
+    imageUrl: '/images/bandeirante-real.jpg',
     gallery: [
-      '/images/bandeirante-avl.png', // <--- Imagem do AVL
-      '/images/bandeirante-plot.png' // <--- Gráfico 3D do MATLAB
+      '/images/bandeirante-avl.png',
+      '/images/bandeirante-plot.png'
     ],
-        featured: true,
-    summary: 'Projeto desenvolvido na disciplina de Mecânica do Voo com foco na análise do comportamento aerodinâmico, estabilidade e dinâmica de voo do EMB-110 Bandeirante (C-95). O trabalho envolveu o levantamento e reconstrução da geometria da aeronave, modelagem aerodinâmica utilizando o método Vortex Lattice no AVL, determinação de derivadas aerodinâmicas, análise de trimagem e desenvolvimento de um simulador não linear de seis graus de liberdade (6-DOF) em MATLAB.',
-    problem: 'O projeto exigia a construção de um modelo representativo do EMB-110 a partir de informações disponíveis em manuais técnicos, dados operacionais e documentação de certificação. Algumas dimensões necessárias para a modelagem não estavam disponíveis diretamente, exigindo um processo de reconstrução geométrica. Além disso, era necessário avaliar não apenas as condições de equilíbrio da aeronave, mas também sua resposta dinâmica a diferentes comandos de controle e condições de massa e centro de gravidade.',
-    contribution: 'Realizei o levantamento geométrico da aeronave a partir de suas vistas ortográficas utilizando Autodesk AutoCAD, escalonando as dimensões para obter uma representação compatível com os dados de referência. Desenvolvi a modelagem aerodinâmica no AVL, defini os arquivos de geometria e massa e extraí as derivadas de estabilidade e controle. Em MATLAB, implementei um simulador não linear de seis graus de liberdade utilizando ode45, integrando as forças e momentos aerodinâmicos às equações de movimento e realizando análises das respostas da aeronave a diferentes comandos de controle.',
+    featured: true,
+
+    summary: 'O projeto foi desenvolvido na disciplina de Mecânica do Voo e teve como objetivo estudar o comportamento do EMB-110 Bandeirante. Comecei pela reconstrução da geometria da aeronave a partir de desenhos e informações técnicas. Depois, utilizei o AVL para analisar a aerodinâmica e obter as derivadas de estabilidade e controle. Com esses dados, desenvolvi no MATLAB um simulador de seis graus de liberdade (6-DOF) para observar como a aeronave responde a comandos no aileron, profundor e leme. O estudo também comparou duas condições de massa e centro de gravidade.',
+
+    problem: 'Uma das principais dificuldades foi obter as dimensões necessárias para representar a aeronave, já que nem todas estavam disponíveis diretamente na documentação. Foi necessário utilizar as três vistas como referência e conferir as proporções com os dados conhecidos. Outro desafio foi transformar os resultados aerodinâmicos do AVL em um modelo de dinâmica de voo no MATLAB, permitindo analisar a trimagem e a resposta da aeronave a diferentes comandos.',
+
+    contribution: '',
+
     engineeringDetails: {
-      aircraft: 'O objeto de estudo foi o EMB-110 Bandeirante, aeronave bimotora turboélice de asa baixa, empenagem convencional e estrutura semimonocoque metálica. O estudo foi fundamentado em informações provenientes de manuais operacionais e de manutenção, além do Type Certificate Data Sheet (TCDS) EASA.IM.A.229.',
-      geometry: 'A geometria da aeronave foi reconstruída utilizando três vistas ortográficas — lateral, superior e frontal — importadas para o Autodesk AutoCAD. As imagens foram escalonadas para dimensões reais e utilizadas para obter parâmetros necessários à modelagem aerodinâmica. O modelo considerado possui envergadura de 15,33 m, área alar de 29,10 m², alongamento de 8,08, corda média aerodinâmica de 1,98 m, diedro de 7° e ângulo de incidência da asa de 3°. O comprimento da fuselagem considerado foi de 15,10 m.',
-      cad: 'O uso do AutoCAD permitiu realizar um processo de engenharia reversa da geometria da aeronave. As dimensões obtidas das vistas ortográficas foram comparadas com os valores disponíveis na documentação técnica, buscando manter a coerência entre a geometria reconstruída e os parâmetros oficiais da aeronave. Esse modelo serviu como base para a construção da geometria utilizada posteriormente no AVL.',
-      massAndCG: 'Foram analisadas duas condições de carregamento da aeronave. A primeira considerou massa de 5000 kg e centro de gravidade de aproximadamente 6,534 m. A segunda considerou massa de 3380 kg e centro de gravidade de aproximadamente 6,645 m. A posição do CG foi determinada a partir dos limites de centragem e da condição de massa considerada. A variação de massa e CG foi posteriormente utilizada para avaliar a influência dessas características sobre a estabilidade e a resposta dinâmica da aeronave.',
-      inertia: 'Os momentos de inércia da aeronave foram estimados por um método semiempírico baseado na geometria global, massa e raios de giração adimensionais. Para as condições de 3380 kg e 5000 kg foram obtidos, respectivamente, diferentes valores de Ixx, Iyy e Izz, permitindo representar a alteração das propriedades inerciais do modelo entre as condições de carregamento.',
-      aerodynamicModel: 'A modelagem aerodinâmica foi realizada no Athena Vortex Lattice (AVL), utilizando o Vortex Lattice Method (VLM). A geometria das superfícies sustentadoras foi representada por uma malha de vórtices. A fuselagem foi simplificada no modelo devido às limitações do VLM para representar corpos rombudos, enquanto a asa principal foi prolongada até o plano de simetria para manter a representação aerodinâmica utilizada na análise.',
-      derivatives: 'Foram extraídas do AVL as principais derivadas aerodinâmicas de estabilidade e controle. Esses coeficientes representam a influência de variáveis como ângulo de ataque, ângulo de derrapagem, taxas de rotação e deflexões das superfícies de controle sobre as forças e momentos aerodinâmicos. As derivadas foram utilizadas tanto na análise de trimagem quanto na construção do modelo matemático do simulador de voo.',
-      trim: 'Foi realizada uma análise de trimagem longitudinal para determinar as condições necessárias para manter a aeronave em voo reto e nivelado. O ângulo de ataque e a deflexão do profundor foram calculados analiticamente a partir das derivadas aerodinâmicas e comparados com os resultados obtidos diretamente no AVL. A análise considerou velocidades entre 70 e 130 m/s.',
-      trimValidation: 'A comparação entre os resultados analíticos e a solução numérica do AVL apresentou boa concordância. As maiores diferenças ocorreram nas menores velocidades analisadas, com discrepâncias inferiores a 0,2° no caso mais extremo. Esse resultado forneceu uma validação do modelo analítico de trimagem utilizado no estudo.',
-      simulation: 'Foi desenvolvido em MATLAB um simulador não linear de dinâmica de voo com seis graus de liberdade (6-DOF), utilizando o integrador numérico ode45. O modelo representa os movimentos translacionais e rotacionais da aeronave nos eixos do corpo, as taxas angulares p, q e r, os ângulos de Euler e a posição da aeronave no sistema de referência inercial.',
-      equations: 'O simulador utiliza as equações de movimento para determinar as acelerações lineares e angulares da aeronave. As forças e momentos aerodinâmicos são calculados a partir dos coeficientes obtidos no AVL, sendo posteriormente dimensionalizados utilizando a pressão dinâmica, área de referência, corda média aerodinâmica e envergadura.',
-      aerodynamicForces: 'O modelo aerodinâmico considera os coeficientes de sustentação, arrasto e força lateral, além dos coeficientes de momento de rolagem, arfagem e guinada. As contribuições das derivadas aerodinâmicas são calculadas em função de α, β, p, q, r e das deflexões de aileron, profundor e leme. Os coeficientes são posteriormente transformados dos eixos aerodinâmicos para os eixos do corpo da aeronave.',
-      dynamicTests: 'Para avaliar a dinâmica da aeronave foram aplicadas perturbações do tipo pulso e doublet nas superfícies de controle. Foram analisados comandos no aileron, profundor e leme, permitindo observar as respostas longitudinais e laterodirecionais da aeronave.',
-      pulse: 'Nos ensaios com pulso foram aplicadas deflexões de 2°, iniciadas em t = 1 s e mantidas durante 1 s. As respostas foram avaliadas por meio da evolução temporal das velocidades, taxas angulares, ângulos de atitude, altitude e posições Norte e Leste.',
-      doublet: 'Os ensaios do tipo doublet utilizaram uma deflexão seguida por um comando de sentido oposto. Essa configuração permitiu investigar a resposta transitória da aeronave e identificar o comportamento dos diferentes modos dinâmicos sem manter uma perturbação contínua no sistema.',
-      dynamicModes: 'As simulações permitiram investigar diferentes modos característicos da dinâmica de voo. As perturbações no profundor evidenciaram principalmente os modos de curto período e fugóide. Os comandos no leme apresentaram respostas associadas ao Dutch roll e ao modo espiral. Os comandos laterais também demonstraram o acoplamento entre os movimentos laterodirecionais e longitudinais.',
-      massComparison: 'A influência da massa e do centro de gravidade foi analisada comparando diretamente as condições de 5000 kg e 3380 kg. A configuração de menor massa e CG mais recuado apresentou respostas dinâmicas mais intensas em diversas perturbações, com maiores amplitudes de velocidade, atitude e taxas angulares.',
-      stabilityAnalysis: 'A comparação das respostas mostrou que a redução da massa combinada ao deslocamento do CG modificou significativamente o comportamento dinâmico da aeronave. Em determinadas perturbações, a condição mais leve apresentou menor amortecimento, maiores oscilações e maior perda de altitude, evidenciando a influência das propriedades de massa e centragem sobre a estabilidade e a qualidade de voo.',
+      aircraft: 'A aeronave estudada foi o EMB-110 Bandeirante (C-95), um bimotor turboélice de asa baixa e empenagem convencional. Como referência, foram utilizados dados encontrados em manuais técnicos e na documentação de certificação indicada no estudo.',
+
+      geometry: 'A geometria foi reconstruída no AutoCAD utilizando as vistas superior, frontal e lateral da aeronave. Os desenhos foram ajustados à escala para obter dimensões e posições das superfícies. No modelo adotado, foram considerados envergadura de 15,33 m, área alar de 29,10 m², alongamento de 8,08, corda média aerodinâmica de 1,98 m, diedro de 7°, incidência da asa de 3° e comprimento de fuselagem de 15,10 m.',
+
+      cad: 'No AutoCAD, utilizei as três vistas para acompanhar os contornos da asa, da fuselagem e da empenagem. A comparação entre as vistas ajudou a estimar dimensões que não estavam indicadas diretamente. Os valores obtidos foram comparados com as referências disponíveis e serviram de base para criar o modelo utilizado no AVL.',
+
+      massAndCG: 'Foram consideradas duas condições de carregamento: uma com massa de 5.000 kg e centro de gravidade (CG) em aproximadamente 6,534 m, e outra com 3.380 kg e CG em aproximadamente 6,645 m. A comparação foi feita para observar como a mudança de massa e de posição do CG influencia as respostas da aeronave.',
+
+      inertia: 'Os momentos de inércia foram estimados a partir da massa, das dimensões gerais da aeronave e de valores aproximados de raios de giração. Essas estimativas foram utilizadas no modelo de dinâmica de voo para representar as duas condições de carregamento.',
+
+      aerodynamicModel: 'A modelagem aerodinâmica foi realizada no Athena Vortex Lattice (AVL), que utiliza o método dos vórtices em malha (VLM). Modelei as superfícies sustentadoras e defini os parâmetros necessários para as análises. A fuselagem foi representada de forma simplificada devido às limitações do método para esse tipo de geometria.',
+
+      derivatives: 'No AVL, obtive derivadas de estabilidade e controle que relacionam o ângulo de ataque, a derrapagem, as taxas angulares e os comandos das superfícies às forças e aos momentos aerodinâmicos. Esses resultados foram utilizados tanto nos cálculos de trimagem quanto no simulador desenvolvido em MATLAB.',
+
+      trim: 'Foi realizada uma análise de trimagem longitudinal para encontrar o ângulo de ataque e a deflexão do profundor necessários ao voo reto e nivelado. Os cálculos foram feitos para velocidades entre 70 e 130 m/s e comparados com os resultados gerados pelo AVL.',
+
+      trimValidation: 'Os valores obtidos pelos cálculos analíticos ficaram próximos dos resultados do AVL. Na comparação apresentada, a maior diferença foi inferior a 0,2°, ocorrendo nas menores velocidades analisadas. Isso ajudou a conferir a implementação dos cálculos de trimagem.',
+
+      simulation: 'No MATLAB, desenvolvi um simulador não linear de seis graus de liberdade (6-DOF), utilizando o integrador ode45. O código calcula a evolução das velocidades, taxas angulares, atitude e posição da aeronave a partir das equações de movimento.',
+
+      equations: 'O simulador utiliza as equações de movimento translacional e rotacional da aeronave. Para calcular as forças e os momentos, os coeficientes aerodinâmicos foram combinados com a pressão dinâmica e as dimensões de referência da aeronave.',
+
+      aerodynamicForces: 'O modelo considera sustentação, arrasto, força lateral e momentos de rolagem, arfagem e guinada. Também inclui a influência do ângulo de ataque, da derrapagem, das taxas angulares e das deflexões de aileron, profundor e leme.',
+
+      dynamicTests: 'Para observar a resposta da aeronave, apliquei perturbações do tipo pulso e doublet nas superfícies de controle. Os gráficos permitiram acompanhar mudanças de velocidade, atitude, taxas angulares, altitude e trajetória.',
+
+      pulse: 'Nos testes com pulso, foram utilizadas deflexões de 2°, iniciadas em t = 1 s e mantidas por 1 s. A partir dessas entradas, analisei a evolução das variáveis de voo ao longo do tempo.',
+
+      doublet: 'Nos testes do tipo doublet, apliquei uma deflexão seguida por outra no sentido oposto. Esse tipo de comando ajudou a observar a resposta transitória da aeronave sem manter uma deflexão constante.',
+
+      dynamicModes: 'A partir das respostas, estudei comportamentos relacionados aos modos de curto período, fugóide, Dutch roll e espiral. Os comandos no profundor destacaram principalmente o movimento longitudinal, enquanto os comandos laterais permitiram observar o acoplamento entre rolagem e guinada.',
+
+      massComparison: 'Comparei os resultados das condições de 5.000 kg e 3.380 kg. Na configuração mais leve, com CG mais recuado, algumas perturbações produziram oscilações e variações de atitude mais intensas.',
+
+      stabilityAnalysis: 'A comparação mostrou que a combinação de massa e posição do CG altera a resposta dinâmica do modelo. Em alguns testes, a condição de 3.380 kg apresentou oscilações maiores e menor amortecimento aparente. Esses resultados descrevem o comportamento do modelo nas condições simuladas e não substituem uma avaliação completa da estabilidade da aeronave real.',
+
       analyses: [
-        'Levantamento geométrico (AutoCAD)',
-        'Modelagem aerodinâmica (AVL)',
-        'Extração de derivadas aerodinâmicas',
-        'Análise de trimagem longitudinal e validação',
-        'Desenvolvimento de simulador 6-DOF (MATLAB)',
-        'Pulso e Doublet (aileron, profundor, leme)',
-        'Análise de modos: fugóide, curto período, Dutch roll e espiral',
-        'Influência de massa e posição de CG nas trajetórias 3D'
+        'Reconstrução da geometria pelas três vistas (AutoCAD)',
+        'Modelagem aerodinâmica no AVL',
+        'Cálculo de derivadas de estabilidade e controle',
+        'Análise de trimagem longitudinal',
+        'Simulação de seis graus de liberdade no MATLAB',
+        'Aplicação de comandos de pulso e doublet',
+        'Estudo de modos de dinâmica de voo',
+        'Comparação de duas condições de massa e centro de gravidade'
       ]
     },
-    result: 'O projeto resultou em um modelo integrado da aeronave, combinando reconstrução geométrica, modelagem aerodinâmica, análise de estabilidade e simulação de dinâmica de voo. A comparação entre a trimagem analítica e os resultados do AVL apresentou boa concordância. O simulador 6-DOF em MATLAB permitiu avaliar a resposta a perturbações e identificar os modos dinâmicos, provando que a configuração de 3380 kg e CG recuado apresenta respostas mais sensíveis. O código completo (scripts MATLAB e modelos AVL) está disponível no repositório.',
-    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/DinamicaVooBandeirante', // <--- COLOQUE SEU LINK AQUI
+
+    result: 'O projeto reuniu diferentes etapas de uma análise de Mecânica do Voo, desde a reconstrução da geometria até a simulação das respostas da aeronave. Foi possível comparar os resultados de trimagem com o AVL e observar, no MATLAB, como o modelo reage a comandos de controle. Também identifiquei diferenças entre as duas condições de massa e centro de gravidade estudadas. O trabalho foi importante para colocar em prática conceitos de aerodinâmica, estabilidade, programação e dinâmica de voo.',
+
+    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/DinamicaVooBandeirante',
     // @ts-ignore
     report: 'Relatório Técnico Completo: Análise do Comportamento de Voo do EMB-110 Bandeirante'
   },
   {
     id: 'cessna-182-avionics-modification',
-    title: 'Projeto de Modificação de Sistema Aviônico — Cessna 182',
+    title: 'Estudo de Modificação do Sistema Aviônico — Cessna 182',
     category: 'Aerospace',
-    shortDescription: 'Análise de engenharia para substituição de um sistema de navegação e comunicação por um Garmin GNS 430W, incluindo balanço de carga elétrica, especificação de componentes e integração elétrica.',
+
+    shortDescription: 'Estudo de substituição de um equipamento aviônico por um Garmin GNS 430W, incluindo componentes, consumo elétrico e proposta de integração com a aeronave.',
+
     technologies: [
       'Engenharia Aeronáutica',
       'Sistemas Elétricos de Aeronaves',
-      'Aviónica',
+      'Aviônicos',
       'Balanço de Carga Elétrica',
-      'Wiring',
+      'Diagramas Elétricos (Wiring)',
       'Documentação Técnica',
       'Regulamentação Aeronáutica'
     ],
+
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Cessna182t_skylane_n2231f_cotswoldairshow_2010_arp.jpg/1280px-Cessna182t_skylane_n2231f_cotswoldairshow_2010_arp.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail',
     featured: false,
-    summary: 'Resolução de um estudo de modificação de uma aeronave Cessna 182, envolvendo a substituição do sistema RT-385 pelo Garmin GNS 430W. O trabalho foi desenvolvido com foco na análise dos requisitos técnicos da modificação, especificação dos equipamentos necessários, avaliação do balanço de carga elétrica da aeronave e elaboração da integração elétrica do novo sistema. A atividade também envolveu a interpretação de documentação técnica e requisitos aplicáveis à instalação de sistemas aviônicos.',
-    problem: 'A modificação de um sistema aviônico exige avaliar não apenas a compatibilidade do novo equipamento, mas também seu impacto sobre o sistema elétrico da aeronave e sua integração com a infraestrutura existente. O desafio proposto consistia em analisar a substituição do equipamento original por um Garmin GNS 430W, determinar os componentes necessários para a instalação, verificar o consumo elétrico adicional e estruturar uma solução de alimentação e conexão compatível com a aeronave.',
-    contribution: 'Desenvolvi a resolução técnica da modificação, analisando os requisitos apresentados na Instrução Suplementar, consultando a documentação de instalação do equipamento e estruturando a solução de integração elétrica. Realizei o levantamento dos equipamentos removidos e instalados, analisei o consumo elétrico do sistema, determinei o impacto da modificação no balanço de carga e organizei as principais conexões elétricas, incluindo alimentação, aterramento e proteção por circuit breakers.',
+
+    summary: 'O projeto consistiu em um estudo de modificação do sistema aviônico de um Cessna 182, considerando a substituição do equipamento RT-385 por um Garmin GNS 430W. O trabalho envolveu a consulta à documentação técnica, o levantamento dos componentes necessários e a análise do consumo elétrico dos equipamentos. Também organizei uma proposta simplificada de ligações elétricas, incluindo alimentação, aterramento e proteção dos circuitos. O objetivo foi entender quais verificações de engenharia são necessárias antes de realizar uma alteração desse tipo em uma aeronave.',
+
+    problem: 'A substituição de um equipamento aviônico não depende apenas de verificar se ele cabe no painel. Também é necessário avaliar a alimentação elétrica, o consumo de corrente, as conexões e os componentes necessários para a instalação. O principal desafio foi reunir essas informações a partir da documentação e utilizá-las para propor uma integração coerente com o sistema elétrico considerado no estudo.',
+
+    contribution: '',
+
     engineeringDetails: {
-      aircraft: 'A aeronave analisada foi um Cessna 182 do ano de 1979, utilizado como plataforma para o estudo da modificação do sistema aviônico. O projeto considerou a arquitetura elétrica de 28 V da aeronave e a infraestrutura existente do sistema de aviônicos.',
-      modification: 'A modificação proposta consiste na substituição do sistema RT-385 por um Garmin GNS 430W. O novo equipamento integra funções relacionadas à navegação e comunicação, exigindo a análise dos requisitos de alimentação, proteção elétrica, conectores, montagem e antena GPS/WAAS.',
-      regulatory: 'A análise considerou a Instrução Suplementar IS Nº 21-021, especificamente a seção 5.6.1 indicada no teste, relacionada à aprovação de modificações em aeronaves. O estudo também considerou a necessidade de utilização de dados técnicos aprovados e a verificação do impacto da instalação sobre o sistema elétrico da aeronave.',
-      equipment: 'Foram identificados os principais componentes necessários para a instalação do Garmin GNS 430W: unidade principal GNS 430W, mounting rack, connector kit, back plate e antena GA 35 GPS/WAAS. A especificação foi organizada considerando modelo, part number, quantidade e função de cada componente.',
+      aircraft: 'O estudo considerou um Cessna 182 de 1979, utilizando como referência uma arquitetura elétrica de 28 V e os equipamentos descritos na atividade.',
+
+      modification: 'A proposta foi substituir o sistema RT-385 por um Garmin GNS 430W, que reúne funções de navegação e comunicação. Para isso, foram levantados os requisitos de montagem, alimentação, conectores, proteção elétrica e antena GPS/WAAS.',
+
+      regulatory: 'Durante o estudo, consultei a Instrução Suplementar IS nº 21-021, com atenção à seção 5.6.1 indicada na atividade. Essa etapa ajudou a entender a importância da documentação e dos requisitos aplicáveis a modificações de aeronaves. O trabalho é um estudo acadêmico e não representa uma instalação aprovada para uso em voo.',
+
+      equipment: 'Foi elaborada uma relação dos principais itens previstos para a instalação: Garmin GNS 430W, suporte de montagem (mounting rack), conjunto de conectores (connector kit), placa traseira (back plate) e antena GA 35 GPS/WAAS. A seleção foi organizada para facilitar a identificação e a consulta aos documentos técnicos.',
+
       equipmentList: [
         '01 × Garmin GNS 430W',
         '01 × Mounting Rack',
@@ -1300,30 +1403,41 @@ imageUrl: '/images/bandeirante-real.jpg', // <--- Foto principal do card
         '01 × Back Plate',
         '01 × GA 35 GPS/WAAS Antenna'
       ],
-      electricalSystem: 'O sistema elétrico considerado possui arquitetura de 28 V. A análise levou em consideração a capacidade de geração da aeronave, o consumo dos equipamentos removidos e o consumo dos novos equipamentos instalados, permitindo determinar a variação líquida de carga provocada pela modificação.',
-      loadAnalysis: 'O balanço de carga elétrica comparou o consumo do equipamento RT-385A removido com o consumo do Garmin GNS 430W instalado. O RT-385A foi considerado com consumo típico de 2,0 A, enquanto o GNS 430W apresenta consumo de aproximadamente 0,8 A em operação típica e até 3,0 A durante a transmissão. Dessa forma, a modificação representa um aumento líquido de aproximadamente 1,8 A no pico de transmissão.',
-      generator: 'Para a análise da capacidade de geração foi considerado um alternador de 28 V e 60 A. O estudo também considerou uma bateria de 24 V e 14 Ah como referência para a aeronave. A capacidade do sistema de geração foi comparada com o limite de carga contínua considerado na análise.',
-      electricalMargin: 'Considerando o critério de utilização de até 80% da capacidade do alternador para operação contínua, o limite de referência calculado foi de 48 A. O acréscimo de aproximadamente 1,8 A associado à modificação representa uma parcela pequena da capacidade disponível, indicando margem elétrica suficiente para a instalação proposta dentro das premissas adotadas no estudo.',
-      wiring: 'Foi estruturada uma proposta de integração elétrica simplificada para o novo equipamento, considerando alimentação, aterramento, proteção por circuit breaker e conexão ao barramento de aviônicos. A solução diferencia os novos circuitos instalados dos elementos existentes que permanecem na aeronave.',
-      protection: 'A proteção elétrica foi considerada por meio de circuit breakers dedicados. O estudo especificou um disjuntor de 5 A para a alimentação principal e um disjuntor de 10 A associado à alimentação do circuito de comunicação (COM), conforme a solução apresentada na documentação da atividade.',
-      connections: 'As principais conexões foram organizadas de acordo com os conectores do Garmin. No P4001 (Main), os pinos 19 e 20 foram destinados à entrada de alimentação Aircraft Power 1 e os pinos 77 e 78 ao Aircraft Ground. No P4002 (COM), os pinos 11 e 12 foram associados à alimentação Aircraft Power COM e os pinos 21 e 22 ao aterramento. No P4006 (NAV), o pino 44 foi associado à alimentação NAV Power.',
-      antenna: 'A integração também contempla a instalação da antena GA 35, utilizada para o sistema GPS/WAAS. O componente foi incluído no levantamento de materiais e considerado parte da arquitetura necessária para a implementação do novo sistema aviônico.',
-      documentation: 'A solução foi organizada como uma documentação de engenharia, contemplando identificação dos equipamentos, part numbers, análise de carga elétrica, capacidade de geração, lista de materiais e conexões principais. Essa estrutura permite rastrear as decisões de engenharia e facilitar a análise da modificação.',
+
+      electricalSystem: 'Foi considerado um sistema elétrico de 28 V. O estudo comparou as correntes atribuídas ao equipamento removido e ao novo equipamento para estimar como a substituição poderia alterar a carga elétrica da aeronave.',
+
+      loadAnalysis: 'No levantamento utilizado, o RT-385A foi considerado com corrente típica de 2,0 A. Para o GNS 430W, foram adotados 0,8 A em operação típica e 3,0 A durante a transmissão. A comparação direta resulta em uma redução de 1,2 A na condição típica e um aumento de 1,0 A quando o novo equipamento está transmitindo, em relação aos 2,0 A usados como referência para o equipamento removido. Trata-se de uma comparação simplificada entre as condições informadas.',
+
+      generator: 'Para os cálculos, foram considerados um alternador de 28 V e 60 A e uma bateria de 24 V e 14 Ah. Esses valores serviram como referência para discutir a capacidade de alimentação e os efeitos da mudança no sistema elétrico.',
+
+      electricalMargin: 'Como critério de estudo, foi adotado o uso de até 80% da capacidade nominal do alternador, correspondente a 48 A. Esse valor foi utilizado como referência para a análise de carga. Para confirmar a margem disponível, seria necessário conhecer também o consumo dos demais equipamentos ligados à aeronave nas condições de operação.',
+
+      wiring: 'Foi elaborada uma proposta simplificada de integração elétrica, indicando as ligações de alimentação, aterramento e proteção e sua relação com o barramento de aviônicos existente.',
+
+      protection: 'No exercício, foram considerados circuit breakers de 5 A para a alimentação principal e 10 A para o circuito de comunicação (COM). Esses valores fazem parte da proposta estudada e precisariam ser conferidos na documentação de instalação aplicável antes de qualquer implementação real.',
+
+      connections: 'As conexões foram organizadas a partir dos conectores indicados no estudo. No P4001 (Main), foram considerados os pinos 19 e 20 para Aircraft Power 1 e os pinos 77 e 78 para Aircraft Ground. No P4002 (COM), os pinos 11 e 12 foram associados à alimentação COM e os pinos 21 e 22 ao aterramento. No P4006 (NAV), foi considerado o pino 44 para NAV Power. Essas indicações são parte do estudo e não devem ser usadas como instruções de instalação sem conferência no manual correspondente.',
+
+      antenna: 'A proposta também incluiu a antena GA 35 GPS/WAAS, prevista como parte do conjunto necessário ao funcionamento das funções de navegação do novo equipamento.',
+
+      documentation: 'As informações foram reunidas em uma documentação de engenharia com lista de equipamentos, identificação de componentes, comparação do consumo elétrico e proposta de conexões. Essa organização facilitou o acompanhamento das decisões tomadas durante o estudo.',
+
       engineeringSkills: [
-        'Interpretação de documentação técnica',
-        'Análise de requisitos de instalação',
-        'Sistemas elétricos aeronáuticos',
+        'Leitura de documentação técnica aeronáutica',
+        'Interpretação de requisitos de instalação',
+        'Sistemas elétricos de aeronaves',
         'Balanço de carga elétrica',
-        'Dimensionamento de proteção elétrica',
-        'Integração de equipamentos aviônicos',
-        'Análise de wiring',
-        'Identificação de componentes e part numbers',
-        'Interpretação de requisitos de aeronavegabilidade',
-        'Elaboração de documentação técnica'
+        'Levantamento de componentes e part numbers',
+        'Estudo de proteção e alimentação elétrica',
+        'Interpretação de diagramas de wiring',
+        'Estudo de integração de equipamentos aviônicos',
+        'Noções de regulamentação e aeronavegabilidade',
+        'Organização de documentação de engenharia'
       ]
     },
-    result: 'A análise resultou em uma proposta estruturada para a substituição do sistema RT-385 pelo Garmin GNS 430W, contemplando os principais componentes necessários, a arquitetura de alimentação, proteção elétrica, conexões e integração com o sistema aviônico existente. O balanço de carga indicou um acréscimo líquido de aproximadamente 1,8 A no pico de transmissão e, considerando o limite de 80% da capacidade do alternador, uma margem suficiente dentro das premissas adotadas. O projeto demonstrou a aplicação integrada de conhecimentos de sistemas elétricos aeronáuticos, aviônicos, regulamentação, análise de requisitos e documentação de engenharia. O material desenvolvido para a resolução técnica e os arquivos utilizados no estudo estão disponibilizados no repositório.',
-    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/ControleCargaCessna' // Lembre-se de colocar o link correto
-  },
-  
-];
+
+    result: 'O projeto resultou em um estudo técnico para a substituição do RT-385 pelo Garmin GNS 430W em um Cessna 182. Foram identificados os principais componentes envolvidos, comparadas as correntes elétricas adotadas e organizadas as conexões previstas para o equipamento. O trabalho ajudou a compreender como uma modificação aviônica envolve documentação, integração elétrica e avaliação de requisitos, além da escolha do equipamento. Para uma instalação real, ainda seriam necessárias verificações específicas da aeronave, da documentação aprovada e do balanço completo de cargas.',
+
+    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/ControleCargaCessna'
+  }
+]
