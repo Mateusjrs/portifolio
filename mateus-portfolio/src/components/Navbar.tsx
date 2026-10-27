@@ -45,7 +45,7 @@ export const Navbar: React.FC = () => {
             </a>
           ))}
           <a
-            href="https://github.com"
+            href="https://github.com/Mateusjrs"
             target="_blank"
             rel="noreferrer"
             className="text-xs font-mono px-4 py-2 rounded-md bg-slate-900 hover:bg-slate-800 text-cyan-400 border border-cyan-500/30 hover:border-cyan-500/70 transition-all shadow-sm"
