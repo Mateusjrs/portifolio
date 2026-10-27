@@ -129,59 +129,72 @@ analyses?: string | string[];
 }
 
 export const projectsData: Project[] = [
+
 {
-    id: 'aero-data-acquisition',
-    title: 'Sistema de Aquisição de Dados para Ensaios Aerodinâmicos',
-    category: 'Aerospace',
-    shortDescription: 'Sistema de aquisição de dados utilizando sensor piezoelétrico para investigação do stall, com validação de esforços mecânicos via célula de carga.',
-    technologies: [
-      'C/C++',
-      'Microcontroladores',
-      'Sensor Piezoelétrico',
-      'Célula de carga',
-      'HX711',
-      'Aquisição de dados',
+  id: 'aero-data-acquisition',
+  title: 'Sistema de Aquisição de Dados para Ensaios Aerodinâmicos',
+  category: 'Aerospace',
+
+  shortDescription: 'Desenvolvimento de um sistema para coletar dados de vibração e força durante ensaios em túnel de vento, com o objetivo de estudar o fenômeno de stall em uma asa.',
+
+  technologies: [
+    'C/C++',
+    'Microcontroladores',
+    'Sensor Piezoelétrico',
+    'Célula de carga',
+    'HX711',
+    'Aquisição de dados',
+    'Túnel de vento'
+  ],
+
+  imageUrl: '/images/asa-celula.png',
+  featured: true,
+
+  summary: 'O projeto consiste no desenvolvimento de um sistema de aquisição de dados para estudar o comportamento de uma asa em túnel de vento, principalmente durante a ocorrência de stall. A ideia é utilizar um sensor piezoelétrico para medir as vibrações e uma célula de carga para acompanhar as forças que atuam na estrutura. Durante os ensaios, o ângulo de ataque da asa é alterado para observar como essas grandezas se comportam. O projeto ainda está em fase de testes e coleta de dados.',
+
+  problem: 'Durante os ensaios em túnel de vento, precisávamos de uma maneira de registrar as vibrações e as forças na asa para diferentes ângulos de ataque. Também era importante que as medições fossem realizadas somente depois que o escoamento estivesse estabilizado, evitando interferências nos resultados. Por isso, foi necessário desenvolver um sistema que permitisse controlar a coleta e organizar os dados para análise posterior.',
+
+  contribution: 'Fiquei responsável pelo desenvolvimento do código de aquisição de dados em C/C++ para o microcontrolador. Trabalhei com a leitura do sensor piezoelétrico e com a integração de uma célula de carga utilizando o módulo HX711. Também implementei uma comunicação Serial para que o operador pudesse informar o ângulo de ataque antes de iniciar cada medição. O código permite armazenar as leituras e calcular a média dos valores obtidos pela célula de carga.',
+
+  engineeringDetails: {
+    calculations: 'O código foi organizado para armazenar até 25 amostras por medição, considerando até 20 ângulos de ataque diferentes. Para cada condição, é calculada a média das leituras da célula de carga, facilitando a comparação dos esforços entre os ensaios.',
+
+    decisions: 'Optamos por iniciar a coleta manualmente, depois que o fluxo de ar no túnel de vento estivesse estabilizado. A célula de carga foi utilizada como uma segunda forma de acompanhar o comportamento da asa, permitindo comparar os esforços mecânicos com as vibrações medidas pelo sensor piezoelétrico.',
+
+    components: [
+      'Microcontrolador',
+      'Sensor piezoelétrico',
+      'Célula de carga de 5 kg/10 kg',
+      'Módulo HX711',
       'Túnel de vento'
     ],
-    imageUrl: '/images/asa-celula.png',
-    featured: true,
-    summary: 'Desenvolvimento de um sistema de aquisição de dados para ensaios em túnel de vento com o objetivo de investigar a ocorrência de stall na esteira de uma asa por meio da análise das variações e picos de vibração durante a mudança do ângulo de ataque. A captação primária das vibrações é realizada através de um sensor piezoelétrico, enquanto uma célula de carga integrada a um módulo HX711 é utilizada para aferir e validar os dados de esforço mecânico. O projeto encontra-se atualmente em fase de testes empíricos, com previsão de divulgação dos resultados e validações obtidas em breve.',
-    problem: 'Durante os ensaios, era necessário correlacionar a vibração estrutural com os diferentes ângulos de ataque para identificar o início do descolamento da camada limite (stall). A captação contínua e a necessidade de validar o sinal do sensor piezoelétrico com o carregamento real exigiam uma estratégia capaz de realizar o processamento básico em tempo real e permitir que o operador controlasse o momento exato da coleta, organizando as amostras assim que as condições do túnel de vento se estabilizassem.',
-    contribution: 'Desenvolvi o firmware de aquisição em C/C++, implementando a leitura de alta frequência do sensor piezoelétrico e a integração com o módulo HX711 para a célula de carga, usada na validação cruzada dos esforços. Desenvolvi também uma interface via comunicação Serial para que o operador informe o ângulo de ataque e inicie as medições. O sistema organiza as amostras de ambos os sensores, calcula a força média estrutural e mantém os dados brutos de vibração disponíveis para análise espectral posterior.',
-    engineeringDetails: {
-      calculations: 'Implementação de uma estrutura matricial para armazenar até 25 amostras brutas para cada ângulo de ataque, com capacidade de registrar até 20 condições diferentes. Para cada condição, o firmware processa as médias, permitindo cruzar os dados de vibração do piezoelétrico com o carregamento da célula de carga.',
-      decisions: 'Foi adotada uma arquitetura de aquisição controlada, onde o operador aciona a leitura após a estabilização do escoamento no túnel de vento. O uso da célula de carga foi mantido como redundância e calibração (validação do experimento) para garantir a integridade da leitura do sensor piezoelétrico.',
-      components: [
-        'Microcontrolador',
-        'Sensor Piezoelétrico (Captação Principal)',
-        'Célula de carga de 5 kg/10 kg (Validação)',
-        'Módulo amplificador HX711',
-        'Túnel de vento'
-      ],
-      dataStructure: 'Os dados são organizados em matrizes bidimensionais, nas quais cada linha representa uma condição de ensaio associada a um ângulo de ataque e cada coluna armazena as amostras conjuntas de vibração e carga para pós-processamento.'
-    },
-    media: {
-      image1: {
-        title: 'Modelo 3D da Bancada',
-        description: 'Visualização da montagem mecânica e posicionamento da célula de carga para o ensaio aerodinâmico.',
-        url: '/images/asa-celula.png' // <-- Coloque o nome real da sua imagem
-      },
-      image2: {
-        title: 'Calibração da Célula de Carga',
-        description: 'Testes práticos de aquisição e calibração do módulo HX711 para garantir a precisão da leitura de vibração.',
-        url: '/images/Modelo_Tunel.jpeg' // <-- Coloque o nome real da sua imagem
-      },
-      gif1: {
-        title: 'Aquisição de Dados (Interface)',
-        description: 'Demonstração do ensaio em túnel de vento.',
-        url: '/images/Modelo_Stall.gif' // <-- Coloque o nome real do seu GIF
-      }
-    },
-    // =================================
 
-    codeSnippet: {
-      language: 'cpp',
-      code: `// Rotina de Aquisição de Dados
+    dataStructure: 'Para organizar as medições, utilizei matrizes no código. Cada linha representa um ângulo de ataque e as colunas armazenam as amostras coletadas. Dessa forma, os dados ficam separados por condição de ensaio e podem ser utilizados em análises posteriores.'
+  },
+
+  media: {
+    image1: {
+      title: 'Modelo 3D da Bancada',
+      description: 'Modelo da montagem utilizada no projeto, mostrando a posição da asa e da célula de carga.',
+      url: '/images/asa-celula.png'
+    },
+
+    image2: {
+      title: 'Montagem e Testes',
+      description: 'Etapa de montagem e preparação do sistema para os ensaios em túnel de vento.',
+      url: '/images/Modelo_Tunel.jpeg'
+    },
+
+    gif1: {
+      title: 'Estudo do Stall',
+      description: 'Visualização do comportamento do escoamento ao redor da asa durante a variação do ângulo de ataque.',
+      url: '/images/Modelo_Stall.gif'
+    }
+  },
+
+  codeSnippet: {
+    language: 'cpp',
+    code: `// Rotina de Aquisição de Dados
 #include "HX711.h"
 
 #define calibration_factor -800000
@@ -232,294 +245,397 @@ void realizarMedicao() {
 
   indiceLeitura++;
 }`
-    },
-    result: 'O sistema possibilitou a realização de ensaios de forma organizada e repetível, mantendo as amostras individuais e os valores médios de cada condição de teste. A estrutura de aquisição permitiu correlacionar as variações de carregamento e vibração com o ângulo de ataque, fornecendo uma base de dados para a identificação e caracterização do início do stall na esteira da asa. O código-fonte completo deste firmware está disponível no GitHub.',
-    githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/aero-data-system'
   },
-  {
-    id: 'airbus-wing-structure',
-    title: 'Projeto Estrutural de Conjunto Aeronáutico (Airbus A380)',
-    category: 'CAD / 3D',
-    shortDescription: 'Tentativa de recriação e modelagem 3D avançada da estrutura da asa do Airbus A380 no SolidWorks, envolvendo perfis aerodinâmicos, superfícies complexas e longarinas.',
-    technologies: [
-      'SolidWorks', 
-      'Modelagem de Superfícies', 
-      'Assembly (Montagem Avançada)', 
-      'Modelagem Paramétrica',
-      'Aerodinâmica'
+
+  result: 'O sistema permite organizar as medições realizadas em diferentes ângulos de ataque, armazenando as amostras e calculando os valores médios da célula de carga. Com esses dados, será possível comparar o comportamento da asa durante os ensaios e estudar a relação entre as vibrações, os esforços e o início do stall. O projeto continua em desenvolvimento, com testes sendo realizados para avaliar os resultados obtidos.',
+
+  githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/aero-data-system'
+},
+
+ 
+{
+  id: 'airbus-wing-structure',
+  title: 'Modelagem 3D de Asa Aeronáutica (Airbus A380)',
+  category: 'CAD / 3D',
+
+  shortDescription: 'Modelagem 3D de uma asa inspirada no Airbus A380 a partir de três vistas de referência, utilizando curvas, superfícies e ferramentas de montagem do SolidWorks.',
+
+  technologies: [
+    'SolidWorks',
+    'Desenho Técnico',
+    'Modelagem de Superfícies',
+    'Splines e Curvas',
+    'Modelagem Paramétrica',
+    'Montagem de Componentes'
+  ],
+
+  imageUrl: '/images/capaAirbus.png',
+
+  modelPath: '/models/Airbus.glb',
+  edrawingsUrl: '/models/Airbus.easm',
+  featured: true,
+
+  summary: 'O projeto teve como objetivo desenvolver um modelo 3D de uma asa inspirada no Airbus A380 utilizando o SolidWorks. A modelagem foi feita a partir das três vistas de referência: superior, frontal e lateral. O foco principal foi interpretar os desenhos em 2D e reproduzir as curvas e os contornos da asa no ambiente tridimensional. Para isso, utilizei ferramentas como Splines, planos de referência e Loft, buscando representar o formato aerodinâmico e desenvolver os componentes estruturais internos, como nervuras e longarinas.',
+
+  problem: 'A principal dificuldade foi transformar as informações das três vistas em uma geometria 3D coerente. Como a asa possui curvas e mudanças de formato ao longo de sua extensão, foi necessário ajustar os esboços para que os contornos das diferentes vistas fossem compatíveis. Outro desafio foi criar superfícies contínuas e posicionar os componentes internos de acordo com a geometria desenvolvida.',
+
+  contribution: 'Fui responsável pela modelagem e montagem do conjunto no SolidWorks. Comecei utilizando as três vistas como referência para desenhar os principais contornos da asa. A partir delas, criei curvas com a ferramenta Spline, ajustando os pontos de controle para aproximar o formato do modelo original. Depois, utilizei planos de referência e recursos de Loft para desenvolver as superfícies tridimensionais. Também modelei nervuras, longarinas e elementos de fixação, organizando as peças em uma montagem.',
+
+  engineeringDetails: {
+    calculations: 'A modelagem foi baseada principalmente na interpretação geométrica das três vistas, utilizando proporções e dimensões de referência para posicionar as curvas e os componentes. O foco do trabalho foi a construção do modelo CAD, e não a realização de uma análise estrutural completa.',
+
+    cadFeatures: 'Utilizei esboços 2D, Splines e planos de referência para definir os contornos da asa. As curvas foram ajustadas considerando as informações das vistas superior, frontal e lateral. Com as ferramentas de Loft e modelagem de superfícies, foi possível criar a geometria 3D a partir dos perfis desenhados. Também utilizei cortes extrudados, padrões lineares e recursos de montagem para desenvolver os componentes internos.',
+
+    decisions: 'Optei por iniciar a modelagem pelas três vistas, pois elas facilitaram a identificação das proporções e das principais curvas da asa. A vista superior foi utilizada para definir o contorno em planta e o enflechamento, a frontal para auxiliar no posicionamento vertical da geometria e a lateral para observar os contornos do perfil. O uso de Splines permitiu ajustar as curvas de maneira gradual, buscando uma transição mais suave entre as superfícies.',
+
+    dimensions: 'Modelo desenvolvido em escala reduzida, com corda de referência de aproximadamente 450 mm, utilizando dimensões adaptadas para a montagem dos componentes.',
+
+    components: [
+      'Superfícies externas da asa',
+      'Curvas e perfis de referência',
+      'Longarina estrutural',
+      'Nervuras internas com alívio de peso',
+      'Elementos de fixação M4'
+    ]
+  },
+
+  media: {
+    render1: {
+      title: 'Montagem da Estrutura (Assembly)',
+      description: 'Visualização da asa modelada no SolidWorks, mostrando os contornos desenvolvidos e a montagem dos componentes estruturais.',
+      url: '/images/Airbus.png'
+    }
+  },
+
+  result: 'O projeto resultou em um modelo tridimensional de uma asa inspirado no Airbus A380, desenvolvido a partir da interpretação das três vistas de referência. Durante o trabalho, pude praticar principalmente a criação e o ajuste de curvas, a modelagem de superfícies e a montagem de componentes no SolidWorks. A maior parte do aprendizado esteve relacionada à transformação de desenhos 2D em geometrias 3D, especialmente em regiões com curvas e mudanças de formato. O modelo também foi preparado para visualização tridimensional no portfólio.'
+},
+
+
+
+{
+  id: 'helicopter-pitch-arm-fea',
+  title: 'Análise Estrutural do Braço de Passo de Helicóptero',
+  category: 'Aerospace',
+
+  shortDescription: 'Simulação estrutural no ANSYS Mechanical para comparar as tensões e os deslocamentos de três modelos de um braço de passo de helicóptero.',
+
+  technologies: [
+    'ANSYS Mechanical',
+    'Método dos Elementos Finitos (FEA)',
+    'Análise Estática Estrutural',
+    'Tensão de von Mises',
+    'Análise de Deformações'
+  ],
+
+  imageUrl: '/images/heli-1.png',
+  featured: true,
+
+  summary: 'O projeto teve como objetivo comparar o comportamento estrutural de três modelos de um braço de passo de helicóptero utilizando o ANSYS Mechanical. Foram analisadas as geometrias Raw Design (A), Engineer Design (B) e Optized Design (C), por meio de simulações estáticas estruturais. Durante a análise, observei principalmente a distribuição das tensões de von Mises e os deslocamentos totais de cada modelo, buscando entender como as diferenças na geometria influenciam a resistência e a rigidez da peça.',
+
+  problem: 'O principal desafio foi comparar três geometrias diferentes e entender como cada uma se comportava quando submetida às mesmas condições de carregamento. Era necessário observar onde ocorriam as maiores concentrações de tensão e quais modelos apresentavam os maiores deslocamentos. Além disso, foi importante considerar que alguns valores muito elevados poderiam estar relacionados à malha ou às condições utilizadas na simulação.',
+
+  contribution: 'Realizei a análise comparativa dos três modelos utilizando os resultados das simulações no ANSYS Mechanical. Avaliei os mapas de tensão de von Mises e os deslocamentos totais, identificando as regiões mais solicitadas de cada geometria. Também comparei os valores máximos obtidos para verificar como as alterações no formato do braço influenciaram seu comportamento estrutural.',
+
+  engineeringDetails: {
+    analysis: 'A análise foi realizada pelo método dos elementos finitos, considerando três configurações geométricas do braço de passo. Foram comparados os valores máximos de tensão equivalente de von Mises e deslocamento total, além das regiões onde ocorreram as maiores concentrações de tensão.',
+
+    'Raw Design (A)': 'O modelo original apresentou os menores valores entre as três geometrias, com tensão máxima de 105,29 MPa e deslocamento máximo de 0,12935 mm. A maior concentração de tensão apareceu na região curva da peça. Nas condições simuladas, foi o modelo que apresentou o menor deslocamento.',
+
+    'Engineer Design (B)': 'Esse modelo apresentou os maiores valores da comparação, com tensão máxima de 2.565,1 MPa e deslocamento máximo de 1,527 mm. O maior pico de tensão ocorreu próximo à extremidade do braço. Por ser um valor bastante elevado, seria importante avaliar melhor a malha e as condições de apoio para entender se essa concentração representa o comportamento real da peça ou uma possível singularidade numérica.',
+
+    'Optized (C)': 'O terceiro modelo apresentou tensão máxima de 932,94 MPa e deslocamento máximo de 0,47336 mm. Em comparação com o modelo B, houve uma redução de aproximadamente 63,6% na tensão máxima e 69,0% no deslocamento. Apesar dessa melhora, os resultados ainda ficaram acima dos valores encontrados no modelo original.',
+
+    mainFindings: [
+      'As mudanças na geometria influenciaram bastante os valores de tensão e deslocamento.',
+      'O modelo A apresentou os menores valores de tensão e deslocamento nas condições analisadas.',
+      'O modelo B apresentou concentrações de tensão elevadas que precisam ser investigadas.',
+      'O modelo C apresentou resultados melhores que o B, mas não superou o modelo original.',
+      'A comparação mostrou a importância de avaliar diferentes geometrias antes de escolher uma solução.'
     ],
-    
-    imageUrl: '/images/capaAirbus.png', // <-- Substitua pelo nome exato da sua imagem!
-  
-    modelPath: '/models/Airbus.glb',
-    edrawingsUrl: '/models/Airbus.easm',
-    featured: true,
-    summary: 'Este projeto consistiu em uma tentativa de recriar a modelagem estrutural de uma seção da asa do Airbus A380 utilizando o SolidWorks. O desenvolvimento resultou em um modelo CAD complexo que explora ferramentas avançadas de modelagem de superfícies para criar o envelope aerodinâmico fluido, aliado aos recursos de modelagem sólida para detalhar as nervuras internas, longarinas e painéis de revestimento.',
-    problem: 'A modelagem de uma asa de grande porte exige extrema precisão na transição do perfil aerodinâmico da raiz até a ponta (enflechamento e torção geométrica), além de demandar uma montagem (Assembly) rigorosa no software para evitar colisões e interferências entre os componentes estruturais internos na caixa de torção.',
-    contribution: 'Fui responsável por toda a estruturação da árvore de projeto (FeatureManager). Utilizei recursos de Loft de Superfície e Lofted Boss/Base orientados por curvas-guia 3D para garantir a fluidez do perfil aerodinâmico gerado por coordenadas. Apliquei parametrização e Padrões Lineares (Linear Patterns) para a distribuição de nervuras e fixadores. No ambiente de Montagem, utilizei posicionamentos mecânicos avançados (Mates) e executei análises de Detecção de Interferência para validar os encaixes.',
-    engineeringDetails: {
-      calculations: 'Dimensionamento de parafusos de fixação sob cisalhamento e verificação de rigidez torcional na raiz da asa.',
-      cadFeatures: 'Uso intensivo de importação de curvas via coordenadas XYZ (Airfoils), Splines, Loft de Superfície (Surface Loft), Extruded Cut para alívio de peso e gestão de submontagens flexíveis.',
-      decisions: 'Uso de cavidades aliviadas nas nervuras internas desenhadas no plano 2D e cortadas com Extruded Cut para redução de massa estrutural (mass reduction), mantendo o momento de inércia transversal.',
-      dimensions: 'Comprimento de corda de 450mm com longarina central de perfil tubular, dimensionada para integração ao envelope aerodinâmico.',
-      components: [
-        'Perfil aerodinâmico gerado por curvas 3D', 
-        'Longarina estrutural de seção usinada', 
-        'Nervuras de reforço com alívio de peso',
-        'Flanges de acoplamento e parafusos estruturais M4'
-      ]
-    },
-    media: {
-      render1: {
-        title: 'Estrutura  (Assembly)',
-        description: 'Vista frontal da montagem .',
-        url: '/images/Airbus.png' 
-      }
-    },
-    result: 'O modelo final possui uma árvore de operações 100% resolvida, sem erros de reconstrução ou referências perdidas. A montagem foi validada geometricamente contra interferências, otimizada para exportação em formatos de visualização web (.glb) e preparada para sessões de Design Review via eDrawings.'
-  },
 
-
-  ,
-  {
-    id: 'helicopter-pitch-arm-fea',
-    title: 'Análise Estrutural: Braço de Passo do Rotor (Helicóptero)',
-    category: 'Aerospace',
-    shortDescription: 'Análise estática estrutural no ANSYS Mechanical para comparar o comportamento mecânico de três geometrias distintas do braço de passo.',
-    technologies: [
-      'ANSYS Mechanical',
-      'FEA (Elementos Finitos)',
+    engineeringSkills: [
+      'Utilização do ANSYS Mechanical',
       'Análise Estática Estrutural',
-      'Otimização Geométrica'
-    ],
-    imageUrl: '/images/heli-1.png', // <-- Substitua pelo nome da sua imagem de capa
-    featured: true,
-    summary: 'A análise estrutural do braço de passo do rotor de helicóptero foi realizada no ANSYS Mechanical, por meio de uma análise estática estrutural, considerando três configurações geométricas: Raw Design (A), Engineer Design (B) e Optized (C). Foram analisadas a tensão equivalente de von Mises e a deformação total para comparar a resposta dos componentes ao carregamento aplicado.',
-    problem: 'O desafio consistia em avaliar o comportamento mecânico de três diferentes geometrias submetidas às mesmas condições de carregamento. Era necessário identificar as concentrações de tensão e comparar a rigidez estrutural entre os modelos para validar se as propostas de otimização apresentavam um desempenho superior ao modelo original.',
-    contribution: 'Estruturação e análise comparativa dos resultados das simulações estáticas estruturais. Avaliação crítica das distribuições de tensão (von Mises) e deslocamentos totais para determinar os impactos das alterações geométricas e investigar se os picos representavam concentrações físicas reais ou apenas singularidades numéricas.',
-    engineeringDetails: {
-      analysis: 'A comparação evidencia que modificações geométricas podem alterar significativamente a distribuição de tensões e os deslocamentos do braço de passo.',
-      'Raw Design (A)': 'Apresentou os menores valores entre as configurações, com tensão máxima de 105,29 MPa e deformação máxima de 0,12935 mm. A tensão concentrou-se na região curva de transição, com o restante da estrutura apresentando valores inferiores. Sugere resposta mais rígida sob as condições simuladas.',
-      'Engineer Design (B)': 'Apresentou os maiores resultados, alcançando tensão máxima de 2.565,1 MPa e deformação máxima de 1,527 mm. A concentração ocorreu próximo à extremidade do braço. Recomenda-se verificar a qualidade da malha e as condições de apoio para determinar se é uma concentração real ou singularidade numérica.',
-      'Optized (C)': 'Apresentou tensão máxima de 932,94 MPa e deformação máxima de 0,47336 mm. Em comparação com o Engineer Design, houve redução de aproximadamente 63,6% na tensão máxima e 69,0% na deformação. Contudo, os valores permaneceram superiores aos do Raw Design.',
-      mainFindings: [
-        'A geometria altera significativamente a distribuição de tensões e os deslocamentos.',
-        'O modelo original (Raw) apresentou a resposta estrutural mais rígida e segura.',
-        'Necessidade de investigar a malha no modelo B para descartar singularidades.',
-        'A otimização (C) não demonstrou desempenho estrutural superior ao modelo original (A).'
-      ],
-      engineeringSkills: [
-        'Simulação em ANSYS Mechanical',
-        'Análise de Tensão de von Mises',
-        'Estudo de Convergência de Malha',
-        'Análise de Singularidades Numéricas',
-        'Estudo Comparativo de Geometrias'
-      ]
-    },
-    
-    result: 'Concluiu-se que a escolha da configuração mais adequada não deve se basear exclusivamente nos valores máximos obtidos. É essencial confirmar a equivalência das condições de simulação, avaliar a convergência da malha e comparar os resultados com os limites de resistência do material, limites admissíveis de deformação e os fatores de segurança exigidos pelo componente aeroespacial.',
-   githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/SUA-PASTA-AQUI', // <-- Substitua pelo link real
-    media: {
-      rawDesignTension: {
-        title: 'Raw Design (A) - Tensão',
-        description: 'Distribuição da tensão de von Mises no modelo original. Concentração na região curva de transição.',
-        url: '/images/heli-1.png'
-      },
-      rawDesignDeformation: {
-        title: 'Raw Design (A) - Deformação',
-        description: 'Deslocamento total sob carregamento. Apresentou a resposta mais rígida (0,12935 mm).',
-        url: '/images/heli-2.png'
-      },
-      engineerDesignTension: {
-        title: 'Engineer Design (B) - Tensão',
-        description: 'Pico de tensão máxima próximo à extremidade. Possível singularidade numérica.',
-        url: '/images/heli-3.png'
-      },
-      engineerDesignDeformation: {
-        title: 'Engineer Design (B) - Deformação',
-        description: 'Maior deslocamento estrutural registrado entre os modelos (1,527 mm).',
-        url: '/images/heli-4.png'
-      },
-      optizedDesignTension: {
-        title: 'Optized Design (C) - Tensão',
-        description: 'Redução de 63,6% na tensão em comparação com o modelo B.',
-        url: '/images/heli-5.png'
-      },
-      optizedDesignDeformation: {
-        title: 'Optized Design (C) - Deformação',
-        description: 'Comportamento do braço otimizado, sem superar o desempenho do modelo original.',
-        url: '/images/heli-6.png'
-      }
-    }
+      'Interpretação de Tensão de von Mises',
+      'Análise de Deslocamentos',
+      'Comparação de Geometrias',
+      'Interpretação de Resultados de Elementos Finitos'
+    ]
   },
-  {
-    id: 'bicycle-suspension-linkage-fea',
-    title: 'Análise Estrutural: Braço de Suspensão (Bicycle Linkage)',
-    category: 'CAD / 3D',
-    shortDescription: 'Análise estática estrutural no ANSYS Mechanical avaliando a deformação total e elástica equivalente de um braço de suspensão de bicicleta.',
-    technologies: [
-      'ANSYS Mechanical',
-      'FEA (Elementos Finitos)',
-      'Análise Estática Estrutural',
-      'Projeto Mecânico'
-    ],
-    imageUrl: '/images/bic1.png', 
-    featured: false,
-    summary: 'A análise estrutural do Bicycle Suspension Linkage Arm foi realizada no ANSYS Mechanical por meio de uma análise estática estrutural. Foram avaliadas a deformação total e a deformação elástica equivalente, com o objetivo de investigar os deslocamentos do componente e a distribuição das deformações locais sob as condições de carregamento aplicadas.',
-    problem: 'O desafio consistia em mapear o comportamento estrutural do braço de ligação, compreendendo que a avaliação do componente deve considerar simultaneamente o comportamento global de movimentação da peça e a identificação dos possíveis pontos de concentração de esforços locais.',
-    contribution: 'Interpretação analítica dos resultados simulados, mapeando o deslocamento máximo na extremidade direita da geometria e contrastando-o com a zona de maior intensidade de deformação local na transição do olhal esquerdo, fundamentando a necessidade de análises complementares.',
-    engineeringDetails: {
-      analysis: 'A comparação evidencia que o maior deslocamento global ocorre em uma região diferente daquela que concentra a maior deformação elástica equivalente.',
-      'Deformação Total': 'Valor máximo de 0,58561 mm e valor mínimo de 0 mm. A distribuição indica valores reduzidos na extremidade esquerda (próximos ao olhal maior) e crescentes em direção à extremidade direita (deslocamento máximo).',
-      'Deformação Elástica Equivalente': 'Valor máximo de 0,00072733 mm/mm (~0,0727%) e mínimo de 6,3085e-8 mm/mm. Maiores intensidades concentradas na transição entre o olhal esquerdo e o corpo do braço, e próximas às bordas da seção alongada.',
-      mainFindings: [
-        'A região de maior deslocamento não coincide com a de maior deformação local.',
-        'O deslocamento máximo (0,5856 mm) isolou-se na extremidade direita.',
-        'A transição geométrica do olhal esquerdo é a área estruturalmente mais exigida.',
-        'Necessidade de verificar tensões de von Mises e a convergência da malha na área crítica.'
-      ],
-      engineeringSkills: [
-        'Simulação ANSYS Mechanical',
-        'Análise de Deformação Total e Elástica',
-        'Avaliação de Integridade Estrutural',
-        'Interpretação de Concentração de Esforços'
-      ]
-    },
-    result: 'Os resultados forneceram uma caracterização robusta da resposta estrutural. Concluiu-se que os dados devem ser interpretados de maneira complementar, e que a confirmação da adequação mecânica do braço depende de análises futuras envolvendo tensões de von Mises, propriedades de escoamento do material e refinamento da malha na região de transição.',
-    githubUrl: 'https://github.com/Mateusjrs/Projetos',
-    media: {
-      totalDeformation: {
-        title: 'Deformação Total',
-        description: 'Deslocamento máximo de 0,58561 mm localizado na extremidade direita do braço de suspensão.',
-        url: '/images/bic1.png'
-      },
-      elasticStrain: {
-        title: 'Deformação Elástica Equivalente',
-        description: 'Concentração de deformação local (0,0727%) identificada na transição do olhal esquerdo.',
-        url: '/images/bic2.png'
-      }
-    }
-  },
-  {
-    id: 'propeller-modal-analysis',
-    title: 'Análise Modal e Dinâmica: Hélice',
-    category: 'Aerospace',
-    shortDescription: 'Análise modal no ANSYS Mechanical para identificação das frequências naturais e formas modais de uma hélice.',
-    technologies: [
-      'ANSYS Mechanical',
-      'FEA (Elementos Finitos)',
-      'Análise Modal',
-      'Dinâmica Estrutural'
-    ],
-    imageUrl: '/images/helice-1.png', 
-    featured: false,
-    summary: 'A análise modal da hélice foi realizada no ANSYS Mechanical com o objetivo de identificar as frequências naturais e as correspondentes formas modais da estrutura. Foram examinados os seis primeiros modos de vibração para caracterizar os padrões geométricos de flexão e torção.',
-    problem: 'O desafio analítico consistia em mapear o comportamento dinâmico da hélice, compreendendo que frequências naturais muito próximas indicam flexões em diferentes direções coordenadas, e que a avaliação estrutural exige cruzar esses dados com as frequências reais de excitação operacional (RPM e passagem de pás) para evitar ressonância.',
-    contribution: 'Interpretação dos seis primeiros modos de vibração, correlacionando a proximidade de frequências (como nos pares 1-2, 3-4 e 5-6) com os padrões de flexão e torção, além de delimitar a validade geométrica dos deslocamentos normalizados gerados pelo software.',
-    engineeringDetails: {
-      analysis: 'A avaliação identificou agrupamentos de frequências naturais, onde pares de modos exibem deformações globais semelhantes com orientações distintas.',
-      'Modos 1 e 2': 'Frequências de 53,668 Hz e 53,702 Hz. Diferença de apenas 0,063%, indicando modos de flexão primária em direções perpendiculares/distintas.',
-      'Modos 3 e 4': 'Frequências de 321,58 Hz e 322,92 Hz (diferença de ~0,416%). Representam modos de ordem superior, com inversões de curvatura ao longo das pás.',
-      'Modos 5 e 6': 'Frequências de 416,62 Hz e 419,7 Hz (diferença de ~0,737%). Formas modais com configurações geométricas complexas, combinando flexão e torção.',
-      mainFindings: [
-        'Existência de modos pareados com frequências muito próximas.',
-        'As amplitudes do software são normalizadas (não representam o deslocamento físico real).',
-        'Necessidade de comparar os resultados numéricos com a rotação operacional do motor.',
-        'Necessidade de calcular o fator de participação modal e massa modal efetiva para validação estrutural.'
-      ],
-      engineeringSkills: [
-        'Simulação Modal (ANSYS)',
-        'Análise de Frequência Natural e Ressonância',
-        'Interpretação de Formas Modais',
-        'Dinâmica Estrutural Aeroespacial'
-      ]
-    },
-    result: 'Os resultados permitiram mapear com sucesso as frequências críticas da estrutura. Concluiu-se que o comportamento dinâmico da hélice exige análises adicionais que correlacionem essas formas modais com as frequências de excitação do motor, validando as condições reais de montagem e evitando zonas de ressonância perigosas durante o voo.',
-    githubUrl: 'https://github.com/Mateusjrs/Projetos',
-    media: {
-      mode1: {
-        title: 'Modo 1 - 53,668 Hz',
-        description: 'Primeira forma modal. Deformação global de flexão da pá.',
-        url: '/images/helice-1.png'
-      },
-      mode2: {
-        title: 'Modo 2 - 53,702 Hz',
-        description: 'Segunda forma modal. Flexão em orientação coordenada distinta (diferença de 0,063%).',
-        url: '/images/helice-2.png'
-      },
-      mode3: {
-        title: 'Modo 3 - 321,58 Hz',
-        description: 'Terceira forma modal. Configuração indicando padrão de flexão de ordem superior.',
-        url: '/images/helice-3.png'
-      },
-      mode4: {
-        title: 'Modo 4 - 322,92 Hz',
-        description: 'Quarta forma modal. Padrão semelhante ao modo 3, diferindo em direção (diferença de 0,416%).',
-        url: '/images/helice-4.png'
-      },
-      mode5: {
-        title: 'Modo 5 - 416,62 Hz',
-        description: 'Quinta forma modal. Distribuição complexa combinando padrões estruturais.',
-        url: '/images/helice-5.png'
-      },
-      mode6: {
-        title: 'Modo 6 - 419,70 Hz',
-        description: 'Sexta forma modal. Combinação avançada de flexão e torção na estrutura das pás.',
-        url: '/images/helice-6.png'
-      }
-    }
-  },
-  
 
-  {
-    id: 'transient-thermal-analysis',
-    title: 'Análise Térmica Transiente em Estrutura Plana',
-    category: 'CAD / 3D',
-    shortDescription: 'Simulação térmica transiente no ANSYS Mechanical para avaliar a distribuição de temperatura e o fluxo de calor ao longo do tempo.',
-    technologies: [
-      'ANSYS Mechanical 2026 R1',
-      'FEA',
-      'Transferência de Calor',
-      'Simulação Transiente'
-    ],
-    imageUrl: '/images/fluxo1.png', 
-    featured: false,
-    summary: 'Este projeto consiste em uma análise térmica transiente de uma estrutura em formato de placa utilizando o ANSYS Mechanical. O objetivo central foi investigar a distribuição de temperatura e o comportamento contínuo da transferência de calor ao longo do tempo, mapeando como o domínio reage às condições de contorno térmicas impostas durante o ciclo de simulação.',
-    problem: 'O principal desafio em simulações transientes é capturar com precisão a evolução temporal dos gradientes térmicos. Era necessário estabelecer uma configuração rigorosa de malha, propriedades dos materiais e restrições térmicas para avaliar o comportamento do fluxo de calor até o instante de 30.000 segundos, evitando divergências numéricas durante a integração temporal.',
-    contribution: 'Realizei a configuração e execução completa da análise por elementos finitos. Modelei as condições de contorno, processei o solver transiente e extraí os campos térmicos. Através da interpretação dos resultados numéricos, correlacionei os gradientes de temperatura com as taxas de fluxo de calor, validando a física do escoamento térmico na estrutura.',
-    engineeringDetails: {
-      analysis: 'Ao invés de uma análise estática, o estudo focou na evolução temporal da transferência de calor. A avaliação do campo térmico no instante final (30.000 s) revelou uma temperatura máxima de 402,74 K e uma mínima de 300 K. Essa distribuição contínua permitiu identificar visualmente as rotas de condução térmica e as zonas de maior acúmulo de energia geométrica.',
-      calculations: 'A investigação do fluxo de calor total complementou o campo de temperaturas, registrando uma magnitude máxima de 0,0471 W/mm². O cruzamento desses dados evidenciou a relação direta entre a geometria da placa, os gradientes térmicos mais severos e os vetores de dissipação, fundamentando a interpretação física do modelo matemático.',
-      mainFindings: [
-        'Gradiente térmico perfeitamente mapeado entre 300 K e 402,74 K.',
-        'Fluxo de calor atingiu magnitude máxima de 0,0471 W/mm² nas zonas críticas.',
-        'Simulação estável e convergente para o período de 30.000 segundos.',
-        'Os resultados demonstram a resposta específica da estrutura às restrições configuradas.'
-      ],
-      engineeringSkills: [
-        'Simulação Térmica Transiente (ANSYS)',
-        'Análise de Transferência de Calor',
-        'Avaliação de Fluxo e Gradientes Térmicos',
-        'Interpretação de Resultados Numéricos'
-      ]
+  result: 'A análise permitiu comparar o comportamento estrutural dos três modelos e observar como as alterações geométricas influenciaram a distribuição das tensões e os deslocamentos. O modelo original apresentou os menores valores, enquanto o modelo C mostrou uma melhora em relação ao modelo B. O projeto também ajudou a desenvolver minha interpretação dos resultados de simulações no ANSYS Mechanical e a entender a importância de verificar as condições de contorno, a malha e as propriedades do material antes de chegar a uma conclusão sobre a resistência de uma peça.',
+
+  githubUrl: 'https://github.com/Mateusjrs/Projetos/tree/main/SUA-PASTA-AQUI',
+
+  media: {
+    rawDesignTension: {
+      title: 'Raw Design (A) - Tensão',
+      description: 'Distribuição da tensão de von Mises no modelo original, com valor máximo de 105,29 MPa na região curva da peça.',
+      url: '/images/heli-1.png'
     },
-    result: 'O projeto demonstrou com sucesso a aplicação do método dos elementos finitos em problemas de engenharia térmica transiente. A abordagem mais expositiva e temporal da simulação permitiu compreender profundamente os mecanismos de transferência de calor da estrutura, consolidando as competências analíticas em modelagem e configuração de solvers no ANSYS Mechanical.',
-    githubUrl: 'https://github.com/Mateusjrs/Projetos',
-    media: {
-      temperatureDistribution: {
-        title: 'Distribuição de Temperatura',
-        description: 'Campo térmico avaliado em 30.000 segundos, evidenciando o gradiente de 300 K a 402,74 K.',
-        url: '/images/fluxo1.png'
-      },
-      heatFlux: {
-        title: 'Fluxo de Calor Total',
-        description: 'Variação do fluxo de calor ao longo da estrutura com pico de 0,0471 W/mm².',
-        url: '/images/fluxo2.png'
-      }
+
+    rawDesignDeformation: {
+      title: 'Raw Design (A) - Deslocamento',
+      description: 'Resultado do deslocamento total do modelo A, que apresentou o menor valor da comparação: 0,12935 mm.',
+      url: '/images/heli-2.png'
+    },
+
+    engineerDesignTension: {
+      title: 'Engineer Design (B) - Tensão',
+      description: 'Distribuição de tensões do modelo B, com pico de 2.565,1 MPa próximo à extremidade do braço.',
+      url: '/images/heli-3.png'
+    },
+
+    engineerDesignDeformation: {
+      title: 'Engineer Design (B) - Deslocamento',
+      description: 'Deslocamento total do modelo B, que apresentou o maior valor entre as três geometrias: 1,527 mm.',
+      url: '/images/heli-4.png'
+    },
+
+    optizedDesignTension: {
+      title: 'Optized Design (C) - Tensão',
+      description: 'Distribuição de tensões do modelo C, com redução de aproximadamente 63,6% na tensão máxima em relação ao modelo B.',
+      url: '/images/heli-5.png'
+    },
+
+    optizedDesignDeformation: {
+      title: 'Optized Design (C) - Deslocamento',
+      description: 'Resultado do deslocamento total do modelo C, com valor máximo de 0,47336 mm.',
+      url: '/images/heli-6.png'
     }
   }
+},
 
-,
+
+{
+  id: 'bicycle-suspension-linkage-fea',
+  title: 'Análise Estrutural de Braço de Suspensão de Bicicleta',
+  category: 'CAD / 3D',
+
+  shortDescription: 'Simulação estrutural no ANSYS Mechanical para avaliar os deslocamentos e as deformações elásticas de um braço de suspensão de bicicleta.',
+
+  technologies: [
+    'ANSYS Mechanical',
+    'Método dos Elementos Finitos (FEA)',
+    'Análise Estática Estrutural',
+    'Projeto Mecânico'
+  ],
+
+  imageUrl: '/images/bic1.png',
+  featured: false,
+
+  summary: 'O projeto teve como objetivo analisar o comportamento estrutural de um braço de suspensão de bicicleta utilizando o ANSYS Mechanical. Através de uma simulação estática estrutural, foram avaliados o deslocamento total e a deformação elástica equivalente da peça. O foco foi observar como o componente se comporta quando submetido a um carregamento, identificando as regiões com maiores deslocamentos e aquelas onde ocorrem as maiores deformações locais.',
+
+  problem: 'O principal desafio foi entender como o braço de suspensão se comportava sob as condições de carregamento da simulação. Para isso, foi necessário observar não apenas o deslocamento da peça, mas também identificar as regiões onde a deformação elástica era maior. Durante a análise, foi possível perceber que o ponto de maior deslocamento não era o mesmo que apresentava a maior deformação local.',
+
+  contribution: '',
+
+  engineeringDetails: {
+    analysis: 'A análise foi realizada no ANSYS Mechanical utilizando o método dos elementos finitos. Foram observados os resultados de deslocamento total (Total Deformation) e deformação elástica equivalente (Equivalent Elastic Strain). A partir dos mapas de resultados, comparei as regiões mais afetadas pelo carregamento e identifiquei os pontos que merecem maior atenção em uma avaliação estrutural.',
+
+    'Deformação Total': 'O deslocamento máximo encontrado foi de 0,58561 mm, enquanto o mínimo foi de 0 mm. Os menores deslocamentos apareceram na região esquerda da peça, próxima ao olhal maior, e aumentaram em direção à extremidade direita, onde foi registrado o valor máximo.',
+
+    'Deformação Elástica Equivalente': 'A deformação elástica equivalente máxima foi de 0,00072733 mm/mm, aproximadamente 0,0727%, com valor mínimo de 6,3085e-8 mm/mm. As maiores deformações apareceram principalmente na região de transição entre o olhal esquerdo e o corpo do braço, além de algumas áreas próximas às bordas da peça.',
+
+    mainFindings: [
+      'O maior deslocamento ocorreu na extremidade direita do braço de suspensão.',
+      'A maior deformação elástica ficou concentrada na transição entre o olhal esquerdo e o corpo da peça.',
+      'As regiões de maior deslocamento e maior deformação elástica não foram as mesmas.',
+      'A geometria da peça influencia a distribuição das deformações.',
+      'Uma análise de tensões de von Mises e um estudo de malha ajudariam a avaliar melhor as regiões críticas.'
+    ],
+
+    engineeringSkills: [
+      'Utilização do ANSYS Mechanical',
+      'Análise Estática Estrutural',
+      'Método dos Elementos Finitos',
+      'Interpretação de Deslocamentos',
+      'Análise de Deformação Elástica Equivalente',
+      'Interpretação de Resultados de Simulação'
+    ]
+  },
+
+  result: 'A simulação permitiu observar o comportamento do braço de suspensão e identificar as regiões com maiores deslocamentos e deformações elásticas. O maior deslocamento ocorreu na extremidade direita, enquanto a maior deformação elástica ficou concentrada próxima ao olhal esquerdo. O projeto foi importante para praticar o uso do ANSYS Mechanical e entender melhor a diferença entre deslocamento e deformação em uma análise estrutural. Para avaliar se a peça suporta adequadamente o carregamento, ainda seria necessário analisar as tensões, as propriedades do material e a convergência da malha.',
+
+  githubUrl: 'https://github.com/Mateusjrs/Projetos',
+
+  media: {
+    totalDeformation: {
+      title: 'Deslocamento Total',
+      description: 'Resultado da simulação mostrando o deslocamento máximo de 0,58561 mm na extremidade direita do braço de suspensão.',
+      url: '/images/bic1.png'
+    },
+
+    elasticStrain: {
+      title: 'Deformação Elástica Equivalente',
+      description: 'Distribuição da deformação elástica, com valor máximo de aproximadamente 0,0727% na região de transição do olhal esquerdo.',
+      url: '/images/bic2.png'
+    }
+  }
+},
+
+{
+  id: 'propeller-modal-analysis',
+  title: 'Análise Modal de Hélice Aeronáutica',
+  category: 'Aerospace',
+
+  shortDescription: 'Simulação modal no ANSYS Mechanical para identificar as frequências naturais e os principais modos de vibração de uma hélice aeronáutica.',
+
+  technologies: [
+    'ANSYS Mechanical',
+    'Método dos Elementos Finitos (FEA)',
+    'Análise Modal',
+    'Dinâmica Estrutural'
+  ],
+
+  imageUrl: '/images/helice-1.png',
+  featured: false,
+
+  summary: 'O projeto teve como objetivo estudar o comportamento vibratório de uma hélice aeronáutica utilizando o ANSYS Mechanical. Através de uma análise modal pelo método dos elementos finitos, foram obtidas as seis primeiras frequências naturais da estrutura e suas respectivas formas de vibração. Durante o estudo, observei como a geometria da hélice se comporta em cada modo, identificando diferentes padrões de flexão e torção. A análise também permitiu compreender melhor a importância das frequências naturais no projeto de componentes sujeitos a vibrações.',
+
+  problem: 'O principal desafio foi identificar as frequências naturais da hélice e entender como a estrutura tende a vibrar em cada uma delas. Como uma hélice está sujeita a vibrações durante seu funcionamento, é importante conhecer esses modos para avaliar possíveis situações de ressonância. Outro ponto foi interpretar os resultados do ANSYS, principalmente os modos que apresentaram frequências muito próximas, mas com diferentes formas de vibração.',
+
+  contribution: '',
+
+  engineeringDetails: {
+    analysis: 'A simulação foi realizada no ANSYS Mechanical utilizando uma análise modal. Foram avaliados os seis primeiros modos de vibração, observando as frequências naturais e as formas modais apresentadas pelo software. A partir dos resultados, foi possível identificar grupos de frequências próximas e comparar os padrões de deformação da hélice em cada modo.',
+
+    'Modos 1 e 2': 'Os dois primeiros modos apresentaram frequências naturais de 53,668 Hz e 53,702 Hz, respectivamente. A diferença entre elas foi de aproximadamente 0,063%. Esses modos estão associados aos primeiros padrões de flexão da estrutura, permitindo observar como a hélice tende a vibrar em diferentes configurações.',
+
+    'Modos 3 e 4': 'O terceiro e o quarto modos apresentaram frequências de 321,58 Hz e 322,92 Hz, com diferença aproximada de 0,416%. Nesses modos, foram observados padrões de vibração de ordem superior, com mudanças na curvatura das pás em comparação com os dois primeiros modos.',
+
+    'Modos 5 e 6': 'Os últimos modos analisados apresentaram frequências de 416,62 Hz e 419,70 Hz, com diferença aproximada de 0,74%. As formas modais mostraram comportamentos mais complexos, envolvendo diferentes combinações de flexão e torção ao longo da estrutura.',
+
+    mainFindings: [
+      'Foram identificadas as seis primeiras frequências naturais da hélice.',
+      'Alguns modos apresentaram frequências muito próximas, formando pares.',
+      'As formas de vibração mudaram conforme a frequência natural aumentou.',
+      'Os deslocamentos mostrados na análise modal representam formas de vibração, não amplitudes reais de funcionamento.',
+      'Para avaliar o risco de ressonância, seria necessário comparar as frequências naturais com as excitações geradas durante a operação da hélice.'
+    ],
+
+    engineeringSkills: [
+      'Utilização do ANSYS Mechanical',
+      'Método dos Elementos Finitos',
+      'Análise Modal',
+      'Interpretação de Frequências Naturais',
+      'Análise de Formas Modais',
+      'Conceitos de Vibração e Ressonância'
+    ]
+  },
+
+  result: 'A análise permitiu identificar as seis primeiras frequências naturais da hélice e visualizar como a estrutura tende a vibrar em cada modo. Foi possível observar pares de frequências próximas e diferentes padrões de flexão e torção ao longo das pás. O projeto foi importante para praticar a análise modal no ANSYS Mechanical e compreender melhor o comportamento dinâmico de componentes aeronáuticos. Como continuidade, seria interessante comparar as frequências encontradas com as frequências de excitação do motor e da hélice durante seu funcionamento, permitindo uma avaliação mais completa do risco de ressonância.',
+
+  githubUrl: 'https://github.com/Mateusjrs/Projetos',
+
+  media: {
+    mode1: {
+      title: 'Modo 1 - 53,668 Hz',
+      description: 'Primeiro modo de vibração da hélice, apresentando um padrão inicial de flexão da estrutura.',
+      url: '/images/helice-1.png'
+    },
+
+    mode2: {
+      title: 'Modo 2 - 53,702 Hz',
+      description: 'Segundo modo de vibração, com frequência muito próxima à do primeiro modo e uma configuração de flexão diferente.',
+      url: '/images/helice-2.png'
+    },
+
+    mode3: {
+      title: 'Modo 3 - 321,58 Hz',
+      description: 'Terceiro modo de vibração, apresentando um padrão de flexão de ordem superior.',
+      url: '/images/helice-3.png'
+    },
+
+    mode4: {
+      title: 'Modo 4 - 322,92 Hz',
+      description: 'Quarto modo de vibração, com frequência próxima à do terceiro modo e diferenças na forma de vibração.',
+      url: '/images/helice-4.png'
+    },
+
+    mode5: {
+      title: 'Modo 5 - 416,62 Hz',
+      description: 'Quinto modo de vibração, mostrando um comportamento mais complexo da estrutura.',
+      url: '/images/helice-5.png'
+    },
+
+    mode6: {
+      title: 'Modo 6 - 419,70 Hz',
+      description: 'Sexto modo de vibração, apresentando padrões mais complexos de flexão e torção das pás.',
+      url: '/images/helice-6.png'
+    }
+  }
+},
+
+  
+
+ 
+{
+  id: 'transient-thermal-analysis',
+  title: 'Análise Térmica Transiente em Estrutura Plana',
+  category: 'CAD / 3D',
+
+  shortDescription: 'Simulação térmica no ANSYS Mechanical para estudar a distribuição de temperatura e o fluxo de calor em uma placa ao longo do tempo.',
+
+  technologies: [
+    'ANSYS Mechanical 2026 R1',
+    'Método dos Elementos Finitos (FEA)',
+    'Transferência de Calor',
+    'Análise Térmica Transiente'
+  ],
+
+  imageUrl: '/images/fluxo1.png',
+  featured: false,
+
+  summary: 'O projeto teve como objetivo estudar a transferência de calor em uma estrutura plana utilizando o ANSYS Mechanical. Foi realizada uma análise térmica transiente para observar como a temperatura se distribui pela placa ao longo do tempo. Durante a simulação, foram avaliados os campos de temperatura e o fluxo de calor, considerando as condições térmicas aplicadas ao modelo. O estudo permitiu visualizar como diferentes regiões da estrutura apresentam temperaturas e intensidades de fluxo de calor distintas.',
+
+  problem: 'O principal desafio foi compreender como a temperatura varia ao longo da estrutura durante o processo de transferência de calor. Diferentemente de uma análise em regime permanente, a simulação transiente considera a passagem do tempo, permitindo acompanhar a evolução das temperaturas. Para isso, foi necessário configurar as propriedades do material, as condições de contorno térmicas e o tempo de simulação, definido em 30.000 segundos.',
+
+  contribution: '',
+
+  engineeringDetails: {
+    analysis: 'A simulação foi realizada no ANSYS Mechanical utilizando uma análise térmica transiente pelo método dos elementos finitos. Foram configuradas as condições térmicas da placa e avaliados os resultados de temperatura e fluxo de calor. No instante final de 30.000 segundos, a temperatura máxima encontrada foi de 402,74 K, enquanto a mínima foi de 300 K. A partir do mapa de temperaturas, foi possível observar a distribuição térmica na estrutura e identificar as regiões com maiores diferenças de temperatura.',
+
+    calculations: 'Além da distribuição de temperatura, foi analisado o fluxo de calor total na estrutura. O valor máximo encontrado foi de 0,0471 W/mm². A comparação entre os mapas de temperatura e fluxo de calor ajudou a entender como as diferenças de temperatura estão relacionadas à transferência de energia térmica pelo material. Dessa forma, foi possível observar o comportamento da condução de calor nas diferentes regiões da placa.',
+
+    mainFindings: [
+      'A temperatura no instante final variou entre 300 K e 402,74 K.',
+      'O fluxo de calor apresentou magnitude máxima de 0,0471 W/mm².',
+      'A distribuição de temperatura permitiu identificar regiões com diferentes condições térmicas.',
+      'Os resultados mostraram como o calor se distribui pela estrutura nas condições simuladas.',
+      'A análise transiente permitiu estudar o comportamento térmico considerando a passagem do tempo.'
+    ],
+
+    engineeringSkills: [
+      'Utilização do ANSYS Mechanical',
+      'Análise Térmica Transiente',
+      'Método dos Elementos Finitos',
+      'Transferência de Calor por Condução',
+      'Interpretação de Mapas de Temperatura',
+      'Análise de Fluxo de Calor'
+    ]
+  },
+
+  result: 'A simulação permitiu estudar a distribuição de temperatura e o fluxo de calor em uma estrutura plana durante um intervalo de 30.000 segundos. No instante final, foram encontrados valores de temperatura entre 300 K e 402,74 K, além de um fluxo de calor máximo de 0,0471 W/mm². O projeto foi importante para praticar a configuração de análises térmicas no ANSYS Mechanical e compreender melhor como o calor se propaga em um material. Também ajudou a entender a diferença entre análises transientes e em regime permanente e a importância das condições de contorno nos resultados.',
+
+  githubUrl: 'https://github.com/Mateusjrs/Projetos',
+
+  media: {
+    temperatureDistribution: {
+      title: 'Distribuição de Temperatura',
+      description: 'Mapa de temperatura da estrutura no instante de 30.000 segundos, mostrando valores entre 300 K e 402,74 K.',
+      url: '/images/fluxo1.png'
+    },
+
+    heatFlux: {
+      title: 'Fluxo de Calor Total',
+      description: 'Distribuição da magnitude do fluxo de calor na placa, com valor máximo de 0,0471 W/mm².',
+      url: '/images/fluxo2.png'
+    }
+  }
+},
+
+
   {
     id: 'truss-structure-fea',
     title: 'Análise Estrutural de uma Estrutura Treliçada',
