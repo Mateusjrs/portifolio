@@ -156,7 +156,7 @@ export const projectsData: Project[] = [
     
     problem: 'O maior desafio de programação foi lidar com mensagens CAN de formatos e tamanhos diferentes, sem perder a organização das consultas à ECU. Para isso, precisei estudar o funcionamento do ISO-TP, controlar a sequência de quadros e organizar as solicitações OBD-II por estados. Também foi necessário lidar com tempos de resposta e integrar a transmissão Bluetooth ao funcionamento do scanner.',
     
-    contribution: '',
+    contribution: 'Desenvolvi o projeto completo do scanner, desde a integração do ESP32 com o controlador MCP2515 até a programação do firmware em C/C++. Implementei a máquina de estados para organizar as consultas OBD-II, o tratamento de mensagens CAN e a remontagem de quadros pelo protocolo ISO-TP. Também programei a comunicação Bluetooth para enviar os dados e receber comandos do usuário.',
     
     engineeringDetails: {
       firmwareArchitecture: 'O firmware foi organizado com uma máquina de estados para controlar as consultas OBD-II, incluindo leitura do VIN, códigos de falha e Freeze Frame. Essa organização ajuda a executar as solicitações sem interromper constantemente a leitura do barramento CAN.',
@@ -222,7 +222,7 @@ if (pciType == 0x1) { // FIRST FRAME detectado
     featured: true,
     summary: 'Neste projeto desenvolvi um firmware em C/C++ para controlar diferentes modelos de ar-condicionado por sinais infravermelhos. Para evitar repetir código para cada fabricante, organizei os comandos em uma interface chamada ACInterface, utilizando ponteiros de função e macros. O programa também lê a temperatura com um DS18B20, aplica um filtro de média móvel exponencial (EMA) e acompanha a taxa de variação da temperatura para decidir quando ajustar o aparelho. A comunicação Wi-Fi e MQTT permite trocar dados e comandos com outros dispositivos.',
     problem: 'O desafio principal estava na organização do código: os aparelhos utilizam diferentes protocolos infravermelhos, mas o sistema precisava controlá-los por uma mesma interface. Também foi necessário integrar leitura de temperatura, lógica de controle e comunicação de rede, evitando que os ajustes fossem feitos com muita frequência e mantendo as funções organizadas.',
-    contribution: '',
+    contribution: 'Desenvolvi o firmware em C/C++ para o ESP32, organizando diferentes protocolos de ar-condicionado em uma interface comum com macros e ponteiros de função. Implementei a leitura de temperatura pelo DS18B20, o filtro EMA, o cálculo da taxa de variação térmica e a lógica de ajuste do ar-condicionado. Também integrei a comunicação Wi-Fi/MQTT e as rotinas de configuração e armazenamento.',
     engineeringDetails: {
       firmwareArchitecture: 'Para organizar os diferentes aparelhos, utilizei uma interface chamada ACInterface, baseada em ponteiros de função e macros em C/C++. Essa estrutura permite reunir drivers de diferentes fabricantes e selecionar as funções necessárias para cada modelo. O projeto contempla suporte a 19 conjuntos de drivers/protocolos de climatização.',
       thermostatControl: 'A temperatura é lida por um sensor DS18B20 e passa por um filtro de média móvel exponencial (EMA), usado para suavizar pequenas variações nas leituras. O firmware também calcula a taxa de mudança da temperatura (dT/dt). Com essas informações, a lógica procura ajustar o setpoint do ar-condicionado de forma gradual, respeitando um intervalo mínimo entre comandos.',
@@ -302,7 +302,7 @@ void runThermostat() {
     featured: true,
     summary: 'O Quilli é um projeto de programação embarcada desenvolvido em C/C++ para ESP32. O principal trabalho foi organizar no firmware várias funções que precisam funcionar juntas: leitura de temperatura, controle do aquecedor e cooler, alimentação em horários programados, iluminação com PWM, interface TFT e comunicação Wi-Fi/MQTT. Separei a lógica em rotinas e módulos para facilitar o controle de cada função e utilizei RTC e memória não volátil para trabalhar com horários e manter as configurações do usuário.',
     problem: 'O principal desafio de programação foi fazer diferentes funções de automação trabalharem no mesmo microcontrolador sem atrapalhar umas às outras. O sistema precisa consultar sensores, comparar horários, acionar dispositivos, atualizar a tela e trocar mensagens pela rede. Por isso, organizei o código com rotinas e temporizadores para gerenciar o funcionamento de cada parte do aquário.',
-    contribution: '',
+    contribution: 'Desenvolvi o firmware do Quilli em C/C++, organizando as rotinas de monitoramento da temperatura, controle do aquecedor e cooler, alimentação programada e iluminação por PWM. Programei a interface TFT, a comunicação Wi-Fi/MQTT e a utilização de RTC e memória não volátil para os horários e configurações. Também integrei sensores e atuadores e organizei as tarefas do ESP32 para que as funções trabalhassem de forma coordenada.',
     engineeringDetails: {
       systemArchitecture: 'O ESP32 é o controlador principal do sistema. O firmware foi dividido em partes para leitura de sensores, controle dos equipamentos, interface gráfica, armazenamento de configurações e comunicação. Essa divisão facilitou a organização do código e a integração entre as funções.',
       temperatureControl: 'O sistema acompanha a temperatura da água e permite configurar um valor desejado e uma faixa de controle. A partir das leituras do sensor, o firmware decide quando acionar o aquecimento ou o resfriamento.',
@@ -398,7 +398,7 @@ void runThermostat() {
 
   problem: 'O desafio principal foi organizar a lógica de aquisição para que as medições fossem realizadas nas condições escolhidas pelo operador, após a estabilização do escoamento. Era necessário ler os sensores, identificar o ângulo de ataque de cada ensaio e armazenar amostras de forma que os dados pudessem ser comparados posteriormente. A comunicação Serial e o uso de matrizes ajudaram a estruturar esse processo.',
 
-  contribution: 'Fiquei responsável pelo desenvolvimento do código de aquisição de dados em C/C++ para o microcontrolador. Trabalhei com a leitura do sensor piezoelétrico e com a integração de uma célula de carga utilizando o módulo HX711. Também implementei uma comunicação Serial para que o operador pudesse informar o ângulo de ataque antes de iniciar cada medição. O código permite armazenar as leituras e calcular a média dos valores obtidos pela célula de carga.',
+  contribution: 'Desenvolvi a lógica de aquisição de dados em C/C++ para o microcontrolador, incluindo a leitura da célula de carga pelo HX711, o registro das amostras em matrizes e o cálculo das médias. Programei a comunicação Serial para que o operador informe o ângulo de ataque e controle o início de cada coleta. Também trabalhei na integração do sensor piezoelétrico ao experimento para estudar as vibrações da asa; essa parte permanece em testes.',
 
   engineeringDetails: {
     calculations: 'O código foi organizado para armazenar até 25 amostras por medição, considerando até 20 ângulos de ataque diferentes. Para cada condição, é calculada a média das leituras da célula de carga, facilitando a comparação dos esforços entre os ensaios.',
@@ -525,7 +525,7 @@ void realizarMedicao() {
 
     problem: 'O maior desafio foi transformar informações geométricas e resultados do AVL em um modelo matemático que pudesse ser executado em MATLAB. Além da definição dos parâmetros aerodinâmicos, foi necessário implementar as equações de movimento, organizar os estados da aeronave e aplicar comandos de controle para analisar as respostas ao longo do tempo.',
 
-    contribution: '',
+    contribution: 'Realizei o levantamento da geometria do EMB-110 pelas três vistas no AutoCAD e preparei o modelo aerodinâmico no AVL para obter as derivadas de estabilidade e controle. Desenvolvi em MATLAB o simulador não linear 6-DOF, implementando as equações de movimento e a integração numérica com ode45. Também programei os comandos de pulso e doublet, comparei condições de massa e centro de gravidade e analisei os gráficos das respostas de voo.',
 
     engineeringDetails: {
       aircraft: 'A aeronave estudada foi o EMB-110 Bandeirante (C-95), um bimotor turboélice de asa baixa e empenagem convencional. Como referência, foram utilizados dados encontrados em manuais técnicos e na documentação de certificação indicada no estudo.',
@@ -611,7 +611,7 @@ void realizarMedicao() {
     featured: true,
     summary: 'O projeto reuniu simulações aerodinâmicas no XFLR5 com o processamento dos resultados em Python. Foram comparadas variações geométricas do perfil NACA 5312, como espessura, camber e formato dos bordos de ataque e fuga. Depois de exportar os resultados, utilizei Python para organizar os dados e gerar gráficos comparativos de sustentação, arrasto, eficiência, momento aerodinâmico e características do escoamento. O uso da programação facilitou a comparação entre diferentes configurações em um mesmo estudo.',
     problem: 'O desafio foi organizar uma quantidade grande de resultados sem perder a relação entre cada geometria e suas condições de simulação. Para isso, o estudo foi dividido em alterações individuais dos parâmetros do perfil, e os dados exportados foram tratados em Python para facilitar a comparação das curvas e a interpretação das diferenças entre os casos.',
-    contribution: '',
+    contribution: 'Planejei e executei as análises paramétricas do perfil NACA 5312 no XFLR5, variando características como espessura, camber e geometria dos bordos. Organizei os resultados exportados e utilizei Python para tratar os dados e gerar gráficos comparativos de sustentação, arrasto, eficiência e momento. Também analisei a distribuição de pressão, a camada limite e as diferenças entre as configurações estudadas.',
     engineeringDetails: {
       baseline: 'O perfil utilizado como referência foi o NACA 5312, que possui camber máximo de 5% da corda, localizado a 30% da corda, e espessura máxima de 12% da corda. As outras configurações foram comparadas com esse perfil inicial.',
       simulation: 'As análises foram realizadas no XFLR5, utilizando métodos de painéis e modelos de camada limite. Foram consideradas condições com números de Reynolds entre 4 × 10^6 e 6 × 10^6, Mach de 0,15 a 0,22 e ângulos de ataque de -2° a 14°.',
@@ -684,7 +684,7 @@ void realizarMedicao() {
 
   problem: 'Um dos principais desafios foi integrar vários sensores e dispositivos de controle em um espaço reduzido, considerando as limitações de uma competição de robótica. O robô precisa identificar rapidamente a posição do adversário e detectar as bordas da arena para evitar sair da área de combate. Outro desafio foi utilizar cinco sensores VL53L0X no mesmo barramento I2C, já que esses sensores possuem o mesmo endereço padrão. Também foi necessário organizar a alimentação para reduzir possíveis interferências provocadas pelos motores.',
 
-  contribution: '',
+  contribution: 'Desenvolvi a arquitetura eletrônica do robô e o esquemático da placa principal, definindo as conexões do ESP32, sensores, alimentação e interfaces de controle. Estruturei a integração dos cinco sensores VL53L0X pelo barramento I2C, utilizando os pinos XSHUT para configurar endereços diferentes. Também organizei as conexões dos sensores de borda, do MPU6050, do receptor PPM e dos elementos de sinalização.',
 
   engineeringDetails: {
     schematic: 'O esquemático eletrônico foi desenvolvido separando os circuitos em blocos de alimentação, sensores, processamento, comunicação e sinalização. Essa organização facilitou a distribuição das conexões e a integração dos componentes utilizados no robô.',
@@ -768,7 +768,7 @@ void realizarMedicao() {
     featured: false,
     summary: 'O projeto teve como objetivo adaptar a parte eletrônica do robô Afrodite, de 3 kg, para um mini sumô de 500 g. Como o robô precisa ocupar um espaço menor, foi necessário reorganizar os componentes e desenvolver uma PCB mais compacta. O sistema utiliza um ESP32, cinco sensores de distância VL53L0X, um sensor inercial MPU6050 e circuitos para o controle dos motores. Durante o desenvolvimento, trabalhei principalmente na escolha dos componentes, no esquemático e no layout da placa.',
     problem: 'O principal desafio foi reduzir o tamanho e o peso da eletrônica sem perder as funções do robô maior. Era preciso acomodar os sensores, a alimentação e o controle dos motores em uma placa que coubesse no chassi, respeitando o limite de 10 x 10 cm da categoria. Também foi importante planejar o caminho das trilhas, porque os motores podem gerar ruídos elétricos que interferem na comunicação dos sensores.',
-    contribution: '',
+    contribution: 'Realizei a adaptação do projeto eletrônico do Afrodite para a categoria de 500 g, redesenhando o esquemático e o layout da PCB para ocupar menos espaço. Selecionei componentes SMD, reorganizei os circuitos de alimentação, sensores e controle dos motores e mantive a integração dos sensores VL53L0X por I2C. Também considerei o posicionamento das trilhas, os planos de terra e a dissipação de calor no desenvolvimento da placa.',
     engineeringDetails: {
       schematic: 'O circuito foi redesenhado para utilizar componentes SMD, incluindo resistores e capacitores nos tamanhos 0603 e 0402. Sempre que possível, os circuitos que antes utilizavam módulos prontos foram integrados diretamente à placa, como os sensores e o MPU6050. Isso ajudou a reduzir o espaço ocupado pelo hardware.',
       controller: 'O ESP32 foi mantido como controlador principal. O projeto considera a organização do firmware em tarefas com FreeRTOS para separar a leitura dos sensores e o controle dos motores, facilitando o gerenciamento das funções do robô.',
@@ -843,7 +843,7 @@ void realizarMedicao() {
 
   problem: 'Um dos principais desafios foi integrar dispositivos que trabalham com tensões e correntes diferentes. Enquanto o ESP32 utiliza sinais de 3,3 V, alguns equipamentos do aquário, como coolers e sistemas de iluminação, trabalham com 12 V. Por isso, foi necessário desenvolver circuitos específicos para o acionamento dessas cargas, utilizando transistores, MOSFETs, relés e optoacopladores. Também foi importante organizar os componentes e as conexões para facilitar a montagem e a manutenção do sistema.',
 
-  contribution: '',
+  contribution: 'Desenvolvi o projeto eletrônico do Aquário Inteligente, desde a definição dos componentes e a criação do esquemático até a organização da PCB. Projetei os estágios de acionamento para aquecedor, cooler e iluminação utilizando relés, transistores, MOSFETs e optoacopladores. Também organizei a alimentação e as interfaces do ESP32 com ADS1115, RTC, display e comunicação RS-485, além da lista de materiais.',
 
   engineeringDetails: {
     schematic: 'O esquemático eletrônico foi desenvolvido dividindo o sistema em blocos, como alimentação, processamento, sensores, acionamento de cargas e comunicação. Essa organização facilitou a identificação das conexões entre os componentes e permitiu planejar a integração de todos os dispositivos em uma única placa.',
@@ -937,7 +937,7 @@ void realizarMedicao() {
 
   problem: 'O principal desafio foi comparar três geometrias diferentes e entender como cada uma se comportava quando submetida às mesmas condições de carregamento. Era necessário observar onde ocorriam as maiores concentrações de tensão e quais modelos apresentavam os maiores deslocamentos. Além disso, foi importante considerar que alguns valores muito elevados poderiam estar relacionados à malha ou às condições utilizadas na simulação.',
 
-  contribution: 'Realizei a análise comparativa dos três modelos utilizando os resultados das simulações no ANSYS Mechanical. Avaliei os mapas de tensão de von Mises e os deslocamentos totais, identificando as regiões mais solicitadas de cada geometria. Também comparei os valores máximos obtidos para verificar como as alterações no formato do braço influenciaram seu comportamento estrutural.',
+  contribution: 'Realizei o estudo comparativo das três geometrias do braço de passo no ANSYS Mechanical, organizando e avaliando os resultados das análises estáticas. Comparei os valores e mapas de tensão de von Mises e deslocamento total de cada modelo, identificando as regiões com maiores concentrações. Também analisei as diferenças entre as geometrias e a necessidade de verificar possíveis efeitos da malha nos picos de tensão.',
 
   engineeringDetails: {
     analysis: 'A análise foi realizada pelo método dos elementos finitos, considerando três configurações geométricas do braço de passo. Foram comparados os valores máximos de tensão equivalente de von Mises e deslocamento total, além das regiões onde ocorreram as maiores concentrações de tensão.',
@@ -1030,7 +1030,7 @@ void realizarMedicao() {
 
   problem: 'O principal desafio foi identificar as frequências naturais da hélice e entender como a estrutura tende a vibrar em cada uma delas. Como uma hélice está sujeita a vibrações durante seu funcionamento, é importante conhecer esses modos para avaliar possíveis situações de ressonância. Outro ponto foi interpretar os resultados do ANSYS, principalmente os modos que apresentaram frequências muito próximas, mas com diferentes formas de vibração.',
 
-  contribution: '',
+  contribution: 'Realizei a análise modal da hélice no ANSYS Mechanical e examinei as seis primeiras frequências naturais e suas formas de vibração. Comparei os modos com frequências próximas e interpretei os padrões de flexão e torção mostrados nos resultados. Também organizei as informações para relacionar o comportamento vibratório da estrutura com o estudo de possíveis condições de ressonância.',
 
   engineeringDetails: {
     analysis: 'A simulação foi realizada no ANSYS Mechanical utilizando uma análise modal. Foram avaliados os seis primeiros modos de vibração, observando as frequências naturais e as formas modais apresentadas pelo software. A partir dos resultados, foi possível identificar grupos de frequências próximas e comparar os padrões de deformação da hélice em cada modo.',
@@ -1123,7 +1123,7 @@ void realizarMedicao() {
 
   problem: 'O principal desafio foi compreender como a temperatura varia ao longo da estrutura durante o processo de transferência de calor. Diferentemente de uma análise em regime permanente, a simulação transiente considera a passagem do tempo, permitindo acompanhar a evolução das temperaturas. Para isso, foi necessário configurar as propriedades do material, as condições de contorno térmicas e o tempo de simulação, definido em 30.000 segundos.',
 
-  contribution: '',
+  contribution: 'Configurei e realizei a simulação térmica transiente da placa no ANSYS Mechanical, considerando as propriedades do material, as condições de contorno e o tempo total de 30.000 segundos. Analisei os mapas de distribuição de temperatura e fluxo de calor, identificando os valores máximos e mínimos do estudo. Também comparei os resultados para entender a relação entre os gradientes térmicos e a condução de calor.',
 
   engineeringDetails: {
     analysis: 'A simulação foi realizada no ANSYS Mechanical utilizando uma análise térmica transiente pelo método dos elementos finitos. Foram configuradas as condições térmicas da placa e avaliados os resultados de temperatura e fluxo de calor. No instante final de 30.000 segundos, a temperatura máxima encontrada foi de 402,74 K, enquanto a mínima foi de 300 K. A partir do mapa de temperaturas, foi possível observar a distribuição térmica na estrutura e identificar as regiões com maiores diferenças de temperatura.',
@@ -1188,7 +1188,7 @@ void realizarMedicao() {
 
   problem: 'O principal desafio foi entender como o braço de suspensão se comportava sob as condições de carregamento da simulação. Para isso, foi necessário observar não apenas o deslocamento da peça, mas também identificar as regiões onde a deformação elástica era maior. Durante a análise, foi possível perceber que o ponto de maior deslocamento não era o mesmo que apresentava a maior deformação local.',
 
-  contribution: '',
+  contribution: 'Realizei a análise estática do braço de suspensão no ANSYS Mechanical e avaliei os resultados de deslocamento total e deformação elástica equivalente. Identifiquei o maior deslocamento na extremidade direita e a maior deformação local na transição do olhal esquerdo. Também comparei os dois mapas para entender por que as regiões críticas de deslocamento e deformação não coincidiram.',
 
   engineeringDetails: {
     analysis: 'A análise foi realizada no ANSYS Mechanical utilizando o método dos elementos finitos. Foram observados os resultados de deslocamento total (Total Deformation) e deformação elástica equivalente (Equivalent Elastic Strain). A partir dos mapas de resultados, comparei as regiões mais afetadas pelo carregamento e identifiquei os pontos que merecem maior atenção em uma avaliação estrutural.',
@@ -1255,7 +1255,7 @@ void realizarMedicao() {
 
   problem: 'O principal desafio foi entender como uma estrutura formada por várias barras conectadas se comporta quando submetida a esforços. Para isso, foi necessário considerar a geometria da treliça, os pontos de apoio e as condições de carregamento. Outro ponto importante foi interpretar os resultados da simulação, identificando as regiões com maiores deslocamentos e observando como as restrições influenciam o comportamento da estrutura.',
 
-  contribution: '',
+  contribution: 'Realizei a análise estática estrutural da treliça no ANSYS Mechanical, considerando a geometria, os apoios e o carregamento adotado no estudo. Avaliei os mapas de deslocamento total e de deslocamento direcional no eixo X, identificando os valores máximos e a distribuição dos deslocamentos nas barras. Também interpretei como as condições de contorno influenciaram o comportamento do conjunto.',
 
   engineeringDetails: {
     analysis: 'A simulação foi realizada no ANSYS Mechanical utilizando uma análise estática estrutural. Foram avaliados o deslocamento total (Total Deformation) e o deslocamento direcional no eixo X (Directional Deformation). A partir dos mapas de resultados, foi possível observar como a estrutura se desloca sob as condições aplicadas e identificar as regiões que apresentam os maiores valores.',
@@ -1324,7 +1324,7 @@ void realizarMedicao() {
 
   problem: 'O principal desafio foi transformar o desenho técnico em uma estrutura tridimensional, mantendo as proporções e as dimensões indicadas. Como a asa possui enflechamento e redução da corda em direção à ponta, foi necessário ajustar os contornos e o posicionamento dos componentes internos ao longo da geometria. Outro desafio foi organizar as nervuras e os elementos longitudinais para que acompanhassem corretamente o formato da asa e se encaixassem na montagem.',
 
-  contribution: '',
+  contribution: 'Realizei a modelagem completa da asa enflechada a partir do desenho técnico, utilizando as dimensões da raiz, da ponta, da semienvergadura e do ângulo de enflechamento. Construí a geometria externa e modelei as nervuras e os elementos longitudinais, posicionando a longarina principal na linha de 25% da corda. Por fim, organizei a montagem 3D para representar a estrutura interna da asa.',
 
   engineeringDetails: {
     geometry: 'A asa foi modelada considerando uma corda de 2.000 mm na raiz e 800 mm na ponta, distribuídas ao longo de uma semienvergadura de 4.000 mm. A geometria apresenta uma redução gradual da corda, formando uma asa trapezoidal enflechada. Essas dimensões foram utilizadas como referência para desenvolver o contorno externo e posicionar os componentes estruturais.',
@@ -1400,7 +1400,7 @@ void realizarMedicao() {
 
   problem: 'A principal dificuldade foi transformar as informações das três vistas em uma geometria 3D coerente. Como a asa possui curvas e mudanças de formato ao longo de sua extensão, foi necessário ajustar os esboços para que os contornos das diferentes vistas fossem compatíveis. Outro desafio foi criar superfícies contínuas e posicionar os componentes internos de acordo com a geometria desenvolvida.',
 
-  contribution: 'Fui responsável pela modelagem e montagem do conjunto no SolidWorks. Comecei utilizando as três vistas como referência para desenhar os principais contornos da asa. A partir delas, criei curvas com a ferramenta Spline, ajustando os pontos de controle para aproximar o formato do modelo original. Depois, utilizei planos de referência e recursos de Loft para desenvolver as superfícies tridimensionais. Também modelei nervuras, longarinas e elementos de fixação, organizando as peças em uma montagem.',
+  contribution: 'Desenvolvi a modelagem da asa inspirada no Airbus A380 no SolidWorks, utilizando as vistas superior, frontal e lateral como referência. Desenhei e ajustei curvas com Splines, criei planos e superfícies com recursos de Loft e trabalhei nas transições da geometria. Também modelei as nervuras, longarinas e elementos de fixação, organizando os componentes na montagem 3D.',
 
   engineeringDetails: {
     calculations: 'A modelagem foi baseada principalmente na interpretação geométrica das três vistas, utilizando proporções e dimensões de referência para posicionar as curvas e os componentes. O foco do trabalho foi a construção do modelo CAD, e não a realização de uma análise estrutural completa.',
@@ -1455,7 +1455,7 @@ void realizarMedicao() {
 
     problem: 'A substituição de um equipamento aviônico não depende apenas de verificar se ele cabe no painel. Também é necessário avaliar a alimentação elétrica, o consumo de corrente, as conexões e os componentes necessários para a instalação. O principal desafio foi reunir essas informações a partir da documentação e utilizá-las para propor uma integração coerente com o sistema elétrico considerado no estudo.',
 
-    contribution: '',
+    contribution: 'Desenvolvi o estudo técnico da substituição do sistema RT-385 pelo Garmin GNS 430W no Cessna 182. Consultei a documentação dos equipamentos e os requisitos aplicáveis, levantei os componentes necessários e comparei os consumos elétricos para montar o balanço de carga. Também organizei uma proposta de integração com alimentação, aterramento, proteção dos circuitos e conexões principais, sem tratar o estudo como uma instalação já executada ou certificada.',
 
     engineeringDetails: {
       aircraft: 'O estudo considerou um Cessna 182 de 1979, utilizando como referência uma arquitetura elétrica de 28 V e os equipamentos descritos na atividade.',
