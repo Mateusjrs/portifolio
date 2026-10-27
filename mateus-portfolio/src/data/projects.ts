@@ -313,12 +313,12 @@ void realizarMedicao() {
     technicalDrawing: {
       title: 'Desenho Técnico da Asa',
       description: 'Desenho utilizado como referência para a modelagem, apresentando as dimensões de corda, semienvergadura, enflechamento e posição da longarina principal.',
-      url: '/images/vista3d'
+      url: '/images/vista3d.png'
     },
 
     structuralModel: {
       title: 'Modelo 3D da Estrutura',
-      description: 'Visualização da montagem tridimensional, mostrando a distribuição das nervuras, longarinas e demais componentes internos da asa.',
+      description: 'Visualiza ção da montagem tridimensional, mostrando a distribuição das nervuras, longarinas e demais componentes internos da asa.',
       url: '/images/asa.png'
     }
   },
