@@ -269,7 +269,7 @@ void realizarMedicao() {
     'Geometria de Asas'
   ],
 
-  imageUrl: '/images/asa-enflechada-estrutura.png',
+  imageUrl: '/images/asa.png',
   featured: false,
 
   summary: 'O projeto teve como objetivo desenvolver um modelo 3D da estrutura de uma asa enflechada a partir de um desenho técnico com suas principais dimensões. A modelagem considerou a variação da corda ao longo da envergadura, o ângulo de enflechamento e a posição dos componentes estruturais internos. Durante o desenvolvimento, trabalhei na construção da geometria da asa e na modelagem das nervuras e longarinas, buscando representar como esses elementos são distribuídos e conectados dentro de uma estrutura aeronáutica.',
