@@ -12,31 +12,40 @@ import {
 
 export const About: React.FC = () => {
 
-  const courses = [
-    {
-      title: 'Sensoriamento Remoto',
-      institution: 'Agência Espacial Brasileira (AEB)'
-    },
-    {
-      title: 'Engenharia de Produtos Aeronáuticos',
-      institution: 'Agência Espacial Brasileira (AEB)'
-    },
-    {
-      title: 'Introdução ao SIPAER (CI-SIPAER)',
-      institution: 'CENIPA',
-      year: '2026'
-    },
-    {
-      title: 'Aprendizagem Industrial em Processos Administrativos',
-      institution: 'SENAI',
-      year: '2019'
-    },
-    {
-      title: 'Aprendizagem Industrial em Assistente de Qualidade Industrial',
-      institution: 'SENAI',
-      year: '2018'
-    }
-  ];
+
+const courses = [
+  {
+    title: 'Sensoriamento Remoto',
+    institution: 'Agência Espacial Brasileira (AEB)'
+  },
+  {
+    title: 'Engenharia de Produtos Aeronáuticos',
+    institution: 'Agência Espacial Brasileira (AEB)'
+  },
+  {
+    title: 'PART-21D for Beginners',
+    institution: 'Princípios da Regulação Part 21 / RBAC 21'
+  },
+  {
+    title: 'Elementary Aviation English Vocabulary Course',
+    institution: 'ANAC'
+  },
+  {
+    title: 'Introdução ao SIPAER (CI-SIPAER)',
+    institution: 'CENIPA',
+    year: '2026'
+  },
+  {
+    title: 'Aprendizagem Industrial em Processos Administrativos',
+    institution: 'SENAI',
+    year: '2019'
+  },
+  {
+    title: 'Aprendizagem Industrial em Assistente de Qualidade Industrial',
+    institution: 'SENAI',
+    year: '2018'
+  }
+];
 
   const awards = [
     {
